@@ -1,0 +1,10 @@
+# Replace the placeholders with real GitHub/GitLab usernames.
+*                          @lead
+/firmware/                 @member2 @lead
+/firmware/components/saathios/  @lead
+/firmware/components/voice/     @lead
+/backend/                  @member1
+/app/                      @member1
+/ml/                       @lead
+/data/                     @member3
+/docs/                     @member3

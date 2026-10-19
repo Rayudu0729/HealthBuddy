@@ -1,0 +1,25 @@
+# Target: ESP32-S3 N16R8 (16 MB flash, 8 MB octal PSRAM)
+CONFIG_IDF_TARGET="esp32s3"
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+
+# PSRAM for wake word and audio buffers
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+
+# Kernel: fast tick for fall detection
+CONFIG_FREERTOS_HZ=1000
+
+# Restart hung tasks
+CONFIG_ESP_TASK_WDT_EN=y
+CONFIG_ESP_TASK_WDT_PANIC=y
+
+# Battery: power management + tickless idle
+CONFIG_PM_ENABLE=y
+CONFIG_FREERTOS_USE_TICKLESS_IDLE=y
+
+# Own partition table: two firmware slots, voice model, health data
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# Fail-safe OTA: roll back if new firmware does not confirm itself
+CONFIG_BOOTLOADER_APP_ROLLBACK_ENABLE=y
