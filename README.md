@@ -6,6 +6,8 @@ An always-on AI companion wearable for elderly people: talks in Telugu or Hindi,
 
 Full plan (roles, week-by-week tasks, parts, pitch): [docs/HackWithAditya-Plan.html](docs/HackWithAditya-Plan.html)
 
+Parts to order, with order/received tracking: [docs/parts-list.md](docs/parts-list.md)
+
 ## Repo layout
 
 | Folder | What lives here | Owner |
