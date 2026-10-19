@@ -22,7 +22,7 @@ static void on_event(const saathi_event_t *evt, void *ctx)
     xQueueSend(s_alert_queue, evt, 0);
 }
 
-// TODO (Member 1 + Member 2): AT commands to the SIM800L/A7670 over UART.
+// TODO (Member 1 + Member 2): AT commands to the A7670C (4G) over UART.
 static void gsm_send_sms(const char *text)
 {
     xSemaphoreTake(s_gsm_lock, portMAX_DELAY);
