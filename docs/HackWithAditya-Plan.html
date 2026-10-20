@@ -106,6 +106,8 @@
 <tr><td>Cause explanation</td><td>Dashboard shows why risk rose, e.g. new medicine, poor sleep, dehydration</td><td><span class="pill l1">Level 1</span></td></tr>
 <tr><td>Missed-call mode</td><td>Family gives a missed call; device replies by SMS with location and vitals</td><td><span class="pill l1">Level 1</span></td></tr>
 <tr><td>Offline SOS</td><td>Fall alert goes out by SMS even with Wi-Fi unplugged</td><td><span class="pill l1">Level 1</span></td></tr>
+<tr><td>Gesture-activated obstacle alerts</td><td>Blind and low-vision users point the watch forward and bend the wrist to activate distance-based vibration and optional sound warnings</td><td><span class="pill">Proposed; phase TBD</span></td></tr>
+<tr><td>Watch-removal alerts</td><td>Confirmed loss of wrist contact alerts the caregiver, with an approved charging/removal mode to reduce nuisance alerts</td><td><span class="pill">Proposed; phase TBD</span></td></tr>
 <tr><td>Night path light</td><td>Getting out of bed at night switches on a small LED strip by the bed</td><td><span class="pill">Level 2</span></td></tr>
 <tr><td>Fall direction and impact</td><td>Alert says "fell backwards, hard impact, head-injury risk"</td><td><span class="pill">Level 2</span></td></tr>
 <tr><td>Unconscious escalation</td><td>No movement or reply after a fall: family, then ASHA worker, then 108</td><td><span class="pill">Level 2</span></td></tr>
@@ -127,6 +129,28 @@
   <li>The dashboard shows the cause of the risk, not just a number.</li>
 </ol>
 <p><strong>Privacy point for judges:</strong> fall detection and the wake word run on the device; nothing is sent to the cloud until the wake word or an alert, and there is no camera.</p>
+
+<h3 id="obstacle-assistance">Planned accessibility mode: obstacle assistance</h3>
+<p><strong>User interaction:</strong> raise the forearm so the watch's distance sensor faces ahead, then use a deliberate wrist-bending gesture to activate obstacle scanning. A distinct vibration confirms activation. Vibration pulses become faster as an obstacle gets closer; an optional short beep adds a close-obstacle warning. A deliberate deactivation gesture gives a different confirmation vibration. Exact gestures, timing and distance thresholds will be decided through prototype testing.</p>
+<ul>
+  <li><strong>Gesture detection:</strong> an accelerometer and gyroscope detect watch movement, not the hand-to-forearm bend angle directly. If the intended hand bend leaves the watch stationary, evaluate an additional bend sensor across the wrist. Two deliberate watch tilts are an alternative to test, not a confirmed replacement for the requested wrist bend.</li>
+  <li><strong>Watch layout:</strong> position a small distance sensor on the edge facing forward in the scanning posture. Verify its field of view and alignment with a wearable mockup before finalising the enclosure.</li>
+  <li><strong>Local operation:</strong> gesture recognition and obstacle warnings should work on the watch without a phone or 4G connection. Keep SOS and fall detection available while this mode runs.</li>
+  <li><strong>Validation:</strong> test accidental activation during normal activities, left and right wrists, comfortable gesture ranges, warning recognition, sunlight, glass, dark surfaces, narrow obstacles and battery consumption. Evaluate with blind and low-vision users in supervised trials.</li>
+  <li><strong>Scope:</strong> supplementary obstacle awareness alongside a cane or guide dog. One forward-facing sensor does not provide complete obstacle coverage or reliable drop-off detection. A quiet sensor must not be presented as proof that the path is clear.</li>
+</ul>
+<p class="note">Status: proposed feature only; no obstacle sensor driver, gesture recogniser or alert behaviour is implemented yet. Build phase and sensor selection remain open.</p>
+
+<h3 id="watch-removal-alerts">Planned caregiver feature: watch-removal alerts</h3>
+<p><strong>Requested behaviour:</strong> notify the caregiver when the watch is removed. Proposed detection uses skin-contact sensing, optionally combined with a strap-open sensor. Missing heart-rate readings alone must not be considered proof of removal. Sensor choice, confirmation delay and alert channels remain to be validated.</p>
+<ul>
+  <li><strong>Confirm before alerting:</strong> distinguish worn, removal suspected, removed and contact unknown. Use a short configurable confirmation delay to filter brief contact loss or a loose strap, then send one removal notification with device identity and detection time. Do not imply who removed the watch or why.</li>
+  <li><strong>Expected removal:</strong> support a caregiver-approved charging/removal mode with a defined duration. Confirm charging from the charger state rather than assuming every removal is charging, and remind the caregiver if the watch has not been worn again when the approved period ends.</li>
+  <li><strong>Delivery:</strong> use the standalone 4G connection for a caregiver app notification and/or SMS, according to configured channels. Track delivery, retry failures and retain pending alerts during network loss. Report the original detection time when a delayed alert is delivered.</li>
+  <li><strong>Worn again:</strong> confirm stable wrist contact before updating the caregiver. Keep a removal/restoration history and suppress repeated alerts for the same removal episode.</li>
+  <li><strong>Validation:</strong> test loose straps, motion, sweat, different skin conditions, charging, sensor faults, network loss and repeated removal. Sudden power loss prevents the watch itself from sending an alert; a backend missing-heartbeat warning must be reported separately from confirmed removal.</li>
+</ul>
+<p class="note">Status: proposed feature only; removal sensing, caregiver controls and notification delivery are not implemented. Confirmation timing and the charging exception are design proposals for review.</p>
 
 <h2>Team roles</h2>
 <p>Four members, each owning one layer, so every person can explain their part in the ownership viva.</p>
