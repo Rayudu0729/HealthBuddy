@@ -26,3 +26,6 @@ Thumbs.db
 
 # Large raw recordings (keep small samples in data/samples/)
 data/raw/
+
+# Local previews and scratch artifacts
+tmp/

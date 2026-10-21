@@ -9,16 +9,16 @@
 #include "freertos/task.h"
 #include "esp_log.h"
 #include "esp_timer.h"
-#include "saathios.h"
+#include "binduos.h"
 
 #define MAX_SUBSCRIBERS 24
 #define QUEUE_LEN       32
 
-static const char *TAG = "saathi_bus";
+static const char *TAG = "bindu_bus";
 
 typedef struct {
-    saathi_event_id_t id;
-    saathi_event_handler_t handler;
+    bindu_event_id_t id;
+    bindu_event_handler_t handler;
     void *ctx;
 } subscriber_t;
 
@@ -27,31 +27,31 @@ static int s_sub_count;
 static SemaphoreHandle_t s_subs_lock;
 static QueueHandle_t s_queue;
 
-static const char *const EVENT_NAMES[SAATHI_EVT_COUNT] = {
-    [SAATHI_EVT_FALL]        = "FALL",
-    [SAATHI_EVT_STAND_UP]    = "STAND_UP",
-    [SAATHI_EVT_RISK_HIGH]   = "RISK_HIGH",
-    [SAATHI_EVT_WAKE_WORD]   = "WAKE_WORD",
-    [SAATHI_EVT_SOS_BUTTON]  = "SOS_BUTTON",
-    [SAATHI_EVT_MISSED_CALL] = "MISSED_CALL",
-    [SAATHI_EVT_LOW_BATTERY] = "LOW_BATTERY",
+static const char *const EVENT_NAMES[BINDU_EVT_COUNT] = {
+    [BINDU_EVT_FALL]        = "FALL",
+    [BINDU_EVT_STAND_UP]    = "STAND_UP",
+    [BINDU_EVT_RISK_HIGH]   = "RISK_HIGH",
+    [BINDU_EVT_WAKE_WORD]   = "WAKE_WORD",
+    [BINDU_EVT_SOS_BUTTON]  = "SOS_BUTTON",
+    [BINDU_EVT_MISSED_CALL] = "MISSED_CALL",
+    [BINDU_EVT_LOW_BATTERY] = "LOW_BATTERY",
 };
 
-const char *saathi_event_name(saathi_event_id_t id)
+const char *bindu_event_name(bindu_event_id_t id)
 {
-    return (id < SAATHI_EVT_COUNT) ? EVENT_NAMES[id] : "UNKNOWN";
+    return (id < BINDU_EVT_COUNT) ? EVENT_NAMES[id] : "UNKNOWN";
 }
 
 static void dispatcher_task(void *arg)
 {
-    saathi_event_t evt;
+    bindu_event_t evt;
     subscriber_t snapshot[MAX_SUBSCRIBERS];
 
     for (;;) {
         if (xQueueReceive(s_queue, &evt, portMAX_DELAY) != pdTRUE) {
             continue;
         }
-        ESP_LOGI(TAG, "event %s value=%.2f", saathi_event_name(evt.id), evt.value);
+        ESP_LOGI(TAG, "event %s value=%.2f", bindu_event_name(evt.id), evt.value);
 
         // Copy the table so handlers can run without holding the lock.
         xSemaphoreTake(s_subs_lock, portMAX_DELAY);
@@ -67,28 +67,28 @@ static void dispatcher_task(void *arg)
     }
 }
 
-esp_err_t saathi_init(void)
+esp_err_t bindu_init(void)
 {
     s_subs_lock = xSemaphoreCreateMutex();
-    s_queue = xQueueCreate(QUEUE_LEN, sizeof(saathi_event_t));
+    s_queue = xQueueCreate(QUEUE_LEN, sizeof(bindu_event_t));
     if (s_subs_lock == NULL || s_queue == NULL) {
         return ESP_ERR_NO_MEM;
     }
 
-    BaseType_t ok = xTaskCreatePinnedToCore(dispatcher_task, "saathi_bus", 4096, NULL,
-                                            SAATHI_PRIO_BUS, NULL, SAATHI_CORE_SAFETY);
+    BaseType_t ok = xTaskCreatePinnedToCore(dispatcher_task, "bindu_bus", 4096, NULL,
+                                            BINDU_PRIO_BUS, NULL, BINDU_CORE_SAFETY);
     if (ok != pdPASS) {
         return ESP_ERR_NO_MEM;
     }
 
-    saathi_set_mode(SAATHI_MODE_DAY);
-    ESP_LOGI(TAG, "SaathiOS started");
+    bindu_set_mode(BINDU_MODE_DAY);
+    ESP_LOGI(TAG, "BinduOS started");
     return ESP_OK;
 }
 
-esp_err_t saathi_subscribe(saathi_event_id_t id, saathi_event_handler_t handler, void *ctx)
+esp_err_t bindu_subscribe(bindu_event_id_t id, bindu_event_handler_t handler, void *ctx)
 {
-    if (id >= SAATHI_EVT_COUNT || handler == NULL) {
+    if (id >= BINDU_EVT_COUNT || handler == NULL) {
         return ESP_ERR_INVALID_ARG;
     }
 
@@ -103,24 +103,24 @@ esp_err_t saathi_subscribe(saathi_event_id_t id, saathi_event_handler_t handler,
     return err;
 }
 
-esp_err_t saathi_publish(saathi_event_id_t id, float value)
+esp_err_t bindu_publish(bindu_event_id_t id, float value)
 {
-    if (id >= SAATHI_EVT_COUNT) {
+    if (id >= BINDU_EVT_COUNT) {
         return ESP_ERR_INVALID_ARG;
     }
 
-    saathi_event_t evt = {
+    bindu_event_t evt = {
         .id = id,
         .timestamp_us = esp_timer_get_time(),
         .value = value,
     };
 
     // Safety events jump the queue so a FALL is never stuck behind routine events.
-    bool urgent = (id == SAATHI_EVT_FALL || id == SAATHI_EVT_SOS_BUTTON);
+    bool urgent = (id == BINDU_EVT_FALL || id == BINDU_EVT_SOS_BUTTON);
     BaseType_t ok = urgent ? xQueueSendToFront(s_queue, &evt, 0)
                            : xQueueSendToBack(s_queue, &evt, 0);
     if (ok != pdTRUE) {
-        ESP_LOGW(TAG, "queue full, dropped %s", saathi_event_name(id));
+        ESP_LOGW(TAG, "queue full, dropped %s", bindu_event_name(id));
         return ESP_ERR_TIMEOUT;
     }
     return ESP_OK;

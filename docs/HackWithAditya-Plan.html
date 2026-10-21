@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wearable Health Guardian Plan</title>
+<title>Bindu — Standalone Safety and Accessibility Wearable Plan</title>
 <style>
   :root {
     --bg: #fbfaf7; --surface: #ffffff; --text: #1f1e1c; --muted: #5f5c55;
@@ -62,26 +62,28 @@
 </head>
 <body>
 <main>
-<h1>HackWithAditya 2026 — Wearable Health Guardian Plan</h1>
-<div class="byline">19 Oct 2026 · Team plan and pitch outline</div>
+<h1>Bindu — Standalone Safety and Accessibility Wearable</h1>
+<div class="byline">Updated 20 Oct 2026 · HackWithAditya team plan and pitch outline</div>
+<p><strong>Current status:</strong> firmware scaffold only; sensor readings, cellular alerts, voice and sync are stubs. XIAO ESP32-S3 Plus and MPU6050 ordered; receipt and hardware integration not yet confirmed. Features and demonstrations below are development targets, not completed results. Size, budget, detection accuracy and runtime require validation.</p>
+<p><a href="project-submission.html">Open the Bindu submission fields and printable project summary</a></p>
 
 <h2>Overview</h2>
-<p>We build an always-on AI companion wearable (under Rs 5,000) that talks in Telugu or Hindi, predicts and prevents falls, detects emergencies, tracks location and alerts caregivers.</p>
+<p>We are developing a standalone 4G wrist wearable combining physical SOS, motion-based fall detection, gesture-activated obstacle warnings and watch-removal alerts. Location sharing, vitals, risk analysis and Telugu/Hindi voice interaction are planned extensions. The final design uses an integrated PCB and custom enclosure; cost and battery life will be measured.</p>
 <ul>
   <li><strong>Track:</strong> HealthTech &amp; Bio-Innovation (also eligible for the Hardware Innovation prize)</li>
-  <li><strong>Target users:</strong> elderly people living alone, and rural patients cared for by ASHA workers</li>
-  <li><strong>Pitch line:</strong> "Other devices call for help after you fall. Ours stops the fall."</li>
-  <li><strong>Tagline:</strong> "An always-on AI companion you wear: talks in your language, knows your health, stops falls."</li>
+  <li><strong>Target users:</strong> older adults living independently, blind and low-vision adults, and their family caregivers</li>
+  <li><strong>Pitch line:</strong> "One wearable for accessible warnings and caregiver connection."</li>
+  <li><strong>Tagline:</strong> "Safety and accessibility, connected at the wrist."</li>
 </ul>
 <p><strong>What makes it new</strong></p>
 <div class="table-wrap"><table>
 <thead><tr><th>Existing devices</th><th>Our wearable</th></tr></thead>
 <tbody>
-<tr><td>Report a fall after it happens</td><td>Predicts rising fall risk and acts to prevent the fall</td></tr>
+<tr><td>Reactive fall alerts</td><td>Planned fall detection plus experimental motion-based risk warnings; prevention benefit requires validation</td></tr>
 <tr><td>Silent box with a button</td><td>Always-on voice agent: ask vitals, call family, SOS by voice</td></tr>
 <tr><td>Bare score or alarm</td><td>Explains the cause ("stability down 25% since new BP medicine")</td></tr>
 <tr><td>Only detect falls</td><td>Also spot fever, dehydration and routine changes early</td></tr>
-<tr><td>Need internet and cost Rs 30,000+</td><td>Work over SMS and missed calls; under Rs 5,000</td></tr>
+<tr><td>Connectivity and cost vary by device</td><td>Target standalone cellular alerts; final cost and network performance to be measured</td></tr>
 </tbody></table></div>
 <p><strong>Key dates (IST)</strong></p>
 <div class="table-wrap"><table>
@@ -97,15 +99,15 @@
 <p class="note">Source: <a href="https://hackathon.adityauniversity.in/">HackWithAditya 2026</a></p>
 
 <h2>Predict → Prevent and wow features</h2>
-<p>A warning is only useful if it leads to an action, so every risk signal triggers something that prevents the fall; if a fall still happens, help arrives in minutes, not hours.</p>
+<p>The planned demonstrations connect local warnings with caregiver alerts. Detection performance and delivery latency will be measured; neither fall prevention nor a guaranteed response time has been demonstrated.</p>
 <div class="table-wrap"><table>
 <thead><tr><th>Feature</th><th>What it does</th><th>Build</th></tr></thead>
 <tbody>
 <tr><td>Stand-up guard</td><td>Person stands while heart rate or SpO2 is unstable; device says "Sit for 30 seconds before walking"</td><td><span class="pill l1">Level 1</span></td></tr>
-<tr><td>Voice agent</td><td>"Hey Saathi": ask vitals, call family, log medicine, SOS by voice ("Bachao")</td><td><span class="pill l1">Level 1</span></td></tr>
+<tr><td>Voice agent</td><td>"Hey Bindu": ask vitals, call family, log medicine, SOS by voice ("Bachao")</td><td><span class="pill l1">Level 1</span></td></tr>
 <tr><td>Cause explanation</td><td>Dashboard shows why risk rose, e.g. new medicine, poor sleep, dehydration</td><td><span class="pill l1">Level 1</span></td></tr>
-<tr><td>Missed-call mode</td><td>Family gives a missed call; device replies by SMS with location and vitals</td><td><span class="pill l1">Level 1</span></td></tr>
-<tr><td>Offline SOS</td><td>Fall alert goes out by SMS even with Wi-Fi unplugged</td><td><span class="pill l1">Level 1</span></td></tr>
+<tr><td>Missed-call mode</td><td>Deferred: requires separate telephony integration; initial alerts use backend-triggered httpSMS</td><td><span class="pill l1">Level 1</span></td></tr>
+<tr><td>SOS over LTE data</td><td>Fall event reaches the backend over LTE data; httpSMS Android gateway sends caregiver SMS</td><td><span class="pill l1">Level 1</span></td></tr>
 <tr><td>Gesture-activated obstacle alerts</td><td>Blind and low-vision users point the watch forward and bend the wrist to activate distance-based vibration and optional sound warnings</td><td><span class="pill">Proposed; phase TBD</span></td></tr>
 <tr><td>Watch-removal alerts</td><td>Confirmed loss of wrist contact alerts the caregiver, with an approved charging/removal mode to reduce nuisance alerts</td><td><span class="pill">Proposed; phase TBD</span></td></tr>
 <tr><td>Night path light</td><td>Getting out of bed at night switches on a small LED strip by the bed</td><td><span class="pill">Level 2</span></td></tr>
@@ -124,8 +126,8 @@
 <ol>
   <li>A judge stands up fast and the device speaks a warning in Telugu.</li>
   <li>Someone says "Bachao" and the family phone gets an SOS.</li>
-  <li>A missed call to the device returns an SMS with location and vitals.</li>
-  <li>Wi-Fi is unplugged on stage and the fall alert still arrives by SMS.</li>
+  <li>Removing the watch creates a backend event and an httpSMS caregiver alert.</li>
+  <li>Watch Wi-Fi is unplugged; LTE data reaches the backend and httpSMS gateway sends an SMS.</li>
   <li>The dashboard shows the cause of the risk, not just a number.</li>
 </ol>
 <p><strong>Privacy point for judges:</strong> fall detection and the wake word run on the device; nothing is sent to the cloud until the wake word or an alert, and there is no camera.</p>
@@ -158,7 +160,7 @@
 <thead><tr><th>Member</th><th>Strength</th><th>Role</th><th>Owns</th></tr></thead>
 <tbody>
 <tr><td>Lead (you)</td><td>All-round</td><td>Lead, AI/ML, voice agent</td><td>System design, data format, voice agent (wake word, speech, LLM tools), stand-up guard, risk score with causes, final integration, reviewing pull requests</td></tr>
-<tr><td>Member 1</td><td>Coding</td><td>Backend and app</td><td>MQTT/Firebase, SMS and missed-call mode, APIs, medicine log, caregiver dashboard or app</td></tr>
+<tr><td>Member 1</td><td>Coding</td><td>Backend and app</td><td>Express/TypeScript API, PostgreSQL, httpSMS gateway and React dashboard on the existing Kubernetes VM</td></tr>
 <tr><td>Member 2</td><td>Electronics</td><td>Hardware and firmware</td><td>ESP32-S3 wiring, sensors, mic and speaker, battery, enclosure, on-device fall detection</td></tr>
 <tr><td>Member 3</td><td>Presenting</td><td>Pitch, testing, user research</td><td>Slides, demo video, test data (falls, stand-ups, wake word), interviews with 5–10 users, documentation</td></tr>
 </tbody></table></div>
@@ -170,25 +172,25 @@
 </ul>
 
 <h2>System architecture</h2>
-<p>The wearable sends readings over Wi-Fi to the backend, which feeds the AI layer and the caregiver app; an SOS also goes straight out by SMS so alerts work without internet.</p>
+<p>The wearable sends readings and alerts over HTTPS using Wi-Fi or LTE data. The Express/TypeScript backend and PostgreSQL run on the existing Kubernetes VM. The backend calls httpSMS, whose connected Android gateway phone sends caregiver SMS. Remote delivery requires internet and gateway availability; obstacle warnings remain local.</p>
 <figure>
-<svg viewBox="0 0 760 430" role="img" aria-label="Readings flow to the cloud; an SOS also goes straight out by SMS">
+<svg viewBox="0 0 760 430" role="img" aria-label="Bindu: HTTPS backend, live dashboard and httpSMS gateway">
   <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
-  <text class="title" x="24" y="34">Readings flow to the cloud; an SOS also goes straight out by SMS</text>
+  <text class="title" x="24" y="34">Bindu: HTTPS backend, live dashboard and httpSMS gateway</text>
   <g class="wire">
     <path d="M224 120H280" marker-end="url(#arr)"/>
     <path d="M480 120H536" marker-end="url(#arr)"/>
-    <path d="M124 192V248" marker-end="url(#arr)"/>
+    <path d="M300 176V218H124V248" marker-end="url(#arr)"/>
     <path d="M380 176V248" marker-start="url(#arr)" marker-end="url(#arr)"/>
     <path d="M636 176V248" marker-end="url(#arr)"/>
     <path d="M124 328V388H636V328" marker-end="url(#arr)"/>
   </g>
-  <text class="lbl" x="252" y="112" text-anchor="middle">Wi-Fi</text>
+  <text class="lbl" x="252" y="112" text-anchor="middle">Wi-Fi/LTE</text>
   <text class="lbl" x="508" y="112" text-anchor="middle">data</text>
   <text class="lbl" x="132" y="224">SOS, falls</text>
   <text class="lbl" x="388" y="216">scores, warnings</text>
-  <text class="lbl" x="644" y="216">push alerts</text>
-  <text class="lbl" x="380" y="408" text-anchor="middle">SMS over GSM, works without internet</text>
+  <text class="lbl" x="644" y="216">live alerts</text>
+  <text class="lbl" x="380" y="408" text-anchor="middle">SMS via httpSMS + Android phone; internet required</text>
 
   <rect class="box" x="24" y="64" width="200" height="128" rx="8"/>
   <text class="name" x="40" y="88">Wearable (Member 2)</text>
@@ -200,7 +202,7 @@
 
   <rect class="box" x="280" y="64" width="200" height="112" rx="8"/>
   <text class="name" x="296" y="88">Backend (Member 1)</text>
-  <text class="ln" x="296" y="108">MQTT or Firebase</text>
+  <text class="ln" x="296" y="108">Express + PostgreSQL</text>
   <text class="ln" x="296" y="124">Stores readings</text>
   <text class="ln" x="296" y="140">Alert service</text>
   <text class="ln" x="296" y="156">APIs for the app</text>
@@ -213,9 +215,9 @@
   <text class="ln" x="552" y="156">Caregiver contacts</text>
 
   <rect class="box" x="24" y="248" width="200" height="80" rx="8"/>
-  <text class="name" x="40" y="272">SMS module (GSM)</text>
-  <text class="ln" x="40" y="292">A7670C (4G LTE)</text>
-  <text class="ln" x="40" y="308">Sends SOS and location</text>
+  <text class="name" x="40" y="272">httpSMS gateway</text>
+  <text class="ln" x="40" y="292">Android phone + active SIM</text>
+  <text class="ln" x="40" y="308">Backend requests SMS</text>
 
   <rect class="box main" x="280" y="248" width="200" height="112" rx="8"/>
   <text class="name" x="296" y="272">AI layer (Lead)</text>
@@ -234,7 +236,7 @@
 <p>The AI layer (highlighted) is what makes this new: it turns daily motion and vitals into fall-risk warnings with causes, and runs the voice agent.</p>
 <h3>Voice agent on the wearable</h3>
 <ol>
-  <li>Wake word ("Hey Saathi") runs on the ESP32-S3 (Espressif ESP-SR / WakeNet, or Picovoice Porcupine), or a fall or risk event wakes the agent.</li>
+  <li>Wake word ("Hey Bindu") runs on the ESP32-S3 (Espressif ESP-SR / WakeNet, or Picovoice Porcupine), or a fall or risk event wakes the agent.</li>
   <li>Speech goes to Sarvam AI or Bhashini for Telugu or Hindi speech-to-text.</li>
   <li>An LLM agent with tools decides what to do: <code>get_vitals</code>, <code>call_family</code>, <code>send_sos</code>, <code>log_medicine</code>.</li>
   <li>The reply is spoken back in Telugu through the speaker.</li>
@@ -242,18 +244,18 @@
 </ol>
 <p><strong>Battery strategy:</strong> listen continuously only in waking hours; at night wake on motion; SOS button as a push-to-talk fallback; offload heavy AI to the family phone over Bluetooth when nearby; charge nightly like a smartwatch (estimate, measure in Week 4).</p>
 
-<h2>Firmware: SaathiOS</h2>
-<p>SaathiOS is our own health-first runtime built on FreeRTOS + ESP-IDF: fall detection and SOS always come first, even at 5% battery. We do not write a kernel; FreeRTOS gives us a proven scheduler and Espressif's Wi-Fi, Bluetooth, ESP-SR and ESP-ADF need it.</p>
+<h2>Firmware: BinduOS</h2>
+<p>BinduOS is our own health-first runtime built on FreeRTOS + ESP-IDF: fall detection and SOS always come first, even at 5% battery. We do not write a kernel; FreeRTOS gives us a proven scheduler and Espressif's Wi-Fi, Bluetooth, ESP-SR and ESP-ADF need it.</p>
 <figure>
-<svg viewBox="0 0 760 480" role="img" aria-label="SaathiOS sits between our voice skills and FreeRTOS">
-  <text class="title" x="24" y="34">SaathiOS sits between our voice skills and FreeRTOS</text>
+<svg viewBox="0 0 760 480" role="img" aria-label="BinduOS sits between our voice skills and FreeRTOS">
+  <text class="title" x="24" y="34">BinduOS sits between our voice skills and FreeRTOS</text>
   <rect class="box" x="24" y="56" width="712" height="64" rx="8"/>
   <text class="name" x="40" y="80">Voice skills (apps)</text>
   <text class="ln" x="40" y="102">Vitals, medicine, call family, SOS, companion</text>
   <text class="lbl" x="720" y="80" text-anchor="end">we build</text>
 
   <rect class="box main" x="24" y="136" width="712" height="160" rx="8"/>
-  <text class="name" x="40" y="160">SaathiOS: health-first runtime</text>
+  <text class="name" x="40" y="160">BinduOS: health-first runtime</text>
   <text class="lbl" x="720" y="160" text-anchor="end">we build</text>
   <rect class="sub" x="40" y="176" width="216" height="48" rx="8"/>
   <text class="name" x="148" y="204" text-anchor="middle">Health-priority scheduler</text>
@@ -278,11 +280,11 @@
   <text class="ln" x="40" y="438">ESP32-S3, MPU6050, MAX30102, GPS, GSM, mic, speaker, battery</text>
   <text class="lbl" x="720" y="416" text-anchor="end">off the shelf</text>
 </svg>
-<figcaption>SaathiOS firmware stack · 4 layers</figcaption>
+<figcaption>BinduOS firmware stack · 4 layers</figcaption>
 </figure>
 <p>We build the top two layers; FreeRTOS, ESP-IDF and the hardware are existing parts.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>SaathiOS service</th><th>What it does</th></tr></thead>
+<thead><tr><th>BinduOS service</th><th>What it does</th></tr></thead>
 <tbody>
 <tr><td>Health-priority scheduler</td><td>Fall detection, SOS and voice always pre-empt other tasks; sync waits</td></tr>
 <tr><td>Event bus</td><td>Modules publish and subscribe to events instead of calling each other</td></tr>
@@ -302,7 +304,7 @@
 <tr><td>Safety</td><td>Low battery or fault</td><td>Only fall detection and SOS; family gets a low-battery alert</td></tr>
 </tbody></table></div>
 <p><strong>FreeRTOS tools we use:</strong> queues for sensor data, event groups for alerts, a mutex on the GSM module, a task watchdog that restarts a hung task.</p>
-<p><strong>Firmware folders (one owner each):</strong> <code>sensors/</code>, <code>fall_detect/</code>, <code>voice/</code>, <code>alerts/</code>, <code>sync/</code>, <code>power/</code>, plus <code>saathios/</code> for the core services.</p>
+<p><strong>Firmware folders (one owner each):</strong> <code>sensors/</code>, <code>fall_detect/</code>, <code>voice/</code>, <code>alerts/</code>, <code>sync/</code>, <code>power/</code>, plus <code>binduos/</code> for the core services.</p>
 <p><strong>Build order</strong></p>
 <ol>
   <li>Week 1: ESP-IDF v5.x set up, task skeleton, event bus.</li>
@@ -310,7 +312,7 @@
   <li>Week 4: adaptive power manager, fail-safe OTA.</li>
   <li>Level 2: skill system for adding features fast on site.</li>
 </ol>
-<p><strong>For the viva:</strong> say clearly that SaathiOS is a runtime on FreeRTOS, not a new kernel.</p>
+<p><strong>For the viva:</strong> say clearly that BinduOS is a runtime on FreeRTOS, not a new kernel.</p>
 <h3>Kernel setup for the prototype</h3>
 <p>FreeRTOS through ESP-IDF v5.x is the kernel: it is built in, dual-core, and the only option that keeps ESP-SR, ESP-ADF, Wi-Fi and Bluetooth working.</p>
 <div class="table-wrap"><table>
@@ -329,8 +331,8 @@
 <thead><tr><th>Level</th><th>What we change</th></tr></thead>
 <tbody>
 <tr><td>Kernel configuration (<code>menuconfig</code>)</td><td>Tick rate, priorities, stack sizes, core pinning, power management, watchdog; remove unused features</td></tr>
-<tr><td>System (ESP-IDF)</td><td>Own partition table (two firmware slots, voice model, health data), secure boot and flash encryption, own drivers, "Saathi ready" boot sound</td></tr>
-<tr><td>SaathiOS</td><td>All six services above; 100% our code</td></tr>
+<tr><td>System (ESP-IDF)</td><td>Own partition table (two firmware slots, voice model, health data), secure boot and flash encryption, own drivers, "Bindu ready" boot sound</td></tr>
+<tr><td>BinduOS</td><td>All six services above; 100% our code</td></tr>
 </tbody></table></div>
 <p>We do not change the FreeRTOS kernel source. Pitch it the way Android is described: built on the Linux kernel, but still Android.</p>
 
@@ -346,7 +348,7 @@
 <tr><td>MAX30102</td><td>Heart rate and SpO2</td><td>150–250</td></tr>
 <tr><td>MPU6050</td><td>Accelerometer and gyroscope for falls, stand-up and walking stability</td><td>120–200</td></tr>
 <tr><td>NEO-6M GPS</td><td>Location</td><td>300–450</td></tr>
-<tr><td>A7670C 4G LTE GSM (with antenna)</td><td>SMS, calls, missed-call mode</td><td>900–1,400</td></tr>
+<tr><td>A7670C 4G LTE GSM (with antenna)</td><td>LTE data for backend access; voice and direct SMS optional later</td><td>900–1,400</td></tr>
 <tr><td>MLX90614 (optional)</td><td>Body temperature</td><td>600–900</td></tr>
 <tr><td>LiPo battery 1,000–1,500 mAh + TP4056 charger</td><td>All-day power with always-on listening</td><td>400–600</td></tr>
 <tr><td>Buzzer, SOS button, LED</td><td>Emergency beacon and push-to-talk</td><td>50–100</td></tr>
@@ -361,7 +363,7 @@
   <li><input type="checkbox"><span>Lead: architecture, sensor data format (JSON fields), Git repo and branch rules</span></li>
   <li><input type="checkbox"><span>Lead: sign up for Sarvam AI or Bhashini and an LLM API; test Telugu speech-to-text</span></li>
   <li><input type="checkbox"><span>Member 2: order parts; wire ESP32-S3 + MPU6050 on a breadboard</span></li>
-  <li><input type="checkbox"><span>Member 1: pick Firebase or MQTT; create project and empty dashboard</span></li>
+  <li><input type="checkbox"><span>Member 1: set up Express/TypeScript, PostgreSQL and React/Vite locally; prepare existing Kubernetes deployment and httpSMS Android gateway</span></li>
   <li><input type="checkbox"><span>Member 3: interview 5–10 elderly people, families or ASHA workers; note real problems</span></li>
 </ul>
 <h3>Week 2 (27 Oct–2 Nov): sensors to cloud</h3>
@@ -369,13 +371,13 @@
   <li><input type="checkbox"><span>Member 2: read all sensors (MPU6050, MAX30102, GPS) and send data over Wi-Fi</span></li>
   <li><input type="checkbox"><span>Member 2: wire mic and speaker; play audio and record a voice clip</span></li>
   <li><input type="checkbox"><span>Member 1: store readings; show live vitals and map on dashboard</span></li>
-  <li><input type="checkbox"><span>Lead: wake word on ESP32-S3 ("Hey Saathi"); record raw motion data for walking, standing up and fake falls</span></li>
+  <li><input type="checkbox"><span>Lead: wake word on ESP32-S3 ("Hey Bindu"); record raw motion data for walking, standing up and fake falls</span></li>
   <li><input type="checkbox"><span>Member 3: set up the test-data log; help record the data sessions</span></li>
 </ul>
 <h3>Week 3 (3–9 Nov): alerts and voice working</h3>
 <ul class="tasks">
   <li><input type="checkbox"><span>Member 2: on-device fall detection (impact spike, then stillness) with 10-second cancel</span></li>
-  <li><input type="checkbox"><span>Member 1: SMS alert through GSM, SOS flow, missed-call reply with location and vitals</span></li>
+  <li><input type="checkbox"><span>Member 1: persist SOS events, call httpSMS, track delivery and test Android gateway availability; missed-call mode deferred</span></li>
   <li><input type="checkbox"><span>Lead: voice pipeline end to end (wake word, speech-to-text, LLM with tools, Telugu reply)</span></li>
   <li><input type="checkbox"><span>Lead: first walking-stability score from motion data</span></li>
   <li><input type="checkbox"><span>Member 3: draft pitch slides and problem story from interviews</span></li>
@@ -423,8 +425,8 @@
   <li><strong>Why current devices fall short:</strong> react after the fall, silent, need internet, cost Rs 30,000+, English only.</li>
   <li><strong>Our solution:</strong> "Other devices call for help after you fall. Ours stops the fall." Product photo.</li>
   <li><strong>Live demo 1:</strong> a judge stands up fast; the device says "Sit for 30 seconds" in Telugu.</li>
-  <li><strong>Live demo 2:</strong> "Hey Saathi, how is my heart rate?", then "Bachao" triggers an SOS on the family phone.</li>
-  <li><strong>Live demo 3:</strong> unplug Wi-Fi, fake a fall, SMS arrives; a missed call returns location and vitals.</li>
+  <li><strong>Live demo 2:</strong> "Hey Bindu, how is my heart rate?", then "Bachao" triggers an SOS on the family phone.</li>
+  <li><strong>Live demo 3:</strong> disable watch Wi-Fi, trigger a controlled SOS, and deliver SMS via LTE data, backend and Android gateway.</li>
   <li><strong>How it works:</strong> the architecture diagram; privacy (on-device wake word, no camera).</li>
   <li><strong>Test results:</strong> falls detected, false alarms, wake-word accuracy, battery life, from our own test log.</li>
   <li><strong>Impact, cost and next steps:</strong> under Rs 5,000; ASHA-worker network; pilot with a local old-age home or PHC.</li>
@@ -451,7 +453,7 @@
 <tr><td>Wake word misses in a noisy home</td><td>Test with TV on; SOS button always works</td></tr>
 <tr><td>Voice replies slow (1–3 s)</td><td>Keep replies short; play a quick tone while thinking</td></tr>
 <tr><td>Device too bulky</td><td>Pendant or belt clip, not a wristband</td></tr>
-<tr><td>Venue internet poor during demo</td><td>Offline SMS path; recorded backup video</td></tr>
+<tr><td>Venue internet poor during demo</td><td>Test LTE data and gateway phone connectivity; retain a recorded backup video</td></tr>
 <tr><td>GPS weak indoors</td><td>Show last known location; add Wi-Fi location later</td></tr>
 <tr><td>GSM module unstable</td><td>Send alerts over Wi-Fi and phone notification for the demo</td></tr>
 <tr><td>Not enough real fall data</td><td>Record safe fake falls on a mattress; start with simple rules, add ML later</td></tr>

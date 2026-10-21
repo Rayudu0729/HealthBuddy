@@ -1,7 +1,7 @@
 #include "esp_log.h"
 #include "esp_ota_ops.h"
 
-#include "saathios.h"
+#include "binduos.h"
 #include "sensors.h"
 #include "fall_detect.h"
 #include "voice.h"
@@ -13,7 +13,7 @@ static const char *TAG = "main";
 
 void app_main(void)
 {
-    ESP_ERROR_CHECK(saathi_init());
+    ESP_ERROR_CHECK(bindu_init());
 
     // Safety-critical modules first, so they are subscribed before anything publishes.
     ESP_ERROR_CHECK(alerts_init());
@@ -27,5 +27,5 @@ void app_main(void)
     // If a new image crashes before this line, the bootloader rolls back.
     esp_ota_mark_app_valid_cancel_rollback();
 
-    ESP_LOGI(TAG, "Saathi ready");
+    ESP_LOGI(TAG, "Bindu ready");
 }

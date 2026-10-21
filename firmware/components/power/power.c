@@ -5,7 +5,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
-#include "saathios.h"
+#include "binduos.h"
 #include "power.h"
 
 static const char *TAG = "power";
@@ -32,20 +32,20 @@ static void power_task(void *arg)
         int pct = read_battery_pct();
 
         if (pct <= LOW_BATTERY_PCT) {
-            saathi_set_mode(SAATHI_MODE_SAFETY);
+            bindu_set_mode(BINDU_MODE_SAFETY);
             if (!low_reported) {
-                saathi_publish(SAATHI_EVT_LOW_BATTERY, (float)pct);
+                bindu_publish(BINDU_EVT_LOW_BATTERY, (float)pct);
                 low_reported = true;
             }
         } else {
             low_reported = false;
             // TODO: leave ALERT only after the caregiver acknowledges.
-            if (saathi_get_mode() != SAATHI_MODE_ALERT) {
-                saathi_set_mode(is_night() ? SAATHI_MODE_NIGHT : SAATHI_MODE_DAY);
+            if (bindu_get_mode() != BINDU_MODE_ALERT) {
+                bindu_set_mode(is_night() ? BINDU_MODE_NIGHT : BINDU_MODE_DAY);
             }
         }
 
-        ESP_LOGD(TAG, "battery %d%%, mode %s", pct, saathi_mode_name(saathi_get_mode()));
+        ESP_LOGD(TAG, "battery %d%%, mode %s", pct, bindu_mode_name(bindu_get_mode()));
         vTaskDelay(pdMS_TO_TICKS(60000));
     }
 }
@@ -55,6 +55,6 @@ esp_err_t power_init(void)
     // TODO (Member 2): esp_pm_configure() with light sleep, and the MPU6050
     // motion interrupt as a wake source for NIGHT mode.
     BaseType_t ok = xTaskCreatePinnedToCore(power_task, "power", 3072, NULL,
-                                            SAATHI_PRIO_POWER, NULL, SAATHI_CORE_NET);
+                                            BINDU_PRIO_POWER, NULL, BINDU_CORE_NET);
     return ok == pdPASS ? ESP_OK : ESP_ERR_NO_MEM;
 }

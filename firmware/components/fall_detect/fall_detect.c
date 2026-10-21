@@ -7,7 +7,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
-#include "saathios.h"
+#include "binduos.h"
 #include "fall_detect.h"
 
 static const char *TAG = "fall_detect";
@@ -45,7 +45,7 @@ static void fall_task(void *arg)
                 still_ms += SAMPLE_PERIOD_MS;
                 if (still_ms >= STILL_TIME_MS) {
                     ESP_LOGW(TAG, "fall detected, impact %.1f g", impact_g);
-                    saathi_publish(SAATHI_EVT_FALL, impact_g);
+                    bindu_publish(BINDU_EVT_FALL, impact_g);
                     impact_seen = false;
                 }
             } else {
@@ -54,7 +54,7 @@ static void fall_task(void *arg)
         }
 
         // TODO (Lead): stand-up detection from the gyroscope + posture change,
-        // then saathi_publish(SAATHI_EVT_STAND_UP, 0).
+        // then bindu_publish(BINDU_EVT_STAND_UP, 0).
 
         vTaskDelayUntil(&last_wake, pdMS_TO_TICKS(SAMPLE_PERIOD_MS));
     }
@@ -63,6 +63,6 @@ static void fall_task(void *arg)
 esp_err_t fall_detect_init(void)
 {
     BaseType_t ok = xTaskCreatePinnedToCore(fall_task, "fall_detect", 4096, NULL,
-                                            SAATHI_PRIO_FALL, NULL, SAATHI_CORE_SAFETY);
+                                            BINDU_PRIO_FALL, NULL, BINDU_CORE_SAFETY);
     return ok == pdPASS ? ESP_OK : ESP_ERR_NO_MEM;
 }

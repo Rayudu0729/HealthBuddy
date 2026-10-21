@@ -1,7 +1,7 @@
 # Replace the placeholders with real GitHub/GitLab usernames.
 *                          @lead
 /firmware/                 @member2 @lead
-/firmware/components/saathios/  @lead
+/firmware/components/binduos/  @lead
 /firmware/components/voice/     @lead
 /backend/                  @member1
 /app/                      @member1

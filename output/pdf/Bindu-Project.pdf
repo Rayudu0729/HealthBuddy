@@ -1,0 +1,296 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 4 /Kids [6 0 R 8 0 R 10 0 R 16 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 3803 >>
+stream
+q 0.067 0.42 0.388 rg 0 0 0 RG 0 w 0 834.89 595.28 7 re f Q
+BT /F2 11 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 806.89 Tm (BINDU) Tj ET
+BT /F1 7.6 Tf 0.325 0.404 0.475 rg 1 0 0 1 253 807.29 Tm (HACKWITHADITYA 2026  /  HEALTHTECH) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 768.89 Tm (PROJECT OVERVIEW) Tj ET
+BT /F2 25 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 730.89 Tm (Safety and accessibility,) Tj ET
+BT /F1 10.5 Tf 0.325 0.404 0.475 rg 1 0 0 1 44 706.39 Tm (connected at the wrist.) Tj ET
+q 0.851 0.89 0.906 RG 0.7 w 44 49 m 551.28 49 l S Q
+BT /F1 8 Tf 0.325 0.404 0.475 rg 1 0 0 1 44 28 Tm (Bindu  |  Project submission  |  20 October 2026) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 515.28 28 Tm (01 / 04) Tj ET
+BT /F2 48 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 630.89 Tm (BINDU) Tj ET
+BT /F2 18 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 597.89 Tm (Standalone Safety and Accessibility Wearable) Tj ET
+q 1 0.957 0.894 rg 0 0 0 RG 0 w 44 527.89 507.28 47 re f Q
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 57 556.89 Tm (DEVELOPMENT STAGE) Tj ET
+BT /F1 9.5 Tf 0.596 0.38 0.118 rg 1 0 0 1 57 538.39 Tm (Pre-hardware integration - firmware scaffold and two parts ordered) Tj ET
+BT /F2 17 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 487.89 Tm (The problem) Tj ET
+BT /F1 11 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 462.89 Tm (Older adults living independently may struggle to request help after a fall or emergency. Blind) Tj ET
+BT /F1 11 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 446.89 Tm (and low-vision users need accessible obstacle feedback, while caregivers need to know when) Tj ET
+BT /F1 11 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 430.89 Tm (a safety wearable has been removed.) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 401.89 Tm (TARGET USERS) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 380.39 Tm (Older adults living independently, blind and low-vision adults, and their family caregivers. Each) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 365.39 Tm (user can enable the functions relevant to their needs.) Tj ET
+BT /F2 17 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 313.89 Tm (Abstract) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 289.39 Tm (Bindu is a standalone 4G wrist-wearable project combining physical SOS, motion-based fall) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 274.39 Tm (detection, watch-removal alerts and gesture-activated obstacle awareness. A forward-facing) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 259.39 Tm (distance sensor will drive vibration pulses that become faster as obstacles approach, with) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 244.39 Tm (optional audible feedback.) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 214.39 Tm (An ESP32-S3 will coordinate local sensing and send remote events over Wi-Fi or LTE data to a) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 199.39 Tm (self-hosted backend. The backend will request caregiver SMS through httpSMS and a dedicated) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 184.39 Tm (Android gateway phone. The wearer will not need a nearby phone; remote delivery still depends on) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 169.39 Tm (internet and gateway availability.) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 139.39 Tm (Development proceeds from subsystem tests to an integrated PCB and custom enclosure.) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 124.39 Tm (Evaluation will measure gesture reliability, false alarms, ranging limits, alert delivery and power) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 109.39 Tm (use. Location, vitals and Telugu/Hindi voice interaction are planned extensions. No detection or) Tj ET
+BT /F1 10.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 94.39 Tm (battery-performance results are claimed at this stage.) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 4034 >>
+stream
+q 0.067 0.42 0.388 rg 0 0 0 RG 0 w 0 834.89 595.28 7 re f Q
+BT /F2 11 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 806.89 Tm (BINDU) Tj ET
+BT /F1 7.6 Tf 0.325 0.404 0.475 rg 1 0 0 1 253 807.29 Tm (HACKWITHADITYA 2026  /  HEALTHTECH) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 768.89 Tm (PRODUCT AND USER EXPERIENCE) Tj ET
+BT /F2 25 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 730.89 Tm (One device. Clear interactions.) Tj ET
+BT /F1 10.5 Tf 0.325 0.404 0.475 rg 1 0 0 1 44 706.39 Tm (Four planned functions connect accessible local feedback with caregiver awareness.) Tj ET
+q 0.851 0.89 0.906 RG 0.7 w 44 49 m 551.28 49 l S Q
+BT /F1 8 Tf 0.325 0.404 0.475 rg 1 0 0 1 44 28 Tm (Bindu  |  Project submission  |  20 October 2026) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 515.28 28 Tm (02 / 04) Tj ET
+BT /F2 11 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 655.89 Tm (01  Physical SOS) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 636.49 Tm (A deliberate button press creates an emergency event. The watch uploads it over an available data) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 621.49 Tm (connection; the backend records the event and requests caregiver SMS. A cancel input and clear) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 606.49 Tm (local feedback are part of the design.) Tj ET
+BT /F2 11 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 575.89 Tm (02  Gesture-activated obstacle mode) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 556.49 Tm (Raise the forearm so the sensor faces forward, then perform the deliberate wrist gesture.) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 541.49 Tm (Distinct vibration confirms activation. Faster pulses indicate a nearer obstacle; optional sound) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 526.49 Tm (adds a close-obstacle warning. Repeat a validated gesture to deactivate.) Tj ET
+BT /F2 11 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 495.89 Tm (03  Watch-removal awareness) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 476.49 Tm (Confirm sustained contact loss before alerting the caregiver. Filter loose-strap events, provide) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 461.49 Tm (an approved charging/removal interval, and report stable worn-again contact. Missing heart-rate) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 446.49 Tm (readings alone are not proof of removal.) Tj ET
+BT /F2 11 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 415.89 Tm (04  Motion-based fall detection) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 396.49 Tm (Replace fixed sensor stubs with real IMU readings, then evaluate impact and stillness logic on) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 381.49 Tm (controlled recordings. Tune false alarms and detection thresholds before enabling automatic) Tj ET
+BT /F1 10.4 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 366.49 Tm (caregiver alerts.) Tj ET
+q 0.929 0.961 0.949 rg 0 0 0 RG 0 w 44 172.89 507.28 94 re f Q
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 57 246.89 Tm (KEY ENGINEERING DISTINCTION) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 57 222.89 Tm (A watch-mounted IMU measures watch motion. Bending only the hand may leave the forearm and) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 57 208.89 Tm (watch stationary. The requested gesture needs experiments and may require an additional) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 57 194.89 Tm (wrist-bend sensor.) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 141.89 Tm (WEARABLE DESIGN DIRECTION) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 119.89 Tm (Use the compact XIAO controller, an integrated carrier PCB, selected LTE module, protected flat) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 105.89 Tm (battery and a custom wrist enclosure. Sensor direction, antenna clearance, optical contact and) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 91.89 Tm (battery current capability must be checked together. Case dimensions and runtime are not yet) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 77.89 Tm (validated.) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 6662 >>
+stream
+q 0.067 0.42 0.388 rg 0 0 0 RG 0 w 0 834.89 595.28 7 re f Q
+BT /F2 11 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 806.89 Tm (BINDU) Tj ET
+BT /F1 7.6 Tf 0.325 0.404 0.475 rg 1 0 0 1 253 807.29 Tm (HACKWITHADITYA 2026  /  HEALTHTECH) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 768.89 Tm (SYSTEM ARCHITECTURE) Tj ET
+BT /F2 25 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 730.89 Tm (Local awareness. Remote alerts.) Tj ET
+BT /F1 10.5 Tf 0.325 0.404 0.475 rg 1 0 0 1 44 706.39 Tm (Selected architecture - software implementation and Kubernetes deployment are pending.) Tj ET
+q 0.851 0.89 0.906 RG 0.7 w 44 49 m 551.28 49 l S Q
+BT /F1 8 Tf 0.325 0.404 0.475 rg 1 0 0 1 44 28 Tm (Bindu  |  Project submission  |  20 October 2026) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 515.28 28 Tm (03 / 04) Tj ET
+q 0.929 0.961 0.949 rg 0.851 0.89 0.906 RG 0.6 w 44 592.89 150 72 re B Q
+BT /F2 10.3 Tf 0.067 0.42 0.388 rg 1 0 0 1 55 644.59 Tm (BINDU WATCH) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 55 626.69 Tm (Sensing + local feedback) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 55 614.19 Tm (Wi-Fi / LTE data) Tj ET
+q 0.929 0.961 0.949 rg 0.851 0.89 0.906 RG 0.6 w 222 592.89 150 72 re B Q
+BT /F2 10.3 Tf 0.067 0.42 0.388 rg 1 0 0 1 233 644.59 Tm (BACKEND API) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 233 626.69 Tm (Express / TypeScript) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 233 614.19 Tm (Device authentication) Tj ET
+q 0.929 0.961 0.949 rg 0.851 0.89 0.906 RG 0.6 w 400 592.89 151 72 re B Q
+BT /F2 10.3 Tf 0.067 0.42 0.388 rg 1 0 0 1 411 644.59 Tm (CAREGIVER WEB) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 411 626.69 Tm (React / TypeScript Live) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 411 614.19 Tm (SSE updates) Tj ET
+q 0.067 0.42 0.388 RG 1.3 w 194 628.89 m 222 628.89 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 222 628.89 m 216.735 626.013 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 222 628.89 m 216.735 631.767 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 372 628.89 m 400 628.89 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 400 628.89 m 394.735 626.013 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 400 628.89 m 394.735 631.767 l S Q
+q 0.929 0.961 0.949 rg 0.851 0.89 0.906 RG 0.6 w 222 481.89 150 72 re B Q
+BT /F2 10.3 Tf 0.067 0.42 0.388 rg 1 0 0 1 233 533.59 Tm (DATA + SMS WORKER) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 233 515.69 Tm (PostgreSQL event store) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 233 503.19 Tm (Outbox + delivery retries) Tj ET
+q 0.067 0.42 0.388 RG 1.3 w 297 592.89 m 297 553.89 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 297 553.89 m 294.123 559.155 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 297 553.89 m 299.877 559.155 l S Q
+q 0.929 0.961 0.949 rg 0.851 0.89 0.906 RG 0.6 w 44 367.89 150 72 re B Q
+BT /F2 10.3 Tf 0.067 0.42 0.388 rg 1 0 0 1 55 419.59 Tm (httpSMS API) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 55 401.69 Tm (Server-side credentials) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 55 389.19 Tm (SMS request + status) Tj ET
+q 0.929 0.961 0.949 rg 0.851 0.89 0.906 RG 0.6 w 222 367.89 150 72 re B Q
+BT /F2 10.3 Tf 0.067 0.42 0.388 rg 1 0 0 1 233 419.59 Tm (ANDROID GATEWAY) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 233 401.69 Tm (Team-managed phone) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 233 389.19 Tm (Internet + active SIM) Tj ET
+q 0.929 0.961 0.949 rg 0.851 0.89 0.906 RG 0.6 w 400 367.89 151 72 re B Q
+BT /F2 10.3 Tf 0.067 0.42 0.388 rg 1 0 0 1 411 419.59 Tm (CAREGIVER SMS) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 411 401.69 Tm (SMS received on phone) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 411 389.19 Tm (Acknowledgement separate) Tj ET
+q 0.067 0.42 0.388 RG 1.3 w 222 517.89 m 119 517.89 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 119 517.89 m 124.265 520.767 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 119 517.89 m 124.265 515.013 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 119 517.89 m 119 439.89 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 119 439.89 m 116.123 445.155 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 119 439.89 m 121.877 445.155 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 194 403.89 m 222 403.89 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 222 403.89 m 216.735 401.013 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 222 403.89 m 216.735 406.767 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 372 403.89 m 400 403.89 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 400 403.89 m 394.735 401.013 l S Q
+q 0.067 0.42 0.388 RG 1.3 w 400 403.89 m 394.735 406.767 l S Q
+BT /F1 9.4 Tf 0.325 0.404 0.475 rg 1 0 0 1 44 343.49 Tm (The gateway phone can stay with the team; it is not paired to the wearer.) Tj ET
+q 0.071 0.149 0.227 rg 0.851 0.89 0.906 RG 0.6 w 44 283.89 117 30 re B Q
+BT /F2 9 Tf 1 1 1 rg 1 0 0 1 54 294.89 Tm (Layer) Tj ET
+q 0.071 0.149 0.227 rg 0.851 0.89 0.906 RG 0.6 w 161 283.89 390.28 30 re B Q
+BT /F2 9 Tf 1 1 1 rg 1 0 0 1 171 294.89 Tm (Selected technology) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 44 245.89 117 38 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 54 264.59 Tm (Firmware) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 161 245.89 390.28 38 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 171 264.59 Tm (C, ESP-IDF, FreeRTOS; I2C, UART, cellular AT commands) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 44 207.89 117 38 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 54 226.59 Tm (Frontend) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 161 207.89 390.28 38 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 171 226.59 Tm (React, TypeScript, Vite; responsive caregiver dashboard) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 44 169.89 117 38 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 54 188.59 Tm (Backend / data) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 161 169.89 390.28 38 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 171 188.59 Tm (Node.js, TypeScript, Express, PostgreSQL; HTTPS + SSE) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 44 131.89 117 38 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 54 150.59 Tm (Deployment) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 161 131.89 390.28 38 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 171 150.59 Tm (Container images; existing Kubernetes VM; persistent storage) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 44 93.89 117 38 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 54 112.59 Tm (Notifications) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 161 93.89 390.28 38 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 171 112.59 Tm (httpSMS REST API and dedicated Android gateway phone) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 77.69 Tm (Open-source application stack; no new managed hosting subscription is required. Existing VM/storage, mobile) Tj ET
+BT /F1 9.2 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 65.69 Tm (data, carrier SMS and fabrication costs remain separate.) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 5323 >>
+stream
+q 0.067 0.42 0.388 rg 0 0 0 RG 0 w 0 834.89 595.28 7 re f Q
+BT /F2 11 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 806.89 Tm (BINDU) Tj ET
+BT /F1 7.6 Tf 0.325 0.404 0.475 rg 1 0 0 1 253 807.29 Tm (HACKWITHADITYA 2026  /  HEALTHTECH) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 768.89 Tm (READINESS AND DELIVERY) Tj ET
+BT /F2 25 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 730.89 Tm (What exists. What comes next.) Tj ET
+BT /F1 10.5 Tf 0.325 0.404 0.475 rg 1 0 0 1 44 706.39 Tm (A measurable delivery plan with explicit prototype status.) Tj ET
+q 0.851 0.89 0.906 RG 0.7 w 44 49 m 551.28 49 l S Q
+BT /F1 8 Tf 0.325 0.404 0.475 rg 1 0 0 1 44 28 Tm (Bindu  |  Project submission  |  20 October 2026) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 515.28 28 Tm (04 / 04) Tj ET
+q 0.929 0.961 0.949 rg 0 0 0 RG 0 w 44 581.89 507.28 89 re f Q
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 57 650.89 Tm (AVAILABLE IN THE REPOSITORY) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 57 626.89 Tm (ESP-IDF/FreeRTOS task scaffold, event dispatch, priorities, power-mode state and component) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 57 612.89 Tm (boundaries. Hardware inputs, SMS, voice and sync remain stubs; selected-board build is) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 57 598.89 Tm (unverified.) Tj ET
+q 0.929 0.961 0.949 rg 0 0 0 RG 0 w 44 491.89 507.28 78 re f Q
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 57 549.89 Tm (HARDWARE ORDERED) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 57 525.89 Tm (XIAO ESP32-S3 Plus from HUBTRONICS; MPU6050 from Quartz. Receipt is not yet confirmed.) Tj ET
+BT /F1 10 Tf 0.141 0.216 0.275 rg 1 0 0 1 57 511.89 Tm (Other sensors, cellular integration and the custom PCB/enclosure are pending.) Tj ET
+BT /F2 17 Tf 0.071 0.149 0.227 rg 1 0 0 1 44 451.89 Tm (Delivery gates and acceptance evidence) Tj ET
+q 0.071 0.149 0.227 rg 0.851 0.89 0.906 RG 0.6 w 44 407.89 128 29 re B Q
+BT /F2 9 Tf 1 1 1 rg 1 0 0 1 54 417.89 Tm (Gate) Tj ET
+q 0.071 0.149 0.227 rg 0.851 0.89 0.906 RG 0.6 w 172 407.89 379.28 29 re B Q
+BT /F2 9 Tf 1 1 1 rg 1 0 0 1 182 417.89 Tm (Required evidence) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 44 358.89 128 49 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 54 388.59 Tm (1. SOS to caregiver) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 172 358.89 379.28 49 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 182 388.59 Tm (Wi-Fi disabled; LTE upload reaches backend and gateway SMS arrives.) Tj ET
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 182 375.59 Tm (Measure latency and record failure/recovery.) Tj ET
+q 0.965 0.976 0.98 rg 0.851 0.89 0.906 RG 0.6 w 44 309.89 128 49 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 54 339.59 Tm (2. Local assistance) Tj ET
+q 0.965 0.976 0.98 rg 0.851 0.89 0.906 RG 0.6 w 172 309.89 379.28 49 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 182 339.59 Tm (Measure obstacle range limits, gesture false triggers and warning recognition) Tj ET
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 182 326.59 Tm (in supervised tests.) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 44 260.89 128 49 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 54 290.59 Tm (3. Removal + motion) Tj ET
+q 1 1 1 rg 0.851 0.89 0.906 RG 0.6 w 172 260.89 379.28 49 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 182 290.59 Tm (Test loose straps, charging, restored contact and controlled motion; record) Tj ET
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 182 277.59 Tm (false alarms and missed events.) Tj ET
+q 0.965 0.976 0.98 rg 0.851 0.89 0.906 RG 0.6 w 44 211.89 128 49 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 54 241.59 Tm (4. Wrist integration) Tj ET
+q 0.965 0.976 0.98 rg 0.851 0.89 0.906 RG 0.6 w 172 211.89 379.28 49 re B Q
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 182 241.59 Tm (Verify PCB fit, supply stability, antenna performance and measured battery) Tj ET
+BT /F1 9.3 Tf 0.141 0.216 0.275 rg 1 0 0 1 182 228.59 Tm (runtime before final case assembly.) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 183.89 Tm (OPERATING BOUNDARIES) Tj ET
+BT /F1 9.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 164.39 Tm (Obstacle warnings supplement a cane or guide dog; a quiet sensor does not prove a clear path or detect) Tj ET
+BT /F1 9.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 151.39 Tm (every drop-off. Remote alerts require watch data, backend and Android gateway availability. httpSMS lists) Tj ET
+BT /F1 9.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 138.39 Tm (a free quota of up to 200 sent/received SMS per month; carrier allowances still apply. Persist alert jobs,) Tj ET
+BT /F1 9.5 Tf 0.141 0.216 0.275 rg 1 0 0 1 44 125.39 Tm (deduplicate retries and distinguish API acceptance, delivery and caregiver acknowledgement.) Tj ET
+BT /F2 8 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 93.89 Tm (PROOF OF WORK AND TECHNICAL REFERENCES) Tj ET
+BT /F1 8.5 Tf 0.067 0.42 0.388 rg 1 0 0 1 44 74.39 Tm (Project repository) Tj ET
+q 0.067 0.42 0.388 RG 0.4 w 44 71.89 m 125.77 71.89 l S Q
+BT /F1 8.5 Tf 0.067 0.42 0.388 rg 1 0 0 1 147.77 74.39 Tm (httpSMS API) Tj ET
+q 0.067 0.42 0.388 RG 0.4 w 147.77 71.89 m 202 71.89 l S Q
+BT /F1 8.5 Tf 0.067 0.42 0.388 rg 1 0 0 1 224 74.39 Tm (Plans) Tj ET
+q 0.067 0.42 0.388 RG 0.4 w 224 71.89 m 246.355 71.89 l S Q
+BT /F1 8.5 Tf 0.067 0.42 0.388 rg 1 0 0 1 268.355 74.39 Tm (Kubernetes) Tj ET
+q 0.067 0.42 0.388 RG 0.4 w 268.355 71.89 m 316.975 71.89 l S Q
+endstream
+endobj
+12 0 obj
+<< /Type /Annot /Subtype /Link /Rect [44 68.88999999999999 125.77000000000001 84.88999999999999] /Border [0 0 0] /A << /S /URI /URI (https://github.com/Rayudu0729/HealthBuddy) >> >>
+endobj
+13 0 obj
+<< /Type /Annot /Subtype /Link /Rect [147.77 68.88999999999999 202.00000000000003 84.88999999999999] /Border [0 0 0] /A << /S /URI /URI (https://docs.httpsms.com/) >> >>
+endobj
+14 0 obj
+<< /Type /Annot /Subtype /Link /Rect [224.00000000000003 68.88999999999999 246.35500000000002 84.88999999999999] /Border [0 0 0] /A << /S /URI /URI (https://auth.httpsms.com/) >> >>
+endobj
+15 0 obj
+<< /Type /Annot /Subtype /Link /Rect [268.355 68.88999999999999 316.975 84.88999999999999] /Border [0 0 0] /A << /S /URI /URI (https://kubernetes.io/docs/concepts/workloads/) >> >>
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R /Annots [12 0 R 13 0 R 14 0 R 15 0 R] >>
+endobj
+17 0 obj
+<< /Title (Bindu - Standalone Safety and Accessibility Wearable) /Author (Bindu Project Team) /Subject (HackWithAditya 2026 project submission - concept and prototype development) /Creator (Bindu Project) >>
+endobj
+xref
+0 18
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000135 00000 n 
+0000000205 00000 n 
+0000000280 00000 n 
+0000004135 00000 n 
+0000004277 00000 n 
+0000008363 00000 n 
+0000008505 00000 n 
+0000015219 00000 n 
+0000015362 00000 n 
+0000020738 00000 n 
+0000020936 00000 n 
+0000021122 00000 n 
+0000021320 00000 n 
+0000021517 00000 n 
+0000021699 00000 n 
+trailer
+<< /Size 18 /Root 1 0 R /Info 17 0 R >>
+startxref
+21923
+%%EOF

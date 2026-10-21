@@ -1,6 +1,6 @@
 #pragma once
 
-// Wi-Fi upload of readings to MQTT/Firebase.
+// HTTPS upload of readings and events to the Bindu backend (implementation pending).
 // Owner: Member 1.
 
 #include "esp_err.h"

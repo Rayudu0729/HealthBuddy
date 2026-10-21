@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bindu — Project Submission</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f4f6f5; color: #172b29; font: 16px/1.65 system-ui, sans-serif; }
+  main { max-width: 880px; margin: 32px auto; padding: 36px; background: white; border: 1px solid #d8e3df; border-radius: 16px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 10px; }
+  h2 { font-size: 19px; margin: 28px 0 8px; color: #145c53; }
+  p { margin: 8px 0 14px; }
+  a { color: #145c53; overflow-wrap: anywhere; }
+  .meta { color: #546964; font-size: 14px; }
+  .status { padding: 14px 18px; border-left: 4px solid #b77920; background: #fff7e8; }
+  button { padding: 9px 16px; border: 0; border-radius: 8px; background: #145c53; color: white; font: inherit; cursor: pointer; }
+  ul { padding-left: 22px; }
+  @media (max-width: 600px) { main { margin: 0; padding: 24px 18px; border: 0; border-radius: 0; } }
+  @media print { body { background: white; font-size: 11pt; } main { max-width: none; margin: 0; padding: 0; border: 0; } button, .navigation { display: none; } h2 { break-after: avoid; } .status { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Bindu — Standalone Safety and Accessibility Wearable</h1>
+<p class="meta">HackWithAditya 2026 · HealthTech · Submission content updated 20 October 2026</p>
+<p class="navigation"><a href="../README.md">Project README</a> · <a href="HackWithAditya-Plan.html">Development plan</a> · <a href="parts-list.md">Parts and orders</a></p>
+<button type="button" onclick="window.print()">Print / Save as PDF</button>
+<p><a href="../output/pdf/Bindu-Project.pdf">Download the formatted four-page submission PDF</a></p>
+<p class="status"><strong>Stage: pre-hardware integration.</strong> Firmware scaffold exists; two hardware items are ordered. Planned functions must not be submitted as tested features. Update the working-prototype field after actual hardware verification.</p>
+
+<h2>Project title</h2>
+<p>Bindu — Standalone Safety and Accessibility Wearable</p>
+
+<h2>Problem statement</h2>
+<p>Older adults living independently may be unable to request help promptly after a fall or emergency. Blind and low-vision users need accessible feedback about obstacles, while caregivers need to know when a safety wearable has been removed. Bindu aims to address these situations through one wrist-worn device combining local vibration and sound warnings with standalone cellular caregiver communication.</p>
+
+<h2>Target users</h2>
+<p>Older adults living independently, blind and low-vision adults, and their family caregivers. Each user can enable the functions relevant to their needs.</p>
+
+<h2>Abstract</h2>
+<p>Bindu is a standalone 4G wrist-wearable project that brings together personal safety, accessibility and caregiver communication. The planned device combines a physical SOS button, motion-based fall detection, watch-removal alerts and a gesture-activated obstacle-awareness mode.</p>
+<p>In obstacle mode, the user raises the forearm so a distance sensor faces forward and performs a deliberate wrist gesture. Vibration pulses increase in frequency as an obstacle approaches, with an optional audible warning and distinct mode confirmations. Hand bending relative to a stationary forearm may require an additional sensor; this interaction will be validated through wearable mockups.</p>
+<p>The planned electronics use an ESP32-S3 controller, motion and distance sensors, haptic feedback, contact sensing and an LTE modem. Local obstacle warnings will operate independently of the cellular connection. SOS and confirmed removal events will reach a self-hosted backend over Wi-Fi or LTE data; the backend will request caregiver SMS through httpSMS and a dedicated Android gateway phone. The wearer does not need a nearby phone, but remote delivery depends on internet connectivity and gateway availability. Location sharing, vitals and Telugu/Hindi voice interaction are planned extensions.</p>
+<p>Development will progress from individual subsystem tests to an integrated PCB and a custom wrist enclosure. Evaluation will measure false alarms, obstacle-detection limits, gesture reliability, alert delivery and power consumption. Bindu is intended to supplement existing mobility aids; it does not establish that a path is clear or guarantee fall prevention.</p>
+
+<h2>Working prototype</h2>
+<p>The repository currently contains an ESP-IDF/FreeRTOS firmware scaffold with event dispatch, task priorities, power-mode state and separate components for fall detection, alerts, sensors, voice and synchronisation. Hardware input functions and external integrations are currently stubs. Firmware compilation and operation on the selected controller have not yet been verified in this project review.</p>
+<p>The XIAO ESP32-S3 Plus controller and MPU6050 motion sensor have been ordered; receipt is not yet confirmed. Physical SOS input, real sensor readings, cellular delivery, obstacle feedback, wrist-gesture activation and watch-removal detection remain to be integrated and tested. There are no measured detection-accuracy, alert-latency or battery-life results yet.</p>
+<p>The first end-to-end milestone is a deliberate SOS-button press reaching the backend over LTE data while Wi-Fi is unavailable, followed by caregiver SMS delivery through httpSMS and the Android gateway. Subsequent milestones add motion testing, obstacle warnings and removal/restoration alerts before PCB and enclosure integration.</p>
+
+<h2>GitHub link</h2>
+<p><a href="https://github.com/Rayudu0729/HealthBuddy">https://github.com/Rayudu0729/HealthBuddy</a></p>
+<p class="meta">This is the repository configured as the local Git remote. The repository URL retains HealthBuddy; the project name is Bindu. Confirm reviewer access and push the reviewed changes before submitting the link.</p>
+
+<h2>Tech stack</h2>
+<p>Firmware: C, ESP-IDF, FreeRTOS, I²C, UART and cellular AT-command integration. Frontend: React, TypeScript and Vite. Backend: Node.js, TypeScript and Express, with PostgreSQL and Server-Sent Events for dashboard updates. SMS: httpSMS REST API and a dedicated Android gateway phone. Deployment: container images on the team's existing Kubernetes VM, HTTPS ingress and persistent database storage. This architecture is selected; implementation and deployment are pending.</p>
+
+<h2>Hardware</h2>
+<p>Ordered: XIAO ESP32-S3 Plus and MPU6050. Planned: VL53L1X distance sensor, LTE modem and antennas, vibration motor and driver, buzzer, SOS/cancel controls, wrist-contact sensing, protected rechargeable battery, charging/power circuitry, custom PCB, strap and enclosure. Additional hand-bend sensing and GNSS will be selected after subsystem evaluation.</p>
+
+<h2>Dependencies</h2>
+<p>Open-source React/Vite, Node.js/Express and PostgreSQL; ESP-IDF/FreeRTOS and hardware drivers; existing Kubernetes VM capacity, persistent storage and HTTPS access; an httpSMS account/API credential; and an Android gateway phone with internet, the httpSMS app and active SMS-capable SIM. The hosted httpSMS free plan currently allows up to 200 sent/received SMS per month. Software subscriptions are avoided, but existing infrastructure, SIM/data/SMS, hardware and fabrication may have costs. API acceptance is not proof of handset delivery or caregiver acknowledgement. No paid speech API or browser background-push service is included.</p>
+
+<h2>Planned demonstration</h2>
+<ul>
+  <li>Physical SOS sends a caregiver alert with Wi-Fi unavailable.</li>
+  <li>A deliberate wrist gesture activates obstacle mode; proximity changes vibration pulses and optionally triggers sound.</li>
+  <li>Confirmed watch removal alerts the caregiver; stable restored contact generates a worn-again update.</li>
+  <li>Controlled motion recordings evaluate fall detection and false alarms before automatic notification is enabled.</li>
+</ul>
+<p class="meta">Demonstrations above are targets. Add a demo video only after the corresponding hardware functions work. If uploading a project PDF, use the print button and review the saved output.</p>
+</main>
+</body>
+</html>
