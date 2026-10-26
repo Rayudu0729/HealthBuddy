@@ -1,23 +1,27 @@
 # Bindu — Hardware order status
 
-Updated 21 October 2026. This list supersedes the earlier shopping alternatives and spare quantities. All ten items below are confirmed ordered by the user; receipt and successful testing remain unconfirmed. Quantities are those requested, pending invoice checks.
+Updated 27 October 2026. This list supersedes the earlier shopping alternatives and spare quantities. All ten items below are confirmed ordered by the user; all except the MPU6050 and Adafruit DRV2605L driver are confirmed received as of 27 October. XIAO initial boot and memory checks passed; peripheral testing remains pending. Quantities are those requested, pending invoice checks.
 
 | Part | Requested quantity | Ordered | Received | Tested |
 | --- | --- | --- | --- | --- |
-| [XIAO ESP32-S3 Plus — HUBTRONICS](https://hubtronics.in/seeed-studio/seeed-studio-xiao-esp32-s3-plus) | 1 | [x] | [ ] | [ ] |
+| [XIAO ESP32-S3 Plus — HUBTRONICS](https://hubtronics.in/seeed-studio/seeed-studio-xiao-esp32-s3-plus) | 1 | [x] | [x] | [x] |
 | [MPU6050 — Quartz](https://quartzcomponents.com/products/mpu6050-gyroscope-accelerometer-sensor) | 1 | [x] | [ ] | [ ] |
-| [VL53L1X — Robokits](https://robokits.co.in/sensors/lidar-laser-rangefinders/vl53l1x-laser-time-of-flight-tof-4-meters-ranging-sensor-module-i2c-interface) | 1 | [x] | [ ] | [ ] |
+| [VL53L1X — Robokits](https://robokits.co.in/sensors/lidar-laser-rangefinders/vl53l1x-laser-time-of-flight-tof-4-meters-ranging-sensor-module-i2c-interface) | 1 | [x] | [x] | [ ] |
 | [Adafruit DRV2605L — DigiKey India](https://www.digikey.in/en/products/detail/adafruit-industries-llc/2305/5356831) | 1 | [x] | [ ] | [ ] |
-| [Coin vibration motor — Robocraze](https://robocraze.com/products/coin-type-micro-vibration-motor) | 1 | [x] | [ ] | [ ] |
-| [Active buzzer module — Robocraze](https://robocraze.com/products/pcb-mounted-active-buzzer-module) | 1 | [x] | [ ] | [ ] |
-| [830-point breadboard — Robocraze](https://robocraze.com/products/mb102-830-points-solderless-breadboard) | 1 | [x] | [ ] | [ ] |
-| [120-piece jumper set — Robocraze](https://robocraze.com/products/jumper-wire-set-m2m-m2f-f2f-40-pcs-each) | 1 set | [x] | [ ] | [ ] |
-| [40-pin male header strip — Robocraze](https://robocraze.com/products/40x1-pin-2-54mm-pitch-male-berg-strip) | 2 strips | [x] | [ ] | [ ] |
-| [6 × 6 mm pushbuttons — ThinkRobotics](https://thinkrobotics.com/products/6mm-tactile-push-button-pack-of-20) | 1 pack of 2, 5 mm height | [x] | [ ] | [ ] |
+| [Coin vibration motor — Robocraze](https://robocraze.com/products/coin-type-micro-vibration-motor) | 1 | [x] | [x] | [ ] |
+| [Active buzzer module — Robocraze](https://robocraze.com/products/pcb-mounted-active-buzzer-module) | 1 | [x] | [x] | [ ] |
+| [830-point breadboard — Robocraze](https://robocraze.com/products/mb102-830-points-solderless-breadboard) | 1 | [x] | [x] | [ ] |
+| [120-piece jumper set — Robocraze](https://robocraze.com/products/jumper-wire-set-m2m-m2f-f2f-40-pcs-each) | 1 set | [x] | [x] | [ ] |
+| [40-pin male header strip — Robocraze](https://robocraze.com/products/40x1-pin-2-54mm-pitch-male-berg-strip) | 2 strips | [x] | [x] | [ ] |
+| [6 × 6 mm pushbuttons — ThinkRobotics](https://thinkrobotics.com/products/6mm-tactile-push-button-pack-of-20) | 1 pack of 2, 5 mm height | [x] | [x] | [ ] |
 
-Prices paid, invoice quantities and delivery dates still need recording. These links identify the ordered products; current stock and pricing are not guaranteed.
+Prices paid, invoice quantities and exact delivery dates still need recording. Receipt was reported on 27 October 2026; this is not necessarily the delivery date. These links identify the ordered products; current stock and pricing are not guaranteed.
 
 ## Pending hardware and equipment
+
+- MPU6050: ordered; user clarified on 27 October 2026 that it has not arrived.
+
+- Adafruit DRV2605L driver: ordered; receipt not confirmed.
 
 - LTE modem development board, matching antenna/RF cable, activated data SIM and suitable regulated power supply.
 - Dedicated Android phone running httpSMS, internet and SMS-capable SIM for caregiver delivery.

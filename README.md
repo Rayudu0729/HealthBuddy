@@ -2,11 +2,13 @@
 
 Bindu is a standalone 4G wrist-wearable project for older adults, blind and low-vision users, and their caregivers. The planned design combines physical SOS, motion-based fall detection, gesture-activated obstacle warnings, and watch-removal alerts. Location sharing, vitals and Telugu/Hindi voice interaction are planned extensions. Built for HackWithAditya 2026 (HealthTech track).
 
-## Current status — 21 October 2026
+## Current status — 27 October 2026
 
-The repository contains an ESP-IDF/FreeRTOS firmware scaffold: event dispatch, task priorities, power-mode state, and component task loops. Hardware readings, SMS, voice and cloud sync are currently stubs. No end-to-end hardware demonstration or measured accuracy/battery results are available yet.
+Session handoff and Phase 0 setup/boot evidence: [context.md](context.md).
 
-The XIAO ESP32-S3 Plus, MPU6050 and the eight remaining items in the latest shopping list have been ordered; receipt is not yet confirmed. Follow the [build tracker](docs/build-tracker.md) for delivery checks, local component tests and integration milestones. The standalone milestone is SOS-button activation followed by caregiver SMS delivery over LTE with watch Wi-Fi disabled. The final wrist device requires an integrated PCB, battery/power design, antennas and a measured enclosure layout; its size and runtime are not yet validated.
+The repository contains an ESP-IDF/FreeRTOS firmware scaffold: event dispatch, task priorities, power-mode state, and component task loops. Hardware readings, SMS, voice and cloud sync are currently stubs. Initial board bring-up is verified from user-provided local logs: ESP-IDF v5.5.6 built and booted firmware revision `9c8b2c4` with 16 MB flash, 8 MB PSRAM, a passing SRAM memory test and `Bindu ready`. End-to-end sensor/alert demonstrations and measured accuracy/battery results remain pending.
+
+All ten items in the latest hardware list are confirmed ordered. The user confirmed receipt of all except the MPU6050 and Adafruit DRV2605L driver on 27 October 2026; XIAO initial boot/memory checks passed; peripheral testing remains pending. Follow the [build tracker](docs/build-tracker.md) for delivery checks, local component tests and integration milestones. The standalone milestone is SOS-button activation followed by caregiver SMS delivery over LTE with watch Wi-Fi disabled. The final wrist device requires an integrated PCB, battery/power design, antennas and a measured enclosure layout; its size and runtime are not yet validated.
 
 Formatted submission PDF: [Download Bindu project submission](output/pdf/Bindu-Project.pdf).
 

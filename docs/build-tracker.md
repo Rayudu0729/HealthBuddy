@@ -1,6 +1,6 @@
 # Bindu — Build plan and pending work
 
-Last updated: 21 October 2026.
+Last updated: 27 October 2026.
 
 This is the current execution tracker for Bindu, our standalone 4G safety and accessibility watch. It records the agreed build sequence and outstanding work. `[x]` means confirmed complete; `[ ]` means pending. Ordering a part does not mean it has arrived or passed testing.
 
@@ -12,8 +12,9 @@ This is the current execution tracker for Bindu, our standalone 4G safety and ac
 - [x] Firmware scaffold exists in the repository.
 - [x] Frontend, backend, deployment and SMS approach selected.
 - [x] Submission HTML and PDF prepared.
-- [ ] Confirm deliveries, actual quantities, variants and condition.
-- [ ] Build and flash firmware on the selected XIAO board.
+- [x] Receipt confirmed for all listed parts except the MPU6050 and Adafruit DRV2605L driver (27 October 2026).
+- [ ] Receive MPU6050 and DRV2605L; verify invoice quantities, exact variants and condition of all parts.
+- [x] Build, flash and boot Bindu firmware on the XIAO ESP32-S3 Plus (27 October 2026; user-provided serial log).
 - [ ] Demonstrate real sensor readings and local alerts.
 - [ ] Implement backend, dashboard and caregiver notifications.
 - [ ] Complete standalone LTE operation and compact watch integration.
@@ -22,24 +23,24 @@ Hardware integrations are not yet verified. Existing firmware sensor, connectivi
 
 ## 2. Ordered hardware
 
-All items below are user-confirmed ordered. Quantities are the requested quantities from the shopping list; confirm them against invoices on arrival. Prices paid and delivery dates have not been recorded.
+All items below are user-confirmed ordered. Quantities are the requested quantities from the shopping list; confirm them against invoices on arrival. All except the MPU6050 and Adafruit DRV2605L driver are confirmed received as of 27 October 2026. Prices paid and exact delivery dates have not been recorded. The XIAO has passed initial build/flash/boot and PSRAM checks; peripheral tests remain pending.
 
 | Item | Requested quantity | Ordered | Received | Tested | Purpose |
 | --- | --- | --- | --- | --- | --- |
-| XIAO ESP32-S3 Plus — HUBTRONICS | 1 | [x] | [ ] | [ ] | Main controller |
+| XIAO ESP32-S3 Plus — HUBTRONICS | 1 | [x] | [x] | [x] | Main controller; initial boot and memory checks passed |
 | MPU6050 — Quartz Components | 1 | [x] | [ ] | [ ] | Motion and gesture experiments |
-| VL53L1X — Robokits | 1 | [x] | [ ] | [ ] | Obstacle distance sensing |
+| VL53L1X — Robokits | 1 | [x] | [x] | [ ] | Obstacle distance sensing |
 | Adafruit DRV2605L driver — DigiKey India | 1 | [x] | [ ] | [ ] | Vibration motor control |
-| Coin vibration motor — Robocraze | 1 | [x] | [ ] | [ ] | Tactile alerts |
-| Active buzzer module — Robocraze | 1 | [x] | [ ] | [ ] | Audible alerts |
-| 830-point breadboard — Robocraze | 1 | [x] | [ ] | [ ] | Bench wiring |
-| M-M / M-F / F-F jumper set — Robocraze | 1 set | [x] | [ ] | [ ] | Prototype connections |
-| 40-pin male header strips — Robocraze | 2 strips | [x] | [ ] | [ ] | Board connections |
-| 6 × 6 mm pushbuttons, 5 mm height — ThinkRobotics | 1 pack of 2 | [x] | [ ] | [ ] | SOS and cancel/test controls |
+| Coin vibration motor — Robocraze | 1 | [x] | [x] | [ ] | Tactile alerts |
+| Active buzzer module — Robocraze | 1 | [x] | [x] | [ ] | Audible alerts |
+| 830-point breadboard — Robocraze | 1 | [x] | [x] | [ ] | Bench wiring |
+| M-M / M-F / F-F jumper set — Robocraze | 1 set | [x] | [x] | [ ] | Prototype connections |
+| 40-pin male header strips — Robocraze | 2 strips | [x] | [x] | [ ] | Board connections |
+| 6 × 6 mm pushbuttons, 5 mm height — ThinkRobotics | 1 pack of 2 | [x] | [x] | [ ] | SOS and cancel/test controls |
 
-Existing equipment: mobile charger labelled 5 V / 3 A and a cable. Confirm that the cable carries USB data. Availability of a multimeter, soldering equipment and wrist mounting materials still needs checking.
+Existing equipment: mobile charger labelled 5 V / 3 A and a cable. USB data connection verified by successful flashing on local COM17. XIAO headers are loose and unsoldered; the user has no soldering iron/solder available yet. Arrange soldering equipment or experienced help before wired tests. Availability of a multimeter and wrist mounting materials still needs checking.
 
-These breakout boards support bench testing and a temporary wrist mockup. Final watch size requires a separate PCB, battery, antenna and enclosure fit review. The older lists in `parts-list.md` include alternatives, spares and future features; do not reorder those as a second complete kit.
+These breakout boards support bench testing and a temporary wrist mockup. Final watch size requires a separate PCB, battery, antenna and enclosure fit review. See `parts-list.md` for the matching order and receipt record; do not order duplicate parts.
 
 ## 3. What we will build first
 
@@ -49,12 +50,13 @@ The first local demonstration will combine a physical SOS button, real motion/di
 
 - [ ] Record received boards, exact variants, quantities and any damage.
 - [ ] Confirm USB data cable, multimeter and soldering access.
-- [ ] Install/check ESP-IDF and identify the XIAO serial port.
-- [ ] Verify the exact board's flash, PSRAM and GPIO configuration.
+- [x] ESP-IDF v5.5.6 activated on the local computer; XIAO detected on COM17.
+- [x] Boot verified with 16 MB flash and 8 MB octal PSRAM; SPI SRAM memory test passed.
+- [ ] Finalise GPIO allocation before connecting peripherals.
 - [ ] Make a pin allocation and wiring diagram before connecting modules.
 - [ ] Check every module's supply voltage and I2C/UART logic levels.
 
-Completion evidence: a successful firmware build, flash and serial boot log on the actual XIAO.
+Completion evidence recorded: on 27 October 2026, user-provided local build/serial output showed ESP-IDF v5.5.6, firmware revision `9c8b2c4`, 16 MB flash, 8 MB PSRAM, `SPI SRAM memory test OK`, `BinduOS started` and `Bindu ready`. This verifies initial boot, not sensor operation, long-term stability or alert delivery. `Returned from app_main()` is expected after creating the background tasks.
 
 ### Step 2 — Test each component separately
 
@@ -188,4 +190,4 @@ These are outside the first core demonstration and have no confirmed hardware or
 
 ## 7. Immediate next action
 
-While deliveries are pending, confirm development tools and prepare the pin allocation from exact board documentation. Once the XIAO arrives, build, flash and verify its serial log before connecting the remaining modules.
+The XIAO and other listed parts have arrived except the MPU6050 and DRV2605L driver. Initial build, flash and boot are verified. Arrange soldering of the loose XIAO headers and prepare the pin allocation from exact board documentation, then test the buttons and VL53L1X separately. MPU6050 motion tests must wait for delivery. Defer vibration-motor integration until the driver arrives; do not connect the motor directly to a GPIO. See [Phase 0 context](../context.md) for the verified local setup and boot evidence.
