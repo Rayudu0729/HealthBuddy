@@ -190,4 +190,4 @@ These are outside the first core demonstration and have no confirmed hardware or
 
 ## 7. Immediate next action
 
-The XIAO and other listed parts have arrived except the MPU6050 and DRV2605L driver. Initial build, flash and boot are verified. Arrange soldering of the loose XIAO headers and prepare the pin allocation from exact board documentation, then test the buttons and VL53L1X separately. MPU6050 motion tests must wait for delivery. Defer vibration-motor integration until the driver arrives; do not connect the motor directly to a GPIO. See [Phase 0 context](../context.md) for the verified local setup and boot evidence.
+The XIAO and other listed parts have arrived except the MPU6050 and DRV2605L driver. Initial build, flash and boot are verified. Arrange soldering of the loose XIAO headers and prepare the pin allocation from exact board documentation, then test the buttons and VL53L1X separately. MPU6050 motion tests must wait for delivery. Defer vibration-motor integration until the driver arrives; do not connect the motor directly to a GPIO. See [Phase 0 context](../Phases/Phase%200/context.md) for the verified local setup and boot evidence.

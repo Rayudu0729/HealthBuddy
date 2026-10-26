@@ -4,7 +4,7 @@ Bindu is a standalone 4G wrist-wearable project for older adults, blind and low-
 
 ## Current status — 27 October 2026
 
-Session handoff and Phase 0 setup/boot evidence: [context.md](context.md).
+Session handoff and Phase 0 setup/boot evidence: [Phase 0 context](Phases/Phase%200/context.md).
 
 The repository contains an ESP-IDF/FreeRTOS firmware scaffold: event dispatch, task priorities, power-mode state, and component task loops. Hardware readings, SMS, voice and cloud sync are currently stubs. Initial board bring-up is verified from user-provided local logs: ESP-IDF v5.5.6 built and booted firmware revision `9c8b2c4` with 16 MB flash, 8 MB PSRAM, a passing SRAM memory test and `Bindu ready`. End-to-end sensor/alert demonstrations and measured accuracy/battery results remain pending.
 

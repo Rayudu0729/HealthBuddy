@@ -86,4 +86,4 @@ Only the controller has passed initial boot/memory checks. All peripheral tests 
 
 Resume with arranging header soldering and checking the planned button connection. USB-only firmware work can continue while assembly is pending. Keep hardware readings and alert delivery labelled as unimplemented until demonstrated. Do not add camera hardware or replace the selected controller.
 
-Detailed milestone checklist: [build tracker](docs/build-tracker.md). Hardware receipt table: [parts list](docs/parts-list.md). The submission PDF is an older presentation snapshot, not the current progress record.
+Detailed milestone checklist: [build tracker](../../docs/build-tracker.md). Hardware receipt table: [parts list](../../docs/parts-list.md). The submission PDF is an older presentation snapshot, not the current progress record.
