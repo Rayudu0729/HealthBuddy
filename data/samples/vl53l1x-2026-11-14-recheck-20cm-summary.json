@@ -1,0 +1,8 @@
+{
+  "samples": 300,
+  "min_mm": 193,
+  "max_mm": 202,
+  "mean_mm": 197.28666666666666,
+  "i2c_errors": 0,
+  "invalid": 0
+}

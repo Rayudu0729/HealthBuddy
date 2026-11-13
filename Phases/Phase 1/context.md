@@ -1,6 +1,94 @@
 # Phase 1 — Sensor bring-up and distance accuracy investigation
 
-Last reviewed: 13 November 2026 (Asia/Calcutta). Latest hardware evidence: direct-host tests on 13 November 2026. Distance accuracy and intermittent I2C communication remain unresolved.
+Last reviewed: 14 November 2026 (Asia/Calcutta). Latest evidence is direct COM17 testing in D:\Bindu\HealthBuddy. Read the new handoff below before the historical notes.
+
+## Resume here — 14 November 2026
+
+- Repository main was pulled from 9c8b2c4 to 0fa8f47. Current computer uses COM17,
+  ESP-IDF D:\Bindu\.espressif\v5.5.6\esp-idf and Python environment
+  C:\Users\Rayudu\.espressif\python_env\idf5.5_py3.12_env. Activate the IDF
+  export.ps1 from that installation. The diagnostic builds in
+  firmware/diagnostics/tof-check/build. Recheck USB/port on resume.
+- Active flashed application is the repository ranging main.c plus ST ULD 3.5.5,
+  now SHORT distance mode (1), 50 ms budget, 100 ms period and 50 kHz I2C.
+  USB console enabled; 16 MB flash. Builds and all written flash-region hashes
+  verified. Main Bindu firmware remains a scaffold. No monitor is left open.
+- Current wiring: orange VCC -> 3V3, yellow GND -> GND, red SDA -> D4/GPIO5,
+  brown SCL -> D5/GPIO6. INT/SHUT unconnected. User discussed 20 cm jumpers;
+  actual final wire length is not independently verified. Do not use D2/D3:
+  that alternate-pin test was unsuccessful and original mapping was restored.
+- User measured sensor-side VCC 3.27 V, SDA/SCL 3.26 V, XSHUT 3.24 V, reported
+  continuity beeps, and measured both SDA-to-VCC and SCL-to-VCC at 4.65 kohm
+  on the 20 kohm range with power disconnected. This is consistent with pull-ups
+  being present; do not add more without checking the breakout circuit.
+- Repeated first-ID reads initially failed ESP_ERR_INVALID_STATE even after a
+  fresh verified flash. Communication-only scanning found zero devices despite
+  high digital idle inputs. MPU6050 substitution repeatedly acknowledged 0x68
+  on D4/D5: this is an address test only, not an IMU functional test.
+- Alternate D2/GPIO3 SDA and D3/GPIO4 SCL also found no devices and failed ID
+  reads at 50 kHz. ESP-IDF 5.5.6 i2c_master_probe internally uses 100 kHz;
+  changing the device clock does not slow the probe. The diagnostic therefore
+  also attempted the actual ID transaction at 50 kHz regardless of probe result.
+- After original D4/D5 wiring was restored, repeated 0x29 ACKs and ID 0xEACC
+  returned. Cause of recovery is not isolated; rewiring, reset and read speed
+  changed across attempts. Do not claim flash corruption or a dead sensor.
+- Ranging at 50 kHz initially still failed: one run stopped after 26 samples at
+  interrupt-clear register 0x0086, and another after 550 samples at data-ready
+  reads 0x0030/0x0031, both with ESP_ERR_INVALID_STATE. Stop writes could fail too.
+- Later long-mode stationary 20 cm test lasted 314.14 seconds with 3,196 valid
+  readings, zero invalid readings and zero I2C errors: mean 19.664 cm, range
+  17.4–20.8 cm. This passes that five-minute communication check, not a guarantee
+  that intermittent faults are eliminated.
+- Same-day long-mode results: 10 cm mean 8.852 cm (328 samples, 8.4–9.3 cm);
+  repeat assumed still 10 cm mean 8.988 cm (366 samples). 20 cm mean 19.729 cm
+  (300), later repeat 19.116 cm (350). Improved-setup 50 cm mean 45.670 cm
+  (400, range 44.1–46.7 cm). All these excerpts had zero invalid/I2C messages.
+  Other captures varied widely and must not be combined into a calibration fit.
+- A requested 20-minute test was corrected by the user to TWO minutes. It ran
+  133.32 seconds, 1,357 samples, mean 5.600 cm, range 5.0–6.3 cm, no I2C/invalid
+  messages despite the stated 20 cm target. Subsequent photos raised alignment
+  questions; the exact explanation for the 5.6 cm return is not established.
+- Photos show a small card supported upright and the sensor propped near a tape
+  roll, later raised on a multimeter. Overhead views were initially misread by
+  the assistant as a flat card; a side view confirmed the card was upright.
+  Do not repeat that claim. Exact optical alignment and window-to-face distance
+  cannot be independently established from these photos. User confirms 20 cm.
+- After raising the sensor, 150 readings averaged 23.03 cm (22.4–23.7 cm); after
+  further alignment, 400 averaged 18.296 cm (16.9–19.0 cm). No I2C/invalid errors.
+  These setup-dependent shifts require care before attributing error to hardware.
+- Added TOF_QUALITY logs: status, raw_mm, ambient, signal_per_spad and spads from
+  the same existing VL53L1X_GetResult block, without extra reads or calibration
+  writes. These are raw ULD fields, not a calibrated target reflectance estimate.
+  Long-mode quality capture: 270 samples mean 17.786 cm, range 16.6–18.9 cm,
+  no I2C errors. Do not infer a particular optical fault solely from these fields.
+- Latest SHORT-mode comparison at user-confirmed 20 cm: 451 valid samples,
+  mean 17.994 cm, range 17.6–18.4 cm, zero invalid/I2C errors. Short mode did not
+  remove the roughly 2 cm short reading. It is the current flashed mode.
+- Offset and xtalk read zero after initialization. No guessed correction,
+  calibration or persistence was added. ST UM2510 offset procedure specifies a
+  17% gray target at 140 mm; returned correction must be stored by the host and
+  reapplied after initialization. User does NOT have a calibrated gray target.
+  Ordinary printed gray paper is not a verified reflectance reference. Do not
+  run a purported ST calibration on the current 20 cm white-card setup.
+- All new capture logs/summaries are in data/samples/vl53l1x-2026-11-14-*.
+  Official monitor startup resets the MCU; captures are monitor transcripts
+  with terminal formatting removed. Calibration/accuracy and Phase 1 remain open.
+
+### Agreed next direction
+
+Keep the VL53L1X for now; damage is not established. Borrow an appropriate gray
+calibration target from a college electronics/robotics lab if possible, follow
+ST's documented offset procedure, and verify at multiple distances afterward.
+Do not apply a blanket +2 cm offset: errors varied across distances and setups.
+Other component work (MPU6050 function, motor/driver, buzzer and SOS button)
+can proceed separately, but no such functional tests were performed today.
+Keep obstacle assistance experimental until distance performance and reliability
+are validated. User requested this context update and push; no firmware operation
+or serial monitor should remain running at handoff.
+
+Reference: https://www.st.com/resource/en/user_manual/um2510-a-guide-to-using-the-vl53l1x-ultra-lite-driver-stmicroelectronics.pdf
+
+## Historical status — superseded where noted above
 
 ## Current status
 

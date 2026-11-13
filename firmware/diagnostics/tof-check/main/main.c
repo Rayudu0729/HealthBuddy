@@ -75,7 +75,7 @@ void app_main(void) {
         .flags.enable_internal_pullup = true
     };
     ESP_ERROR_CHECK(i2c_new_master_bus(&cfg, &bus));
-    i2c_device_config_t dev = {.dev_addr_length = I2C_ADDR_BIT_LEN_7, .device_address = 0x29, .scl_speed_hz = 100000};
+    i2c_device_config_t dev = {.dev_addr_length = I2C_ADDR_BIT_LEN_7, .device_address = 0x29, .scl_speed_hz = 50000};
     ESP_ERROR_CHECK(i2c_master_bus_add_device(bus, &dev, &sensor));
     vTaskDelay(pdMS_TO_TICKS(100));
     uint16_t id = 0;
@@ -89,7 +89,7 @@ void app_main(void) {
     }
     if (!booted) { ESP_LOGE("TOF_RANGE", "Boot timeout; stopping"); return; }
     STEP(VL53L1X_SensorInit(ST_DEVICE));
-    STEP(VL53L1X_SetDistanceMode(ST_DEVICE, 2));
+    STEP(VL53L1X_SetDistanceMode(ST_DEVICE, 1));
     STEP(VL53L1X_SetTimingBudgetInMs(ST_DEVICE, 50));
     STEP(VL53L1X_SetInterMeasurementInMs(ST_DEVICE, 100));
     int16_t offset = 0; uint16_t xtalk = 0;
@@ -97,7 +97,7 @@ void app_main(void) {
     STEP(VL53L1X_GetXtalk(ST_DEVICE, &xtalk));
     ESP_LOGI("TOF_RANGE", "Settings after init: offset=%d mm, xtalk=%u; no added correction", offset, xtalk);
     STEP(VL53L1X_StartRanging(ST_DEVICE));
-    ESP_LOGI("TOF_RANGE", "Ranging started: long mode, 50 ms budget, 100 ms period");
+    ESP_LOGI("TOF_RANGE", "Ranging started: short mode, 50 ms budget, 100 ms period");
     unsigned valid = 0, invalid = 0;
     while (1) {
         uint8_t ready = 0;
@@ -113,6 +113,10 @@ void app_main(void) {
         VL53L1X_Result_t result = {0};
         if (!checked(VL53L1X_GetResult(ST_DEVICE, &result), "Read result")) goto stopped;
         if (!checked(VL53L1X_ClearInterrupt(ST_DEVICE), "Clear interrupt")) goto stopped;
+        ESP_LOGI("TOF_QUALITY", "status=%u, raw_mm=%u, ambient=%u, signal_per_spad=%u, spads=%u (ULD result fields)",
+                 (unsigned)result.Status, (unsigned)result.Distance,
+                 (unsigned)result.Ambient, (unsigned)result.SigPerSPAD,
+                 (unsigned)result.NumSPADs);
         if (result.Status == 0) {
             ++valid;
             ESP_LOGI("TOF_RANGE", "Distance: %.1f cm (raw: %u mm), status=0", result.Distance / 10.0, result.Distance);

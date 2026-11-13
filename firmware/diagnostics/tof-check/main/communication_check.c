@@ -2,6 +2,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/i2c_master.h"
+#include "driver/gpio.h"
 #include "esp_log.h"
 #include "esp_err.h"
 void app_main(void) {
@@ -15,10 +16,13 @@ void app_main(void) {
     ESP_ERROR_CHECK(i2c_new_master_bus(&cfg, &bus));
     i2c_device_config_t dev = {
         .dev_addr_length = I2C_ADDR_BIT_LEN_7,
-        .device_address = 0x29, .scl_speed_hz = 100000
+        .device_address = 0x29, .scl_speed_hz = 50000
     };
     ESP_ERROR_CHECK(i2c_master_bus_add_device(bus, &dev, &sensor));
+    vTaskDelay(pdMS_TO_TICKS(500));
+    ESP_LOGI("TOF_CHECK", "Communication-only test: SDA=D4/GPIO5, SCL=D5/GPIO6, ID read at 50 kHz; no ranging or calibration");
     while (1) {
+        ESP_LOGI("TOF_CHECK", "Idle digital levels: SDA=%d, SCL=%d (1=high; not a voltage measurement)", gpio_get_level(GPIO_NUM_5), gpio_get_level(GPIO_NUM_6));
         esp_err_t err = i2c_master_probe(bus, 0x29, 200);
         if (err != ESP_OK) {
             ESP_LOGE("TOF_CHECK", "No response at 0x29: %s", esp_err_to_name(err));
@@ -35,6 +39,10 @@ void app_main(void) {
             }
             ESP_LOGI("TOF_SCAN", "Scan complete: %u device(s), %u bus error(s)", found, bus_errors);
         } else {
+            ESP_LOGI("TOF_CHECK", "Address 0x29 acknowledges");
+        }
+        {
+            ESP_LOGI("TOF_CHECK", "Attempting ID read at 50 kHz regardless of 100 kHz probe result");
             uint8_t reg[] = {0x01, 0x0F}, id[2] = {0};
             err = i2c_master_transmit_receive(sensor, reg, sizeof(reg), id, sizeof(id), 200);
             if (err == ESP_OK) {

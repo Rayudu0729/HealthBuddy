@@ -1,0 +1,10 @@
+{
+  "stated_target_mm": 200,
+  "samples": 1357,
+  "duration_seconds": 133.32,
+  "min_mm": 50,
+  "max_mm": 63,
+  "mean_mm": 55.99705232129698,
+  "i2c_errors": 0,
+  "invalid": 0
+}

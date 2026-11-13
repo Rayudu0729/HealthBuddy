@@ -1,0 +1,9 @@
+{
+  "target_mm": 200,
+  "samples": 26,
+  "min_mm": 31,
+  "max_mm": 355,
+  "mean_mm": 196.69230769230768,
+  "i2c_errors": 2,
+  "notes": "User confirmed card at 20 cm. Setup may have moved: large variation. D4/D5, 50 kHz. Official monitor reset MCU. Stopped on interrupt-clear error. No correction."
+}

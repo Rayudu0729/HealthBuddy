@@ -1,0 +1,425 @@
+--- WARNING: GDB cannot open serial ports accessed as COMx
+--- NOTE: Using \\.\COM17 instead...
+--- esp-idf-monitor 1.10.0 on \\.\COM17 115200
+--- WARNING: No ELF files found. Please provide the ELF file paths, required for binary log decoding.
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x28 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40377d92
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x142c
+load:0x403c8700,len:0xc94
+load:0x403cb700,len:0x2ee8
+entry 0x403c8914
+I (24) boot: ESP-IDF v5.5.6 2nd stage bootloader
+I (24) boot: compile time Nov 14 2026 01:34:17
+I (25) boot: chip revision: v0.2
+I (25) boot.esp32s3: Boot SPI Speed : 80MHz
+I (25) boot.esp32s3: SPI Mode       : DIO
+I (25) boot.esp32s3: SPI Flash Size : 16MB
+I (26) boot: Partition Table:
+I (26) boot: ## Label            Usage          Type ST Offset   Length
+I (26) boot:  0 nvs              WiFi data        01 02 00009000 00006000       
+I (26) boot:  1 phy_init         RF data          01 01 0000f000 00001000       
+I (27) boot:  2 factory          factory app      00 00 00010000 00100000
+I (27) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0af7ch ( 44924) 
+ map
+I (36) esp_image: segment 1: paddr=0001afa4 vaddr=3fc92700 size=02dd0h ( 11728) 
+ load
+I (39) esp_image: segment 2: paddr=0001dd7c vaddr=40374000 size=0229ch (  8860) 
+ load
+I (41) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=16278h ( 90744) 
+ map
+I (58) esp_image: segment 4: paddr=000362a0 vaddr=4037629c size=0c3cch ( 50124) 
+ load
+I (70) esp_image: segment 5: paddr=00042674 vaddr=50000000 size=00020h (    32) 
+ load
+I (76) boot: Loaded app from partition at offset 0x10000
+I (77) cpu_start: Multicore app
+I (86) cpu_start: Pro cpu start user code
+I (86) cpu_start: cpu freq: 160000000 Hz
+I (86) app_init: Application information:
+I (86) app_init: Project name:     bindu_tof_check
+I (86) app_init: App version:      0fa8f47-dirty
+I (86) app_init: Compile time:     Nov 14 2026 01:43:10
+I (86) app_init: ELF file SHA256:  bdfe19b44...
+I (87) app_init: ESP-IDF:          v5.5.6
+I (87) efuse_init: Min chip rev:     v0.0
+I (87) efuse_init: Max chip rev:     v0.99
+I (87) efuse_init: Chip rev:         v0.2
+I (87) heap_init: Initializing. RAM available for dynamic allocation:
+I (88) heap_init: At 3FC95DD0 len 00053940 (334 KiB): RAM
+I (88) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (88) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (88) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM
+I (89) spi_flash: detected chip: generic
+I (90) spi_flash: flash io: dio
+I (90) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (90) sleep_gpio: Enable automatic switching of GPIO sleep configuration       
+I (91) main_task: Started on CPU0
+I (91) main_task: Calling app_main()
+I (191) TOF_RANGE: Sensor ID: 0xEACC; ST ULD 3.5.5
+I (301) TOF_RANGE: Settings after init: offset=0 mm, xtalk=0; no added correctio
+on
+I (301) TOF_RANGE: Ranging started: long mode, 50 ms budget, 100 ms period      
+I (371) TOF_RANGE: Distance: 15.7 cm (raw: 157 mm), status=0
+I (451) TOF_RANGE: Distance: 15.1 cm (raw: 151 mm), status=0
+I (551) TOF_RANGE: Distance: 18.7 cm (raw: 187 mm), status=0
+I (651) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (741) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (841) TOF_RANGE: Distance: 16.8 cm (raw: 168 mm), status=0
+I (941) TOF_RANGE: Distance: 15.6 cm (raw: 156 mm), status=0
+I (1041) TOF_RANGE: Distance: 17.5 cm (raw: 175 mm), status=0
+I (1141) TOF_RANGE: Distance: 15.8 cm (raw: 158 mm), status=0
+I (1231) TOF_RANGE: Distance: 15.8 cm (raw: 158 mm), status=0
+I (1331) TOF_RANGE: Distance: 18.9 cm (raw: 189 mm), status=0
+I (1431) TOF_RANGE: Distance: 19.4 cm (raw: 194 mm), status=0
+I (1531) TOF_RANGE: Distance: 19.7 cm (raw: 197 mm), status=0
+I (1631) TOF_RANGE: Distance: 22.1 cm (raw: 221 mm), status=0
+I (1731) TOF_RANGE: Distance: 23.7 cm (raw: 237 mm), status=0
+I (1821) TOF_RANGE: Distance: 19.8 cm (raw: 198 mm), status=0
+I (1921) TOF_RANGE: Distance: 19.8 cm (raw: 198 mm), status=0
+I (2021) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (2121) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (2221) TOF_RANGE: Distance: 21.7 cm (raw: 217 mm), status=0
+I (2321) TOF_RANGE: Distance: 26.1 cm (raw: 261 mm), status=0
+I (2411) TOF_RANGE: Distance: 27.3 cm (raw: 273 mm), status=0
+I (2511) TOF_RANGE: Distance: 25.7 cm (raw: 257 mm), status=0
+I (2611) TOF_RANGE: Distance: 25.9 cm (raw: 259 mm), status=0
+I (2711) TOF_RANGE: Distance: 22.8 cm (raw: 228 mm), status=0
+I (2811) TOF_RANGE: Distance: 23.4 cm (raw: 234 mm), status=0
+I (2911) TOF_RANGE: Distance: 17.4 cm (raw: 174 mm), status=0
+I (3001) TOF_RANGE: Distance: 21.2 cm (raw: 212 mm), status=0
+I (3101) TOF_RANGE: Distance: 22.7 cm (raw: 227 mm), status=0
+I (3201) TOF_RANGE: Distance: 19.5 cm (raw: 195 mm), status=0
+I (3301) TOF_RANGE: Distance: 21.2 cm (raw: 212 mm), status=0
+I (3401) TOF_RANGE: Distance: 23.5 cm (raw: 235 mm), status=0
+I (3501) TOF_RANGE: Distance: 23.9 cm (raw: 239 mm), status=0
+I (3591) TOF_RANGE: Distance: 21.4 cm (raw: 214 mm), status=0
+I (3691) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (3791) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (3891) TOF_RANGE: Distance: 23.9 cm (raw: 239 mm), status=0
+I (3991) TOF_RANGE: Distance: 22.7 cm (raw: 227 mm), status=0
+I (4091) TOF_RANGE: Distance: 27.1 cm (raw: 271 mm), status=0
+I (4181) TOF_RANGE: Distance: 30.1 cm (raw: 301 mm), status=0
+I (4281) TOF_RANGE: Distance: 35.0 cm (raw: 350 mm), status=0
+I (4381) TOF_RANGE: Distance: 28.3 cm (raw: 283 mm), status=0
+I (4481) TOF_RANGE: Distance: 27.0 cm (raw: 270 mm), status=0
+I (4581) TOF_RANGE: Distance: 24.4 cm (raw: 244 mm), status=0
+I (4671) TOF_RANGE: Distance: 23.2 cm (raw: 232 mm), status=0
+I (4771) TOF_RANGE: Distance: 24.0 cm (raw: 240 mm), status=0
+I (4871) TOF_RANGE: Distance: 29.5 cm (raw: 295 mm), status=0
+I (4971) TOF_RANGE: Distance: 33.8 cm (raw: 338 mm), status=0
+I (5071) TOF_RANGE: Distance: 35.5 cm (raw: 355 mm), status=0
+I (5171) TOF_RANGE: Distance: 27.7 cm (raw: 277 mm), status=0
+I (5171) TOF_RANGE: Counts: valid=50, invalid=0
+I (5261) TOF_RANGE: Distance: 31.0 cm (raw: 310 mm), status=0
+I (5361) TOF_RANGE: Distance: 31.1 cm (raw: 311 mm), status=0
+I (5461) TOF_RANGE: Distance: 37.3 cm (raw: 373 mm), status=0
+I (5561) TOF_RANGE: Distance: 39.5 cm (raw: 395 mm), status=0
+I (5661) TOF_RANGE: Distance: 36.5 cm (raw: 365 mm), status=0
+I (5761) TOF_RANGE: Distance: 35.9 cm (raw: 359 mm), status=0
+I (5851) TOF_RANGE: Distance: 38.8 cm (raw: 388 mm), status=0
+I (5951) TOF_RANGE: Distance: 33.8 cm (raw: 338 mm), status=0
+I (6051) TOF_RANGE: Distance: 36.5 cm (raw: 365 mm), status=0
+I (6151) TOF_RANGE: Distance: 31.3 cm (raw: 313 mm), status=0
+I (6251) TOF_RANGE: Distance: 32.2 cm (raw: 322 mm), status=0
+I (6351) TOF_RANGE: Distance: 29.6 cm (raw: 296 mm), status=0
+I (6441) TOF_RANGE: Distance: 28.3 cm (raw: 283 mm), status=0
+I (6541) TOF_RANGE: Distance: 30.4 cm (raw: 304 mm), status=0
+I (6641) TOF_RANGE: Distance: 30.8 cm (raw: 308 mm), status=0
+I (6741) TOF_RANGE: Distance: 32.4 cm (raw: 324 mm), status=0
+I (6841) TOF_RANGE: Distance: 35.2 cm (raw: 352 mm), status=0
+I (6941) TOF_RANGE: Distance: 38.1 cm (raw: 381 mm), status=0
+I (7031) TOF_RANGE: Distance: 39.8 cm (raw: 398 mm), status=0
+I (7131) TOF_RANGE: Distance: 41.7 cm (raw: 417 mm), status=0
+I (7231) TOF_RANGE: Distance: 43.7 cm (raw: 437 mm), status=0
+I (7331) TOF_RANGE: Distance: 44.2 cm (raw: 442 mm), status=0
+I (7431) TOF_RANGE: Distance: 44.6 cm (raw: 446 mm), status=0
+I (7521) TOF_RANGE: Distance: 42.5 cm (raw: 425 mm), status=0
+I (7621) TOF_RANGE: Distance: 42.8 cm (raw: 428 mm), status=0
+I (7721) TOF_RANGE: Distance: 43.5 cm (raw: 435 mm), status=0
+I (7821) TOF_RANGE: Distance: 46.6 cm (raw: 466 mm), status=0
+I (7921) TOF_RANGE: Distance: 47.1 cm (raw: 471 mm), status=0
+I (8021) TOF_RANGE: Distance: 45.7 cm (raw: 457 mm), status=0
+I (8111) TOF_RANGE: Distance: 47.2 cm (raw: 472 mm), status=0
+I (8211) TOF_RANGE: Distance: 45.8 cm (raw: 458 mm), status=0
+I (8311) TOF_RANGE: Distance: 44.6 cm (raw: 446 mm), status=0
+I (8411) TOF_RANGE: Distance: 44.5 cm (raw: 445 mm), status=0
+I (8511) TOF_RANGE: Distance: 46.0 cm (raw: 460 mm), status=0
+I (8611) TOF_RANGE: Distance: 46.7 cm (raw: 467 mm), status=0
+I (8701) TOF_RANGE: Distance: 45.5 cm (raw: 455 mm), status=0
+I (8801) TOF_RANGE: Distance: 47.0 cm (raw: 470 mm), status=0
+I (8901) TOF_RANGE: Distance: 46.2 cm (raw: 462 mm), status=0
+I (9001) TOF_RANGE: Distance: 46.9 cm (raw: 469 mm), status=0
+I (9101) TOF_RANGE: Distance: 46.8 cm (raw: 468 mm), status=0
+I (9201) TOF_RANGE: Distance: 46.4 cm (raw: 464 mm), status=0
+I (9291) TOF_RANGE: Distance: 45.4 cm (raw: 454 mm), status=0
+I (9391) TOF_RANGE: Distance: 46.3 cm (raw: 463 mm), status=0
+I (9491) TOF_RANGE: Distance: 44.8 cm (raw: 448 mm), status=0
+I (9591) TOF_RANGE: Distance: 45.9 cm (raw: 459 mm), status=0
+I (9691) TOF_RANGE: Distance: 46.0 cm (raw: 460 mm), status=0
+I (9781) TOF_RANGE: Distance: 46.9 cm (raw: 469 mm), status=0
+I (9881) TOF_RANGE: Distance: 47.4 cm (raw: 474 mm), status=0
+I (9981) TOF_RANGE: Distance: 47.0 cm (raw: 470 mm), status=0
+I (10081) TOF_RANGE: Distance: 46.5 cm (raw: 465 mm), status=0
+I (10081) TOF_RANGE: Counts: valid=100, invalid=0
+I (10181) TOF_RANGE: Distance: 45.8 cm (raw: 458 mm), status=0
+I (10281) TOF_RANGE: Distance: 45.2 cm (raw: 452 mm), status=0
+I (10381) TOF_RANGE: Distance: 46.0 cm (raw: 460 mm), status=0
+I (10471) TOF_RANGE: Distance: 46.1 cm (raw: 461 mm), status=0
+I (10571) TOF_RANGE: Distance: 46.4 cm (raw: 464 mm), status=0
+I (10671) TOF_RANGE: Distance: 47.5 cm (raw: 475 mm), status=0
+I (10771) TOF_RANGE: Distance: 46.1 cm (raw: 461 mm), status=0
+I (10871) TOF_RANGE: Distance: 46.4 cm (raw: 464 mm), status=0
+I (10961) TOF_RANGE: Distance: 46.2 cm (raw: 462 mm), status=0
+I (11061) TOF_RANGE: Distance: 46.9 cm (raw: 469 mm), status=0
+I (11161) TOF_RANGE: Distance: 47.6 cm (raw: 476 mm), status=0
+I (11261) TOF_RANGE: Distance: 48.0 cm (raw: 480 mm), status=0
+I (11361) TOF_RANGE: Distance: 48.7 cm (raw: 487 mm), status=0
+I (11461) TOF_RANGE: Distance: 47.8 cm (raw: 478 mm), status=0
+I (11551) TOF_RANGE: Distance: 48.5 cm (raw: 485 mm), status=0
+I (11651) TOF_RANGE: Distance: 48.7 cm (raw: 487 mm), status=0
+I (11751) TOF_RANGE: Distance: 47.9 cm (raw: 479 mm), status=0
+I (11851) TOF_RANGE: Distance: 48.7 cm (raw: 487 mm), status=0
+I (11951) TOF_RANGE: Distance: 49.0 cm (raw: 490 mm), status=0
+I (12051) TOF_RANGE: Distance: 47.3 cm (raw: 473 mm), status=0
+I (12141) TOF_RANGE: Distance: 47.7 cm (raw: 477 mm), status=0
+I (12241) TOF_RANGE: Distance: 47.3 cm (raw: 473 mm), status=0
+I (12341) TOF_RANGE: Distance: 48.5 cm (raw: 485 mm), status=0
+I (12441) TOF_RANGE: Distance: 49.0 cm (raw: 490 mm), status=0
+I (12541) TOF_RANGE: Distance: 48.6 cm (raw: 486 mm), status=0
+I (12641) TOF_RANGE: Distance: 49.2 cm (raw: 492 mm), status=0
+I (12731) TOF_RANGE: Distance: 47.9 cm (raw: 479 mm), status=0
+I (12831) TOF_RANGE: Distance: 49.0 cm (raw: 490 mm), status=0
+I (12931) TOF_RANGE: Distance: 50.0 cm (raw: 500 mm), status=0
+I (13031) TOF_RANGE: Distance: 49.4 cm (raw: 494 mm), status=0
+I (13131) TOF_RANGE: Distance: 49.6 cm (raw: 496 mm), status=0
+I (13221) TOF_RANGE: Distance: 48.8 cm (raw: 488 mm), status=0
+I (13321) TOF_RANGE: Distance: 49.1 cm (raw: 491 mm), status=0
+I (13421) TOF_RANGE: Distance: 48.3 cm (raw: 483 mm), status=0
+I (13521) TOF_RANGE: Distance: 48.4 cm (raw: 484 mm), status=0
+I (13621) TOF_RANGE: Distance: 46.7 cm (raw: 467 mm), status=0
+I (13721) TOF_RANGE: Distance: 46.7 cm (raw: 467 mm), status=0
+I (13821) TOF_RANGE: Distance: 46.0 cm (raw: 460 mm), status=0
+I (13911) TOF_RANGE: Distance: 47.6 cm (raw: 476 mm), status=0
+I (14011) TOF_RANGE: Distance: 48.9 cm (raw: 489 mm), status=0
+I (14111) TOF_RANGE: Distance: 52.2 cm (raw: 522 mm), status=0
+I (14211) TOF_RANGE: Distance: 51.2 cm (raw: 512 mm), status=0
+I (14311) TOF_RANGE: Distance: 51.9 cm (raw: 519 mm), status=0
+I (14401) TOF_RANGE: Distance: 50.8 cm (raw: 508 mm), status=0
+I (14501) TOF_RANGE: Distance: 51.3 cm (raw: 513 mm), status=0
+I (14601) TOF_RANGE: Distance: 51.2 cm (raw: 512 mm), status=0
+I (14701) TOF_RANGE: Distance: 51.6 cm (raw: 516 mm), status=0
+I (14801) TOF_RANGE: Distance: 51.4 cm (raw: 514 mm), status=0
+I (14901) TOF_RANGE: Distance: 52.0 cm (raw: 520 mm), status=0
+I (14991) TOF_RANGE: Distance: 53.7 cm (raw: 537 mm), status=0
+I (14991) TOF_RANGE: Counts: valid=150, invalid=0
+I (15091) TOF_RANGE: Distance: 52.8 cm (raw: 528 mm), status=0
+I (15191) TOF_RANGE: Distance: 52.8 cm (raw: 528 mm), status=0
+I (15291) TOF_RANGE: Distance: 53.8 cm (raw: 538 mm), status=0
+I (15391) TOF_RANGE: Distance: 54.0 cm (raw: 540 mm), status=0
+I (15491) TOF_RANGE: Distance: 53.9 cm (raw: 539 mm), status=0
+I (15581) TOF_RANGE: Distance: 54.5 cm (raw: 545 mm), status=0
+I (15681) TOF_RANGE: Distance: 54.6 cm (raw: 546 mm), status=0
+I (15781) TOF_RANGE: Distance: 55.4 cm (raw: 554 mm), status=0
+I (15881) TOF_RANGE: Distance: 55.7 cm (raw: 557 mm), status=0
+I (15981) TOF_RANGE: Distance: 56.9 cm (raw: 569 mm), status=0
+I (16081) TOF_RANGE: Distance: 55.2 cm (raw: 552 mm), status=0
+I (16171) TOF_RANGE: Distance: 54.9 cm (raw: 549 mm), status=0
+I (16271) TOF_RANGE: Distance: 56.0 cm (raw: 560 mm), status=0
+I (16371) TOF_RANGE: Distance: 55.9 cm (raw: 559 mm), status=0
+I (16471) TOF_RANGE: Distance: 56.4 cm (raw: 564 mm), status=0
+I (16571) TOF_RANGE: Distance: 56.8 cm (raw: 568 mm), status=0
+I (16671) TOF_RANGE: Distance: 56.3 cm (raw: 563 mm), status=0
+I (16761) TOF_RANGE: Distance: 56.3 cm (raw: 563 mm), status=0
+I (16861) TOF_RANGE: Distance: 55.5 cm (raw: 555 mm), status=0
+I (16961) TOF_RANGE: Distance: 54.9 cm (raw: 549 mm), status=0
+I (17061) TOF_RANGE: Distance: 53.4 cm (raw: 534 mm), status=0
+I (17161) TOF_RANGE: Distance: 52.1 cm (raw: 521 mm), status=0
+I (17251) TOF_RANGE: Distance: 50.0 cm (raw: 500 mm), status=0
+I (17351) TOF_RANGE: Distance: 48.6 cm (raw: 486 mm), status=0
+I (17451) TOF_RANGE: Distance: 42.2 cm (raw: 422 mm), status=0
+I (17551) TOF_RANGE: Distance: 37.8 cm (raw: 378 mm), status=0
+I (17651) TOF_RANGE: Distance: 32.3 cm (raw: 323 mm), status=0
+I (17751) TOF_RANGE: Distance: 29.3 cm (raw: 293 mm), status=0
+I (17851) TOF_RANGE: Distance: 33.2 cm (raw: 332 mm), status=0
+I (17941) TOF_RANGE: Distance: 46.0 cm (raw: 460 mm), status=0
+I (18041) TOF_RANGE: Distance: 40.5 cm (raw: 405 mm), status=0
+I (18141) TOF_RANGE: Distance: 27.6 cm (raw: 276 mm), status=0
+I (18241) TOF_RANGE: Distance: 30.3 cm (raw: 303 mm), status=0
+I (18341) TOF_RANGE: Distance: 32.7 cm (raw: 327 mm), status=0
+I (18441) TOF_RANGE: Distance: 44.4 cm (raw: 444 mm), status=0
+I (18531) TOF_RANGE: Distance: 41.8 cm (raw: 418 mm), status=0
+I (18631) TOF_RANGE: Distance: 48.5 cm (raw: 485 mm), status=0
+I (18731) TOF_RANGE: Distance: 46.0 cm (raw: 460 mm), status=0
+I (18831) TOF_RANGE: Distance: 37.6 cm (raw: 376 mm), status=0
+I (18931) TOF_RANGE: Distance: 33.2 cm (raw: 332 mm), status=0
+I (19031) TOF_RANGE: Distance: 28.4 cm (raw: 284 mm), status=0
+I (19121) TOF_RANGE: Distance: 39.6 cm (raw: 396 mm), status=0
+I (19221) TOF_RANGE: Distance: 39.4 cm (raw: 394 mm), status=0
+I (19321) TOF_RANGE: Distance: 35.3 cm (raw: 353 mm), status=0
+I (19421) TOF_RANGE: Distance: 34.3 cm (raw: 343 mm), status=0
+I (19521) TOF_RANGE: Distance: 28.6 cm (raw: 286 mm), status=0
+I (19621) TOF_RANGE: Distance: 27.9 cm (raw: 279 mm), status=0
+I (19711) TOF_RANGE: Distance: 25.5 cm (raw: 255 mm), status=0
+I (19811) TOF_RANGE: Distance: 23.6 cm (raw: 236 mm), status=0
+I (19911) TOF_RANGE: Distance: 24.6 cm (raw: 246 mm), status=0
+I (19911) TOF_RANGE: Counts: valid=200, invalid=0
+I (20011) TOF_RANGE: Distance: 25.5 cm (raw: 255 mm), status=0
+I (20111) TOF_RANGE: Distance: 28.5 cm (raw: 285 mm), status=0
+I (20211) TOF_RANGE: Distance: 41.8 cm (raw: 418 mm), status=0
+I (20301) TOF_RANGE: Distance: 28.5 cm (raw: 285 mm), status=0
+I (20401) TOF_RANGE: Distance: 33.3 cm (raw: 333 mm), status=0
+I (20501) TOF_RANGE: Distance: 38.7 cm (raw: 387 mm), status=0
+I (20601) TOF_RANGE: Distance: 30.5 cm (raw: 305 mm), status=0
+I (20701) TOF_RANGE: Distance: 42.1 cm (raw: 421 mm), status=0
+I (20791) TOF_RANGE: Distance: 29.5 cm (raw: 295 mm), status=0
+I (20891) TOF_RANGE: Distance: 32.6 cm (raw: 326 mm), status=0
+I (20991) TOF_RANGE: Distance: 42.1 cm (raw: 421 mm), status=0
+I (21091) TOF_RANGE: Distance: 30.8 cm (raw: 308 mm), status=0
+I (21191) TOF_RANGE: Distance: 47.8 cm (raw: 478 mm), status=0
+I (21291) TOF_RANGE: Distance: 48.5 cm (raw: 485 mm), status=0
+I (21381) TOF_RANGE: Distance: 44.3 cm (raw: 443 mm), status=0
+I (21481) TOF_RANGE: Distance: 44.1 cm (raw: 441 mm), status=0
+I (21581) TOF_RANGE: Distance: 47.7 cm (raw: 477 mm), status=0
+I (21681) TOF_RANGE: Distance: 46.7 cm (raw: 467 mm), status=0
+I (21781) TOF_RANGE: Distance: 43.3 cm (raw: 433 mm), status=0
+I (21881) TOF_RANGE: Distance: 30.9 cm (raw: 309 mm), status=0
+I (21971) TOF_RANGE: Distance: 26.3 cm (raw: 263 mm), status=0
+I (22071) TOF_RANGE: Distance: 26.1 cm (raw: 261 mm), status=0
+I (22171) TOF_RANGE: Distance: 25.9 cm (raw: 259 mm), status=0
+I (22271) TOF_RANGE: Distance: 25.5 cm (raw: 255 mm), status=0
+I (22371) TOF_RANGE: Distance: 23.2 cm (raw: 232 mm), status=0
+I (22471) TOF_RANGE: Distance: 24.1 cm (raw: 241 mm), status=0
+I (22561) TOF_RANGE: Distance: 27.8 cm (raw: 278 mm), status=0
+I (22661) TOF_RANGE: Distance: 33.8 cm (raw: 338 mm), status=0
+I (22761) TOF_RANGE: Distance: 31.4 cm (raw: 314 mm), status=0
+I (22861) TOF_RANGE: Distance: 35.5 cm (raw: 355 mm), status=0
+I (22961) TOF_RANGE: Distance: 42.1 cm (raw: 421 mm), status=0
+I (23061) TOF_RANGE: Distance: 43.8 cm (raw: 438 mm), status=0
+I (23151) TOF_RANGE: Distance: 43.3 cm (raw: 433 mm), status=0
+I (23251) TOF_RANGE: Distance: 44.5 cm (raw: 445 mm), status=0
+I (23351) TOF_RANGE: Distance: 44.2 cm (raw: 442 mm), status=0
+I (23451) TOF_RANGE: Distance: 44.5 cm (raw: 445 mm), status=0
+I (23551) TOF_RANGE: Distance: 43.2 cm (raw: 432 mm), status=0
+I (23651) TOF_RANGE: Distance: 45.0 cm (raw: 450 mm), status=0
+I (23741) TOF_RANGE: Distance: 43.7 cm (raw: 437 mm), status=0
+I (23841) TOF_RANGE: Distance: 45.2 cm (raw: 452 mm), status=0
+I (23941) TOF_RANGE: Distance: 44.7 cm (raw: 447 mm), status=0
+I (24041) TOF_RANGE: Distance: 44.3 cm (raw: 443 mm), status=0
+I (24141) TOF_RANGE: Distance: 42.4 cm (raw: 424 mm), status=0
+I (24241) TOF_RANGE: Distance: 42.0 cm (raw: 420 mm), status=0
+I (24331) TOF_RANGE: Distance: 41.6 cm (raw: 416 mm), status=0
+I (24431) TOF_RANGE: Distance: 32.8 cm (raw: 328 mm), status=0
+I (24531) TOF_RANGE: Distance: 33.6 cm (raw: 336 mm), status=0
+I (24631) TOF_RANGE: Distance: 37.2 cm (raw: 372 mm), status=0
+I (24731) TOF_RANGE: Distance: 43.2 cm (raw: 432 mm), status=0
+I (24831) TOF_RANGE: Distance: 42.8 cm (raw: 428 mm), status=0
+I (24831) TOF_RANGE: Counts: valid=250, invalid=0
+I (24921) TOF_RANGE: Distance: 41.9 cm (raw: 419 mm), status=0
+I (25021) TOF_RANGE: Distance: 45.2 cm (raw: 452 mm), status=0
+I (25121) TOF_RANGE: Distance: 44.7 cm (raw: 447 mm), status=0
+I (25221) TOF_RANGE: Distance: 43.8 cm (raw: 438 mm), status=0
+I (25321) TOF_RANGE: Distance: 45.2 cm (raw: 452 mm), status=0
+I (25411) TOF_RANGE: Distance: 44.3 cm (raw: 443 mm), status=0
+I (25511) TOF_RANGE: Distance: 45.1 cm (raw: 451 mm), status=0
+I (25611) TOF_RANGE: Distance: 44.9 cm (raw: 449 mm), status=0
+I (25711) TOF_RANGE: Distance: 47.1 cm (raw: 471 mm), status=0
+I (25811) TOF_RANGE: Distance: 45.8 cm (raw: 458 mm), status=0
+I (25911) TOF_RANGE: Distance: 47.3 cm (raw: 473 mm), status=0
+I (26001) TOF_RANGE: Distance: 47.1 cm (raw: 471 mm), status=0
+I (26101) TOF_RANGE: Distance: 47.3 cm (raw: 473 mm), status=0
+I (26201) TOF_RANGE: Distance: 45.5 cm (raw: 455 mm), status=0
+I (26301) TOF_RANGE: Distance: 44.6 cm (raw: 446 mm), status=0
+I (26401) TOF_RANGE: Distance: 44.0 cm (raw: 440 mm), status=0
+I (26501) TOF_RANGE: Distance: 35.4 cm (raw: 354 mm), status=0
+I (26591) TOF_RANGE: Distance: 30.6 cm (raw: 306 mm), status=0
+I (26691) TOF_RANGE: Distance: 26.6 cm (raw: 266 mm), status=0
+I (26791) TOF_RANGE: Distance: 28.1 cm (raw: 281 mm), status=0
+I (26891) TOF_RANGE: Distance: 32.5 cm (raw: 325 mm), status=0
+I (26991) TOF_RANGE: Distance: 33.2 cm (raw: 332 mm), status=0
+I (27091) TOF_RANGE: Distance: 31.1 cm (raw: 311 mm), status=0
+I (27181) TOF_RANGE: Distance: 31.3 cm (raw: 313 mm), status=0
+I (27281) TOF_RANGE: Distance: 29.7 cm (raw: 297 mm), status=0
+I (27381) TOF_RANGE: Distance: 27.3 cm (raw: 273 mm), status=0
+I (27481) TOF_RANGE: Distance: 24.4 cm (raw: 244 mm), status=0
+I (27581) TOF_RANGE: Distance: 21.0 cm (raw: 210 mm), status=0
+I (27681) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (27771) TOF_RANGE: Distance: 18.5 cm (raw: 185 mm), status=0
+I (27871) TOF_RANGE: Distance: 14.9 cm (raw: 149 mm), status=0
+I (27971) TOF_RANGE: Distance: 12.5 cm (raw: 125 mm), status=0
+I (28071) TOF_RANGE: Distance: 13.0 cm (raw: 130 mm), status=0
+I (28171) TOF_RANGE: Distance: 12.5 cm (raw: 125 mm), status=0
+I (28271) TOF_RANGE: Distance: 11.8 cm (raw: 118 mm), status=0
+I (28361) TOF_RANGE: Distance: 10.0 cm (raw: 100 mm), status=0
+I (28461) TOF_RANGE: Distance: 10.7 cm (raw: 107 mm), status=0
+I (28561) TOF_RANGE: Distance: 9.5 cm (raw: 95 mm), status=0
+I (28661) TOF_RANGE: Distance: 9.0 cm (raw: 90 mm), status=0
+I (28761) TOF_RANGE: Distance: 9.8 cm (raw: 98 mm), status=0
+I (28861) TOF_RANGE: Distance: 10.2 cm (raw: 102 mm), status=0
+I (28951) TOF_RANGE: Distance: 9.9 cm (raw: 99 mm), status=0
+I (29051) TOF_RANGE: Distance: 9.5 cm (raw: 95 mm), status=0
+I (29151) TOF_RANGE: Distance: 10.2 cm (raw: 102 mm), status=0
+I (29251) TOF_RANGE: Distance: 11.1 cm (raw: 111 mm), status=0
+I (29351) TOF_RANGE: Distance: 12.3 cm (raw: 123 mm), status=0
+I (29451) TOF_RANGE: Distance: 13.0 cm (raw: 130 mm), status=0
+I (29541) TOF_RANGE: Distance: 14.2 cm (raw: 142 mm), status=0
+I (29641) TOF_RANGE: Distance: 14.2 cm (raw: 142 mm), status=0
+I (29741) TOF_RANGE: Distance: 15.0 cm (raw: 150 mm), status=0
+I (29741) TOF_RANGE: Counts: valid=300, invalid=0
+I (29841) TOF_RANGE: Distance: 15.2 cm (raw: 152 mm), status=0
+I (29941) TOF_RANGE: Distance: 14.3 cm (raw: 143 mm), status=0
+I (30041) TOF_RANGE: Distance: 15.7 cm (raw: 157 mm), status=0
+I (30131) TOF_RANGE: Distance: 15.0 cm (raw: 150 mm), status=0
+I (30231) TOF_RANGE: Distance: 14.7 cm (raw: 147 mm), status=0
+I (30331) TOF_RANGE: Distance: 15.9 cm (raw: 159 mm), status=0
+I (30431) TOF_RANGE: Distance: 15.5 cm (raw: 155 mm), status=0
+I (30531) TOF_RANGE: Distance: 15.6 cm (raw: 156 mm), status=0
+I (30631) TOF_RANGE: Distance: 15.0 cm (raw: 150 mm), status=0
+I (30721) TOF_RANGE: Distance: 14.9 cm (raw: 149 mm), status=0
+I (30821) TOF_RANGE: Distance: 16.6 cm (raw: 166 mm), status=0
+I (30921) TOF_RANGE: Distance: 18.3 cm (raw: 183 mm), status=0
+I (31021) TOF_RANGE: Distance: 23.4 cm (raw: 234 mm), status=0
+I (31121) TOF_RANGE: Distance: 35.6 cm (raw: 356 mm), status=0
+I (31211) TOF_RANGE: Distance: 27.3 cm (raw: 273 mm), status=0
+I (31311) TOF_RANGE: Distance: 25.1 cm (raw: 251 mm), status=0
+I (31411) TOF_RANGE: Distance: 21.8 cm (raw: 218 mm), status=0
+I (31511) TOF_RANGE: Distance: 21.5 cm (raw: 215 mm), status=0
+I (31611) TOF_RANGE: Distance: 22.7 cm (raw: 227 mm), status=0
+I (31711) TOF_RANGE: Distance: 28.6 cm (raw: 286 mm), status=0
+I (31801) TOF_RANGE: Distance: 50.1 cm (raw: 501 mm), status=0
+I (31901) TOF_RANGE: Distance: 48.4 cm (raw: 484 mm), status=0
+I (32001) TOF_RANGE: Distance: 52.2 cm (raw: 522 mm), status=0
+I (32101) TOF_RANGE: Distance: 52.4 cm (raw: 524 mm), status=0
+I (32201) TOF_RANGE: Distance: 53.4 cm (raw: 534 mm), status=0
+I (32301) TOF_RANGE: Distance: 52.3 cm (raw: 523 mm), status=0
+I (32391) TOF_RANGE: Distance: 50.3 cm (raw: 503 mm), status=0
+I (32491) TOF_RANGE: Distance: 51.1 cm (raw: 511 mm), status=0
+I (32591) TOF_RANGE: Distance: 51.5 cm (raw: 515 mm), status=0
+I (32691) TOF_RANGE: Distance: 51.4 cm (raw: 514 mm), status=0
+I (32791) TOF_RANGE: Distance: 51.6 cm (raw: 516 mm), status=0
+I (32891) TOF_RANGE: Distance: 53.4 cm (raw: 534 mm), status=0
+I (32981) TOF_RANGE: Distance: 53.3 cm (raw: 533 mm), status=0
+I (33081) TOF_RANGE: Distance: 54.7 cm (raw: 547 mm), status=0
+I (33181) TOF_RANGE: Distance: 57.4 cm (raw: 574 mm), status=0
+I (33281) TOF_RANGE: Distance: 58.8 cm (raw: 588 mm), status=0
+I (33381) TOF_RANGE: Distance: 57.8 cm (raw: 578 mm), status=0
+I (33471) TOF_RANGE: Distance: 57.7 cm (raw: 577 mm), status=0
+I (33571) TOF_RANGE: Distance: 58.4 cm (raw: 584 mm), status=0
+I (33671) TOF_RANGE: Distance: 47.4 cm (raw: 474 mm), status=0
+I (33771) TOF_RANGE: Distance: 45.6 cm (raw: 456 mm), status=0
+I (33871) TOF_RANGE: Distance: 45.6 cm (raw: 456 mm), status=0
+I (33971) TOF_RANGE: Distance: 50.2 cm (raw: 502 mm), status=0
+I (34061) TOF_RANGE: Distance: 55.6 cm (raw: 556 mm), status=0
+I (34161) TOF_RANGE: Distance: 55.8 cm (raw: 558 mm), status=0
+I (34261) TOF_RANGE: Distance: 57.8 cm (raw: 578 mm), status=0
+I (34361) TOF_RANGE: Distance: 59.4 cm (raw: 594 mm), status=0
+I (34461) TOF_RANGE: Distance: 48.0 cm (raw: 480 mm), status=0
+I (34561) TOF_RANGE: Distance: 16.6 cm (raw: 166 mm), status=0
+I (34661) TOF_RANGE: Distance: 9.7 cm (raw: 97 mm), status=0
+I (34661) TOF_RANGE: Counts: valid=350, invalid=0
+
+

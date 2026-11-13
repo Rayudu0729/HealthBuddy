@@ -1,5 +1,37 @@
 # Bindu — Current project status
 
+## Latest test update — 14 November 2026
+
+Final handoff: active diagnostic now uses SHORT mode (1), 50 ms timing budget,
+100 ms period, 50 kHz I2C on D4/D5, with TOF_QUALITY logging. Latest 20 cm
+short-mode test: 451 valid samples, mean 17.994 cm, range 17.6–18.4 cm, no
+I2C/invalid errors. No manual correction applied. Accuracy remains unresolved;
+user lacks the calibrated 17% gray target specified by ST for offset calibration.
+Keep the sensor for now; consider borrowing a target and testing other modules
+separately. Read the 14 November Phase 1 handoff for full evidence and setup
+limitations. The five-minute result below was in long mode. All monitors closed.
+
+On the D:\Bindu computer, COM17, the standalone ranging diagnostic now uses
+SDA D4/GPIO5, SCL D5/GPIO6 and 50 kHz I2C. Fresh builds/flashes verified their
+written hashes. Earlier tests today still encountered intermittent communication
+failures; cause of subsequent recovery is not isolated. MPU6050 substitution
+acknowledged at 0x68. VL53L1X subsequently acknowledged 0x29 and ID 0xEACC.
+
+Latest stationary test at the user-confirmed 20 cm target captured 3,196 valid
+readings across 314.14 seconds: mean 19.664 cm, range 17.4–20.8 cm, zero invalid
+measurements and zero I2C error messages. Official monitor startup reset the MCU;
+monitor is closed. This passes this five-minute communication check, not proof
+that all intermittent faults are eliminated. No calibration correction applied.
+
+Other same-day captures: 10 cm mean 8.852 cm (328 samples); repeat assumed still
+10 cm mean 8.988 cm (366); 20 cm mean 19.729 cm (300), later repeat 19.116 cm
+(350); improved-setup 50 cm mean 45.670 cm (400), range 44.1–46.7 cm. These runs
+had no I2C/invalid messages but demonstrate remaining accuracy/repeatability
+questions. Raw logs and summaries are in data/samples/vl53l1x-2026-11-14-*.
+Next investigate measurement setup and ST-documented calibration; do not apply
+a guessed constant correction or mark Phase 1 complete. The older handoff and
+environment details below are historical where superseded by this update.
+
 Reviewed: 13 November 2026 (Asia/Calcutta). Latest physical test evidence: 13 November 2026. Ranging is demonstrated; accuracy and intermittent I2C faults remain unresolved. No deployment or later hardware purchase is confirmed.
 
 ## Source of truth
