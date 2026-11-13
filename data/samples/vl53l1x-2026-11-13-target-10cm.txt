@@ -1,0 +1,249 @@
+User-confirmed target distance: 100 mm from the sensor; physical setup not independently inspected.
+Captured after user-reported USB power cycle and subsequent reset by ESP-IDF monitor.
+IDF PowerShell Environment
+-------------------------
+Environment variables set:
+IDF_PATH: C:\esp\v5.5.6\esp-idf
+IDF_TOOLS_PATH: C:\Espressif\tools
+IDF_PYTHON_ENV_PATH: C:\Espressif\tools\python\v5.5.6\venvCustom commands available:
+idf.py - Use this to run IDF commands (e.g., idf.py build)
+esptool.py
+espefuse.py
+espsecure.py
+otatool.py
+parttool.pyPython environment activated.
+You can now use IDF commands and Python tools.
+Executing action: monitor
+Running idf_monitor in directory E:\ClaudeDesktop\HealthBuddy\tmp\tof-check
+Executing "C:\Espressif\tools\python\v5.5.6\venv\Scripts\python.exe C:\esp\v5.5.6\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 E:\ClaudeDesktop\HealthBuddy\tmp\tof-check\build\bindu_tof_check.elf E:\ClaudeDesktop\HealthBuddy\tmp\tof-check\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v5.5.6\venv\Sc
+cripts\python.exe' 'C:\esp\v5.5.6\esp-idf\tools\idf.py' '-p' 'COM3'"...
+--- WARNING: GDB cannot open serial ports accessed as COMx
+--- NOTE: Using \\.\COM3 instead...
+--- esp-idf-monitor 1.10.0 on \\.\COM3 115200
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40377d92
+--- 0x40377d92: esp_cpu_wait_for_intr at C:/esp/v5.5.6/esp-idf/components/esp_hw
+w_support/cpu.c:64
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x142c
+load:0x403c8700,len:0xc94
+--- 0x403c8700: _stext at ??:?
+load:0x403cb700,len:0x2ee8
+entry 0x403c8914
+--- 0x403c8914: call_start_cpu0 at C:/esp/v5.5.6/esp-idf/components/bootloader/s
+subproject/main/bootloader_start.c:27
+I (24) boot: ESP-IDF v5.5.6 2nd stage bootloader
+I (24) boot: compile time Nov 13 2026 20:20:38
+I (25) boot: chip revision: v0.2
+I (25) boot.esp32s3: Boot SPI Speed : 80MHz
+I (25) boot.esp32s3: SPI Mode       : DIO
+I (25) boot.esp32s3: SPI Flash Size : 16MB
+I (26) boot: Partition Table:
+I (26) boot: ## Label       Usage          Type ST Offset   Length
+I (26) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (26) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (27) boot:  2 factory          factory app      00 00 00010000 00100000
+I (27) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0af7ch ( 44924)
+ map
+I (36) esp_image: segment 1: paddr=0001afa4 vaddr=3fc92700 size=02dd0h ( 11728)
+ load
+I (39) esp_image: segment 2: paddr=0001dd7c vaddr=40374000 size=0229ch (  8860)
+ load
+I (41) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=16278h ( 90744)
+ map
+I (58) esp_image: segment 4: paddr=000362a0 vaddr=4037629c size=0c3cch ( 50124)
+ load
+I (69) esp_image: segment 5: paddr=00042674 vaddr=50000000 size=00020h (    32)
+ load
+I (76) boot: Loaded app from partition at offset 0x10000
+I (76) cpu_start: Multicore app
+I (85) cpu_start: Pro cpu start user code
+I (85) cpu_start: cpu freq: 160000000 Hz
+I (86) app_init: Application information:
+I (86) app_init: Project name:     bindu_tof_check
+I (86) app_init: App version:      3e0bca4-dirty
+I (86) app_init: Compile time:     Nov 13 2026 20:18:54
+I (86) app_init: ELF file SHA256:  262da9da7...
+I (86) app_init: ESP-IDF:          v5.5.6
+I (87) efuse_init: Min chip rev:     v0.0
+I (87) efuse_init: Max chip rev:     v0.99
+I (87) efuse_init: Chip rev:         v0.2
+I (87) heap_init: Initializing. RAM available for dynamic allocation:
+I (87) heap_init: At 3FC95DD0 len 00053940 (334 KiB): RAM
+I (88) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (88) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (88) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM
+I (89) spi_flash: detected chip: generic
+I (89) spi_flash: flash io: dio
+I (90) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (90) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (91) main_task: Started on CPU0
+I (91) main_task: Calling app_main()
+I (191) TOF_RANGE: Sensor ID: 0xEACC; ST ULD 3.5.5
+I (261) TOF_RANGE: Settings after init: offset=0 mm, xtalk=0; no added correctio
+on
+I (261) TOF_RANGE: Ranging started: long mode, 50 ms budget, 100 ms period
+I (331) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (411) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (511) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (611) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (701) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (801) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (901) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (1001) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (1101) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (1191) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (1291) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (1391) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (1491) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (1591) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (1691) TOF_RANGE: Distance: 8.4 cm (raw: 84 mm), status=0
+I (1781) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (1881) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (1981) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (2081) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (2181) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (2271) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (2371) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (2471) TOF_RANGE: Distance: 7.4 cm (raw: 74 mm), status=0
+I (2571) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (2671) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (2771) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (2861) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (2961) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (3061) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (3161) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (3261) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (3361) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (3451) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (3551) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (3651) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (3751) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (3851) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (3941) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (4041) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (4141) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (4241) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (4341) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (4441) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (4531) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (4631) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (4731) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (4831) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (4931) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (5031) TOF_RANGE: Distance: 8.7 cm (raw: 87 mm), status=0
+I (5121) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (5121) TOF_RANGE: Counts: valid=50, invalid=0
+I (5221) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (5321) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (5421) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (5521) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (5611) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (5711) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (5811) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (5911) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (6011) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (6101) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (6201) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (6301) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (6401) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (6501) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (6601) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (6691) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (6791) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (6891) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (6991) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (7091) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (7191) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (7281) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (7381) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (7481) TOF_RANGE: Distance: 7.6 cm (raw: 76 mm), status=0
+I (7581) TOF_RANGE: Distance: 8.4 cm (raw: 84 mm), status=0
+I (7681) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (7771) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (7871) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (7971) TOF_RANGE: Distance: 7.6 cm (raw: 76 mm), status=0
+I (8071) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (8171) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (8271) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (8361) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (8461) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (8561) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (8661) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (8761) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (8851) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (8951) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (9051) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (9151) TOF_RANGE: Distance: 7.6 cm (raw: 76 mm), status=0
+I (9251) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (9341) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (9441) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (9541) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (9641) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (9741) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (9841) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (9931) TOF_RANGE: Distance: 7.4 cm (raw: 74 mm), status=0
+I (10031) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (10031) TOF_RANGE: Counts: valid=100, invalid=0
+I (10131) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (10231) TOF_RANGE: Distance: 7.6 cm (raw: 76 mm), status=0
+I (10331) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (10431) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (10521) TOF_RANGE: Distance: 7.6 cm (raw: 76 mm), status=0
+I (10621) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (10721) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (10821) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (10921) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (11011) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (11111) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (11211) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (11311) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (11411) TOF_RANGE: Distance: 7.5 cm (raw: 75 mm), status=0
+I (11511) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (11601) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (11701) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (11801) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (11901) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (12001) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (12091) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (12191) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (12291) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (12391) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (12491) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (12591) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (12681) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (12781) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (12881) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (12981) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (13081) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (13181) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (13271) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (13371) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (13471) TOF_RANGE: Distance: 8.3 cm (raw: 83 mm), status=0
+I (13571) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (13671) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (13761) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (13861) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0
+I (13961) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (14061) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (14161) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (14261) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (14351) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (14451) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (14551) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (14651) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (14751) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (14851) TOF_RANGE: Distance: 7.5 cm (raw: 75 mm), status=0
+I (14941) TOF_RANGE: Distance: 8.0 cm (raw: 80 mm), status=0
+I (14941) TOF_RANGE: Counts: valid=150, invalid=0
+I (15041) TOF_RANGE: Distance: 8.4 cm (raw: 84 mm), status=0
+I (15141) TOF_RANGE: Distance: 7.9 cm (raw: 79 mm), status=0
+I (15241) TOF_RANGE: Distance: 7.7 cm (raw: 77 mm), status=0
+I (15341) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (15431) TOF_RANGE: Distance: 7.8 cm (raw: 78 mm), status=0
+I (15531) TOF_RANGE: Distance: 8.1 cm (raw: 81 mm), status=0
+I (15631) TOF_RANGE: Distance: 8.2 cm (raw: 82 mm), status=0

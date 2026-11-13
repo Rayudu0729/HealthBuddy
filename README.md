@@ -4,13 +4,13 @@ Bindu is a standalone 4G wrist-wearable project for older adults, blind and low-
 
 ## Current status — reviewed 13 November 2026
 
-Latest evidence remains 1 November 2026. Start with the [current status summary](docs/current-status.md) and [phase index](Phases/README.md).
+Latest evidence includes direct hardware tests on 13 November 2026. The tracked [VL53L1X diagnostic](firmware/diagnostics/tof-check/README.md) builds and ranges, but confirmed 10/20 cm targets read short and intermittent I2C faults remain. Start with the [current status summary](docs/current-status.md) and [phase index](Phases/README.md).
 
 Current handoff: [Phase 1 sensor investigation](Phases/Phase%201/context.md). Phase 0 setup/boot evidence: [Phase 0 context](Phases/Phase%200/context.md).
 
 The repository contains an ESP-IDF/FreeRTOS firmware scaffold: event dispatch, task priorities, power-mode state, and component task loops. Hardware readings, SMS, voice and cloud sync are currently stubs. Initial board bring-up is verified from user-provided local logs: ESP-IDF v5.5.6 built and booted firmware revision `9c8b2c4` with 16 MB flash, 8 MB PSRAM, a passing SRAM memory test and `Bindu ready`. End-to-end sensor/alert demonstrations and measured accuracy/battery results remain pending.
 
-All ten items in the latest hardware list are confirmed ordered. The user reports all initial-list items received and soldered as of 1 November 2026. XIAO initial boot/memory checks passed. A separate local VL53L1X diagnostic confirms ID and ranging, but accuracy checks fail and intermittent I2C read errors remain unresolved. Other peripheral tests and main-firmware integration remain pending. Follow the [build tracker](docs/build-tracker.md) for delivery checks, local component tests and integration milestones. The standalone milestone is SOS-button activation followed by caregiver SMS delivery over LTE with watch Wi-Fi disabled. The final wrist device requires an integrated PCB, battery/power design, antennas and a measured enclosure layout; its size and runtime are not yet validated.
+All ten items in the latest hardware list are confirmed ordered. The user reports all initial-list items received and soldered as of 1 November 2026. XIAO initial boot/memory checks passed. The standalone repository VL53L1X diagnostic confirms ID and ranging, but accuracy checks fail and intermittent I2C read errors remain unresolved. Other peripheral tests and main-firmware integration remain pending. Follow the [build tracker](docs/build-tracker.md) for delivery checks, local component tests and integration milestones. The standalone milestone is SOS-button activation followed by caregiver SMS delivery over LTE with watch Wi-Fi disabled. The final wrist device requires an integrated PCB, battery/power design, antennas and a measured enclosure layout; its size and runtime are not yet validated.
 
 Submission PDF refreshed with the reviewed status: [Download Bindu project submission](output/pdf/Bindu-Project.pdf).
 
@@ -21,6 +21,12 @@ Full plan (roles, week-by-week tasks, parts, pitch): [docs/HackWithAditya-Plan.h
 Parts to order, with order/received tracking: [docs/parts-list.md](docs/parts-list.md)
 
 ## Planned features
+
+The [complete phase roadmap](Phases/README.md) covers setup through compact wearable integration and the final Wi-Fi CSI experiment. All later phases are pending; current execution remains the Phase 1 sensor investigation.
+
+### Final phase: indoor Wi-Fi CSI experiment
+
+Use an additional stationary ESP32 and a compatible Wi-Fi router to explore movement detection in a controlled indoor area. Send local events to Bindu for a distinct automatic vibration. A defined non-SOS button action checks recent movement, with separate acknowledgements for no recent detection and sensing unavailable. This is a planned experiment, not validated person-entry detection or a 3D map; existing distance-based obstacle assistance remains separate. See [Phase 8 requirements and test plan](Phases/Phase%208/context.md). Extra CSI hardware is not confirmed purchased.
 
 ### Accessibility: obstacle alerts
 

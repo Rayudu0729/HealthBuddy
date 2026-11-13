@@ -1,6 +1,6 @@
 # Bindu — Build plan and pending work
 
-Last reviewed: 13 November 2026. Latest physical evidence remains 1 November; no newer pass result is assumed.
+Last reviewed: 13 November 2026. Latest physical evidence is 13 November: the standalone diagnostic builds/flashes and ranges, but measured accuracy and intermittent I2C faults remain unresolved. See Phase 1 resume handoff; the proposed short-jumper replacement is not yet confirmed.
 
 This is the current execution tracker for Bindu, our standalone 4G safety and accessibility watch. It records the agreed build sequence and outstanding work. `[x]` means confirmed complete; `[ ]` means pending. Ordering a part does not mean it has arrived or passed testing.
 
@@ -43,6 +43,8 @@ Existing equipment: mobile charger labelled 5 V / 3 A and a cable. USB data conn
 These breakout boards support bench testing and a temporary wrist mockup. Final watch size requires a separate PCB, battery, antenna and enclosure fit review. See `parts-list.md` for the matching order and receipt record; do not order duplicate parts.
 
 ## 3. What we will build first
+
+The complete [phase roadmap](../Phases/README.md) records requirements and completion evidence for Phases 0–8. Existing Phases 0–1 retain their evidence; later phases are planned. Phase 8 is the final Wi-Fi CSI experiment.
 
 The first local demonstration will combine a physical SOS button, real motion/distance readings, vibration and sound. Next, connect events to the caregiver dashboard and SMS route. The standalone milestone requires successful event delivery over the watch's LTE connection with watch Wi-Fi disabled.
 
@@ -156,6 +158,22 @@ Missing heart-rate readings alone must not be interpreted as confirmed removal. 
 
 Completion evidence: a self-contained battery-powered wrist prototype, measured dimensions/runtime and successful LTE alert delivery. Do not claim waterproofing, medical accuracy or production readiness without the corresponding validation.
 
+### Step 9 — Final phase: Wi-Fi CSI room-motion experiment
+
+This step follows Step 8; see [Phase 8 requirements](../Phases/Phase%208/context.md).
+
+- [ ] Confirm a compatible router and source an additional stationary CSI-capable ESP32 with suitable power; no extra board purchase is confirmed.
+- [ ] Calibrate movement detection in a controlled indoor area using Espressif's CSI examples.
+- [ ] Deliver authenticated local motion events and heartbeat/status updates to Bindu with duplicate/stale-event rejection.
+- [ ] Provide a distinct automatic vibration for new confirmed movement, with configurable repeat suppression.
+- [ ] Use a defined non-SOS button action to check recent movement; distinguish recent event, no recent event and unavailable/calibrating states.
+- [ ] Keep SOS and obstacle feedback responsive and higher priority; document and test distinct haptic patterns.
+- [ ] Measure false alerts, missed detections, alert latency, disconnect/reconnect behaviour and added power use.
+
+Initial claim: movement detected in the monitored area. Entry direction, identity, exact distance and a clear walking path are not established. The watch's distance sensor remains responsible for local obstacle ranging. This experiment requires local wireless connectivity; test it separately from the LTE-only milestone. Internet/cloud/SMS are not required for room-to-watch alerts.
+
+Completion evidence: controlled room trials plus automatic and button-check demonstrations, including no-motion, wearer movement, door movement, stale/offline node and delayed/duplicate messages. Proposed timings and control mapping are in Phase 8 and must be validated before use.
+
 ## 4. Still pending to source, confirm or arrange
 
 | Pending item | Decision depends on |
@@ -168,6 +186,7 @@ Completion evidence: a self-contained battery-powered wrist prototype, measured 
 | Final removal/strap sensor | Contact reliability experiments |
 | Protected LiPo, charger, power-path, regulators and connectors | Measured current and final mechanical layout |
 | Compact PCB, assembly, case and final strap | Electrical and mechanical design review |
+| Additional stationary CSI-capable ESP32, compatible router and power/data cables | Final-phase CSI compatibility checks; check existing equipment before buying |
 
 Do not buy the final battery or generic charger/boost modules as a complete power solution before this review.
 

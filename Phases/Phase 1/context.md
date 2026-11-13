@@ -1,16 +1,33 @@
 # Phase 1 — Sensor bring-up and distance accuracy investigation
 
-Last reviewed: 13 November 2026 (Asia/Calcutta). Latest hardware evidence remains 1 November 2026; no later fix or validated dataset has been reported.
+Last reviewed: 13 November 2026 (Asia/Calcutta). Latest hardware evidence: direct-host tests on 13 November 2026. Distance accuracy and intermittent I2C communication remain unresolved.
 
 ## Current status
 
-VL53L1X communication, sensor identification and distance output are demonstrated in a separate local diagnostic project. Distance accuracy has not passed validation. Intermittent I2C failures have also occurred; their underlying ESP-IDF error has not yet been captured in the shared logs.
+VL53L1X communication, ID 0xEACC and centimetre ranging are demonstrated in the repository diagnostic firmware/diagnostics/tof-check. Confirmed 10 cm and 20 cm targets read short. The latest 20 cm run stopped with ESP_ERR_INVALID_STATE. Current readings are not calibrated or reliable enough for obstacle alerts.
 
 On 1 November the user reported that all components in the initial shopping list had arrived and were soldered. This supersedes the 27 October report that MPU6050 and DRV2605L were missing and headers were loose. This does not confirm receipt of later-stage LTE, battery, power or enclosure parts. Other peripherals have not yet been tested.
 
-## Environments and source locations
+## Resume here — leaving-session handoff, 13 November 2026
 
-The physical board is on the user's local computer. The agent works on a separate remote computer and cannot directly flash or inspect the local board.
+User is going home and will continue in another session. No work is running and serial monitors are closed. Do not mark Phase 1 complete or assume the latest hardware fault has been fixed.
+
+- Current computer: repo `E:\ClaudeDesktop\HealthBuddy`; board directly attached on COM3 during this session. Check the port and installed paths again on any other computer.
+- ESP-IDF v5.5.6: `C:\esp\v5.5.6\esp-idf`; activate `. 'C:\Espressif\tools\Microsoft.v5.5.6.PowerShell_profile.ps1'`. CMake, Ninja, compiler and Python dependency checks passed.
+- Current flashed program: repository `firmware/diagnostics/tof-check`, built/flashed from ignored `tmp/tof-check`. Main Bindu firmware remains a scaffold; do not replace the diagnostic with it for sensor testing.
+- ST ULD v3.5.5 source/header files and licence are included in this diagnostic. The original ZIP is at `C:\Users\Rayudu.Rambabu\Downloads\STSW-IMG009.zip`; no download is required after cloning the committed diagnostic.
+- Wiring: VCC→3V3, GND→GND, SDA→D4/GPIO5, SCL→D5/GPIO6; INT/SHUT unconnected. SDA/SCL use jumper wires. User reports VCC/SDA/SCL/SHUT each 3.27 V, end-to-end continuity on SDA/SCL/GND, and no sustained shorts between SDA/SCL or either signal and GND. Jumper length, external pull-ups, dynamic signals and contact quality are not verified.
+- Confirmed 10 cm target: 157 valid samples, mean 7.966 cm, range 7.4–8.7 cm; no invalid/I2C messages in this excerpt.
+- Confirmed 20 cm target: 21 valid samples, mean 17.067 cm, range 16.7–17.5 cm; then ESP_ERR_INVALID_STATE at reads 0x0030/0x0031 and the stop write 0x0087. Offset and xtalk read zero after init. No added correction.
+- Latest instruction: unplug USB, replace SDA/SCL with another short pair (ideally 10 cm or less if available), firmly seat headers, preserve pin mapping and other wiring, then reconnect with the white card at 20 cm. **The user has NOT confirmed doing this yet.** Start next session by establishing whether that physical change happened.
+- Next software action: capture the diagnostic at a confirmed target with the official ESP-IDF monitor. Plain pyserial opens repeatedly returned no data, whereas the official monitor captured startup; monitor normally resets the MCU. Record this reset in the evidence. On this computer, activate IDF, change to `E:\ClaudeDesktop\HealthBuddy\tmp\tof-check` (existing build), and run `idf.py -p COM3 monitor`; exit Ctrl+]. For a new checkout use the tracked diagnostic directory and build it first. Do not assume the old COM17 or D:\Bindu paths apply.
+- Resolve bus reliability before calibration, threshold integration, buzzer/motor or other sensor work. Do not add an arbitrary +2–3 cm correction. The 10 cm/20 cm biases differ. Continue measured multi-distance validation after communication is stable.
+- Evidence and summaries: `data/samples/vl53l1x-2026-11-13-target-10cm*` and `...target-20cm*`. The earlier unlabelled ranging excerpt has unknown target distance and is not an accuracy dataset.
+
+## Historical environments and source locations — earlier computer
+
+
+The following describes the earlier separate-computer setup. Direct USB access and the current paths are recorded in the resume section above.
 
 | Item | Local path or setting |
 | --- | --- |
@@ -102,3 +119,47 @@ Do not repeat the code-insertion scripts blindly; they deliberately reject a sou
 - [ST ULD package](https://www.st.com/en/embedded-software/stsw-img009.html)
 - [ST ULD manual](https://www.st.com/resource/en/user_manual/um2510-a-guide-to-using-the-vl53l1x-ultra-lite-driver-stmicroelectronics.pdf)
 - [ST sensor datasheet](https://www.st.com/resource/en/datasheet/vl53l1x.pdf)
+
+## Direct-host test — 13 November 2026
+
+The user confirmed that the XIAO is now directly attached to the agent's current computer. This supersedes the separate-host limitation above for this session. Current port is COM3. ESP-IDF v5.5.6 is installed at C:\esp\v5.5.6\esp-idf; tools and the verified Python environment are under C:\Espressif\tools. Activate with `. 'C:\Espressif\tools\Microsoft.v5.5.6.PowerShell_profile.ps1'`. Compiler, CMake, Ninja and Python dependency checks passed.
+
+A new standalone communication-only diagnostic is saved at firmware/diagnostics/tof-check. It built and flashed successfully through COM3 (flash hashes verified). USB Serial/JTAG console is explicitly enabled. A ten-second capture showed five consecutive `No response at 0x29: ESP_ERR_NOT_FOUND` messages. This establishes that the board runs and logs, but the sensor did not acknowledge on SDA GPIO5 / SCL GPIO6 in this setup. It does not establish a defective sensor. Physical wiring/power, correct pins, continuity and sensor shutdown state need investigation before ranging. The diagnostic is currently flashed instead of Bindu or the earlier ranging app. No distance calibration or correction was applied.
+
+Next: disconnect USB before changing wires; verify VCC→3V3, GND→GND, SDA→D4/GPIO5, SCL→D5/GPIO6 against printed labels. Keep other peripherals disconnected for the isolated test; INT and SHUT should be unconnected for the original single-sensor setup. Reconnect and repeat the ID check. Old ST ULD/ranging source has not been located on this computer.
+
+### Recheck after user inspected wiring
+
+On 13 November 2026 the user reported checking the pins and reconnecting USB. COM3 and both ESP32 USB interfaces remained present with Windows status OK. A fresh 12-second serial capture contained six consecutive `No response at 0x29: ESP_ERR_NOT_FOUND` messages. No valid sensor ID was received; communication remains unresolved. Capture: ignored local file tmp/tof-check/sensor-recheck.txt. The next physical checks should establish actual voltage at the sensor VCC/GND and end-to-end wiring continuity; do not infer sensor failure from missing acknowledgement alone.
+
+### Communication restored after voltage checks and diagnostic reflash
+
+The user reported VCC=3.27 V; SDA, SCL and SHUT each=3.27 V; continuity on SDA→D4, SCL→D5 and GND→GND; and no continuous beep between SDA/SCL or either signal and GND (unpowered short checks). These are user measurements, not independently measured by the agent.
+
+The communication diagnostic was extended to scan 7-bit addresses 0x08–0x77 after a failed default-address probe. The incremental build and COM3 flash passed, with flash hashes verified. The following ten-second serial capture contained six successful sensor-ID messages, all 0xEACC. Because the 0x29 probe now succeeded, the fallback full-bus scan was not executed. Communication is restored in this excerpt; no cause is established, no distance samples were collected, and sustained reliability/accuracy remain unvalidated. Evidence is in ignored tmp/tof-check/full-scan-capture.txt. The next step is obtaining the original STSW-IMG009 v3.5.5 ULD sources on this computer and restoring the ranging test with validity/error reporting.
+
+### ST ULD import and centimetre ranging — 13 November 2026
+
+The user downloaded C:\Users\Rayudu.Rambabu\Downloads\STSW-IMG009.zip. Extracted package and API version macros confirm v3.5.5. ZIP SHA256: 5E8114C0F036CF8FAF30E19B3D864455B2459DB50DBF6CAFC7480E13A58A10A1. The four API/core/platform source/header files and API/LICENSE.txt are preserved under firmware/diagnostics/tof-check/main/vl53l1x. Platform functions are implemented for ESP-IDF in main.c, with 7-bit address 0x29 and ST argument 0x52. The original identity/scan program is preserved in communication_check.c (not compiled by default).
+
+Ranging build and COM3 flash succeeded with verified flash hashes. Current flashed diagnostic uses long mode 2, 50 ms timing budget, 100 ms period; status 0 is valid, centimetres are raw mm / 10.0. Invalid readings are labelled separately; no arbitrary correction was added. Actual ESP-IDF bus errors are logged and stop the test; data-ready and boot waits are bounded. Offset/xtalk are read after initialisation, not manually changed. The captured excerpt did not include their startup values, so do not claim a newly observed value.
+
+A roughly 15-second capture contains 147 valid readings, zero invalid readings and zero I2C_DIAG messages. Raw min/mean/max: 107 / 111.69 / 117 mm. Actual target distance has not been confirmed by the user; the earlier request to position a card at 20 cm is not confirmation that this happened. Accuracy and sustained reliability remain unvalidated. Raw serial evidence is saved at data/samples/vl53l1x-2026-11-13-ranging.txt; build and flash logs remain in ignored tmp/tof-check.
+
+Next: obtain user confirmation of a fixed white-card target measured from the optical windows (start at 20 cm), capture a new labelled dataset, then repeat at 10 and 50 cm without changing code or applying guessed corrections.
+
+### Corrected 10 cm target attempt — no distance samples
+
+The user initially said the card was at 20 cm, then corrected it to 10 cm (`it 10`). Two raw serial captures were empty; the initial scratch summary still carried target_mm=200 but contained zero samples and must not be treated as a 20 cm dataset. A software reset via esptool run did not produce a useful raw capture. The official ESP-IDF monitor then reset the board and captured startup with `E (191) I2C_DIAG: Read register 0x010F: ESP_ERR_INVALID_STATE`, followed by `VL53L1X_GetSensorId(ST_DEVICE, &id) failed: ULD=255, I2C=ESP_ERR_INVALID_STATE; stopping` and return from app_main. Monitor was closed normally with Ctrl+]. No firmware was changed during this attempt. There are no fresh distance samples for a confirmed 10 cm target, and no new accuracy result. Communication is intermittent; a full sensor/board power cycle and startup recheck are needed before further target comparisons.
+
+### Confirmed 10 cm target after USB power cycle — ranging restored
+
+The user confirmed disconnecting USB for ten seconds, reconnecting, and keeping the white card at 10 cm. A raw serial capture remained silent. Starting the official ESP-IDF monitor reset the MCU and exposed a successful startup: sensor ID 0xEACC, settings after init offset=0 mm and xtalk=0, then ranging. Do not attribute the recovery solely to the power cycle, because the monitor also reset the MCU.
+
+The captured monitor transcript contains 157 complete valid status-0 samples, zero invalid messages and zero I2C_DIAG messages. Raw minimum/mean/maximum: 74 / 79.6624203821656 / 87 mm for the user-confirmed 100 mm target. Mean error is -20.3375796178344 mm, about 2.03 cm short. These are short-run results only; accuracy has not passed. No calibration or arbitrary correction was applied. Monitor was closed normally with Ctrl+]. Evidence and summary are saved under data/samples/vl53l1x-2026-11-13-target-10cm*. Next obtain a controlled 20 cm target measurement without code changes to investigate whether the short reading is consistent across distances. The earlier unknown-target ~11.2 cm capture is not a valid comparison point.
+
+### Confirmed 20 cm target — short readings and communication failure
+
+The user confirmed the white card was 20 cm from the sensor. The raw serial capture again contained no data. Starting the official ESP-IDF monitor reset the MCU and provided startup plus 21 complete valid status-0 readings, with zero invalid-range messages. Settings after init were offset=0 mm and xtalk=0. Raw minimum/mean/maximum were 167 / 170.6666666666667 / 175 mm for the 200 mm target: mean error -29.3333333333333 mm. At uptime 2301 ms, reads of registers 0x0030 and 0x0031 failed with ESP_ERR_INVALID_STATE. The diagnostic stopped at valid=21, invalid=0; its stop-ranging write to register 0x0087 also failed with ESP_ERR_INVALID_STATE. Three I2C_DIAG messages total; this is not three failed measurement samples. Monitor was closed with Ctrl+]. Evidence and summary: data/samples/vl53l1x-2026-11-13-target-20cm*.
+
+Comparison: confirmed 10 cm mean 79.6624 mm (error -20.3376 mm), confirmed 20 cm mean 170.6667 mm (error -29.3333 mm). A single constant correction is not validated. Communication is demonstrably intermittent and must be investigated before calibration or obstacle alert integration. Do not characterise short excerpts without errors as proving the bus fault resolved. Prefer the official monitor for future startup diagnosis because plain serial opens have repeatedly returned empty captures; document that its normal startup resets the MCU.

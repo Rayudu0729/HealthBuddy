@@ -1,0 +1,11 @@
+{
+  "target_mm": 200,
+  "valid_samples": 21,
+  "invalid_messages": 0,
+  "i2c_error_messages": 3,
+  "stopped": true,
+  "min_mm": 167,
+  "mean_mm": 170.66666666666666,
+  "max_mm": 175,
+  "mean_error_mm": -29.333333333333343
+}

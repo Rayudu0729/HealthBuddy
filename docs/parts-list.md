@@ -28,6 +28,7 @@ Prices paid, invoice quantities and exact delivery dates still need recording. C
 - Removal/contact or strap sensor after testing candidate methods.
 - Protected LiPo, charging/power-path circuit, regulators and connectors after measuring consumption and reviewing fit.
 - Final compact PCB, assembly, enclosure and strap after electrical and mechanical review.
+- Final-phase Wi-Fi CSI experiment: one additional stationary CSI-capable ESP32, compatible Wi-Fi router and suitable power/data cables. Check existing equipment and exact compatibility first; these are planned needs, not confirmed orders.
 
 Existing equipment: mobile charger labelled 5 V / 3 A and a cable. Confirm USB data capability. Verify each board's voltage requirements before connecting it; do not power a modem or vibration motor directly from a GPIO.
 
