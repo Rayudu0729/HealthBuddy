@@ -63,11 +63,12 @@
 <body>
 <main>
 <h1>Bindu — Standalone Safety and Accessibility Wearable</h1>
-<div class="byline">Updated 20 Oct 2026 · HackWithAditya team plan and pitch outline</div>
-<p><strong>Current status:</strong> firmware scaffold only; sensor readings, cellular alerts, voice and sync are stubs. XIAO ESP32-S3 Plus and MPU6050 ordered; receipt and hardware integration not yet confirmed. Features and demonstrations below are development targets, not completed results. Size, budget, detection accuracy and runtime require validation.</p>
+<div class="byline">Reviewed 13 Nov 2026 · current priorities supersede the original October roadmap</div>
+<p><strong>Current status:</strong> XIAO build/boot passed; all initial-list parts reported received and soldered. Separate VL53L1X diagnostic confirms I²C, ID and ranging, but accuracy under-reads and intermittent I²C errors remain unresolved. No integrated SOS, fall, obstacle-feedback, removal or cellular demonstration exists. <a href="current-status.md">Current evidence and next steps</a> · <a href="../Phases/Phase%201/context.md">Phase 1 context</a>. Camera is excluded; final form factor remains a wristwatch.</p>
 <p><a href="project-submission.html">Open the Bindu submission fields and printable project summary</a></p>
 
 <h2>Overview</h2>
+<p class="note">Expanded voice, vitals, ML and medicine features below are future roadmap ideas. They are not part of the proven prototype. Core scope and current priorities are defined in the current-status document.</p>
 <p>We are developing a standalone 4G wrist wearable combining physical SOS, motion-based fall detection, gesture-activated obstacle warnings and watch-removal alerts. Location sharing, vitals, risk analysis and Telugu/Hindi voice interaction are planned extensions. The final design uses an integrated PCB and custom enclosure; cost and battery life will be measured.</p>
 <ul>
   <li><strong>Track:</strong> HealthTech &amp; Bio-Innovation (also eligible for the Hardware Innovation prize)</li>
@@ -242,7 +243,7 @@
   <li>The reply is spoken back in Telugu through the speaker.</li>
   <li>The device can also speak first: stand-up guard, "Are you okay?" after a fall, medicine reminders.</li>
 </ol>
-<p><strong>Battery strategy:</strong> listen continuously only in waking hours; at night wake on motion; SOS button as a push-to-talk fallback; offload heavy AI to the family phone over Bluetooth when nearby; charge nightly like a smartwatch (estimate, measure in Week 4).</p>
+<p><strong>Battery strategy:</strong> listen continuously only in waking hours; at night wake on motion; SOS button as a push-to-talk fallback; defer heavy voice/AI extensions until the core watch functions and power budget are measured. The wearer must not require a nearby phone for core LTE alerts; runtime remains unmeasured.</p>
 
 <h2>Firmware: BinduOS</h2>
 <p>BinduOS is our own health-first runtime built on FreeRTOS + ESP-IDF: fall detection and SOS always come first, even at 5% battery. We do not write a kernel; FreeRTOS gives us a proven scheduler and Espressif's Wi-Fi, Bluetooth, ESP-SR and ESP-ADF need it.</p>
@@ -325,80 +326,31 @@
 <tr><td>Power management</td><td>On, with tickless idle</td><td>Battery between tasks</td></tr>
 <tr><td>PSRAM</td><td>On (octal, 8 MB)</td><td>Wake word and audio buffers</td></tr>
 </tbody></table></div>
-<p>Week 1 sensor tests can use Arduino on the ESP32-S3 (it runs on FreeRTOS too); the real firmware moves to ESP-IDF from Week 2.</p>
+<p>The actual bring-up uses ESP-IDF v5.5.6 on XIAO ESP32-S3 Plus. Continue with that environment; no Arduino migration is required.</p>
 <h3>What we customise</h3>
 <div class="table-wrap"><table>
 <thead><tr><th>Level</th><th>What we change</th></tr></thead>
 <tbody>
 <tr><td>Kernel configuration (<code>menuconfig</code>)</td><td>Tick rate, priorities, stack sizes, core pinning, power management, watchdog; remove unused features</td></tr>
-<tr><td>System (ESP-IDF)</td><td>Own partition table (two firmware slots, voice model, health data), secure boot and flash encryption, own drivers, "Bindu ready" boot sound</td></tr>
-<tr><td>BinduOS</td><td>All six services above; 100% our code</td></tr>
+<tr><td>System (ESP-IDF)</td><td>Own partition table (two firmware slots, voice model, health data), secure boot and flash encryption, planned driver integration; verified "Bindu ready" serial log (no boot sound demonstrated)</td></tr>
+<tr><td>BinduOS</td><td>Application task scaffold; credits and underlying ESP-IDF/FreeRTOS dependencies retained</td></tr>
 </tbody></table></div>
 <p>We do not change the FreeRTOS kernel source. Pitch it the way Android is described: built on the Linux kernel, but still Android.</p>
 
-<h2>Parts list</h2>
-<p>The full set costs roughly Rs 3,500–5,000 with the voice parts; prices are approximate (Indian online electronics stores), so order in Week 1 because delivery can take 1–2 weeks. Buy 2 of each sensor so a burnt part does not stop the team. Use the A7670C (4G), not the SIM800L: it is 2G only, Jio has no 2G and other networks are phasing it out.</p>
-<div class="table-wrap"><table>
-<thead><tr><th>Part</th><th>Purpose</th><th>Approx. cost (Rs)</th></tr></thead>
-<tbody>
-<tr><td>ESP32-S3 N16R8 dev board (16 MB flash, 8 MB PSRAM)</td><td>Main controller; PSRAM is needed for the wake word and audio buffers</td><td>500–800</td></tr>
-<tr><td>INMP441 or PDM microphone</td><td>Listening for the voice agent</td><td>150–250</td></tr>
-<tr><td>MAX98357A amp + 1 W micro speaker</td><td>Talking back</td><td>200–350</td></tr>
-<tr><td>Vibration motor</td><td>Quiet alerts, for hard-of-hearing users</td><td>30–60</td></tr>
-<tr><td>MAX30102</td><td>Heart rate and SpO2</td><td>150–250</td></tr>
-<tr><td>MPU6050</td><td>Accelerometer and gyroscope for falls, stand-up and walking stability</td><td>120–200</td></tr>
-<tr><td>NEO-6M GPS</td><td>Location</td><td>300–450</td></tr>
-<tr><td>A7670C 4G LTE GSM (with antenna)</td><td>LTE data for backend access; voice and direct SMS optional later</td><td>900–1,400</td></tr>
-<tr><td>MLX90614 (optional)</td><td>Body temperature</td><td>600–900</td></tr>
-<tr><td>LiPo battery 1,000–1,500 mAh + TP4056 charger</td><td>All-day power with always-on listening</td><td>400–600</td></tr>
-<tr><td>Buzzer, SOS button, LED</td><td>Emergency beacon and push-to-talk</td><td>50–100</td></tr>
-<tr><td>Wires, PCB, pendant or belt-clip enclosure</td><td>Assembly and wearing</td><td>200–400</td></tr>
-</tbody></table></div>
-<p class="note">Form factor: a pendant or belt clip, not a wristband; the speaker and bigger battery are too bulky for a wrist, and a belt or chest position gives cleaner walking data.</p>
-
-<h2>Week-by-week plan to 25 Nov</h2>
-<p>Five weeks: wire it up, make it alert, add the voice agent and prevention, then test and submit. Tick tasks as they finish.</p>
-<h3>Week 1 (20–26 Oct): setup</h3>
-<ul class="tasks">
-  <li><input type="checkbox"><span>Lead: architecture, sensor data format (JSON fields), Git repo and branch rules</span></li>
-  <li><input type="checkbox"><span>Lead: sign up for Sarvam AI or Bhashini and an LLM API; test Telugu speech-to-text</span></li>
-  <li><input type="checkbox"><span>Member 2: order parts; wire ESP32-S3 + MPU6050 on a breadboard</span></li>
-  <li><input type="checkbox"><span>Member 1: set up Express/TypeScript, PostgreSQL and React/Vite locally; prepare existing Kubernetes deployment and httpSMS Android gateway</span></li>
-  <li><input type="checkbox"><span>Member 3: interview 5–10 elderly people, families or ASHA workers; note real problems</span></li>
-</ul>
-<h3>Week 2 (27 Oct–2 Nov): sensors to cloud</h3>
-<ul class="tasks">
-  <li><input type="checkbox"><span>Member 2: read all sensors (MPU6050, MAX30102, GPS) and send data over Wi-Fi</span></li>
-  <li><input type="checkbox"><span>Member 2: wire mic and speaker; play audio and record a voice clip</span></li>
-  <li><input type="checkbox"><span>Member 1: store readings; show live vitals and map on dashboard</span></li>
-  <li><input type="checkbox"><span>Lead: wake word on ESP32-S3 ("Hey Bindu"); record raw motion data for walking, standing up and fake falls</span></li>
-  <li><input type="checkbox"><span>Member 3: set up the test-data log; help record the data sessions</span></li>
-</ul>
-<h3>Week 3 (3–9 Nov): alerts and voice working</h3>
-<ul class="tasks">
-  <li><input type="checkbox"><span>Member 2: on-device fall detection (impact spike, then stillness) with 10-second cancel</span></li>
-  <li><input type="checkbox"><span>Member 1: persist SOS events, call httpSMS, track delivery and test Android gateway availability; missed-call mode deferred</span></li>
-  <li><input type="checkbox"><span>Lead: voice pipeline end to end (wake word, speech-to-text, LLM with tools, Telugu reply)</span></li>
-  <li><input type="checkbox"><span>Lead: first walking-stability score from motion data</span></li>
-  <li><input type="checkbox"><span>Member 3: draft pitch slides and problem story from interviews</span></li>
-</ul>
-<h3>Week 4 (10–16 Nov): prevention and testing</h3>
-<ul class="tasks">
-  <li><input type="checkbox"><span>Lead: stand-up guard (stand detected + unstable vitals triggers spoken warning)</span></li>
-  <li><input type="checkbox"><span>Lead: risk trend with causes on dashboard ("down 25% since new medicine")</span></li>
-  <li><input type="checkbox"><span>Member 2: battery life (listening windows, sleep modes), pendant or belt-clip enclosure</span></li>
-  <li><input type="checkbox"><span>Member 1: medicine log, caregiver contacts, alert settings, bug fixing</span></li>
-  <li><input type="checkbox"><span>Member 3: run test sessions; count false alarms, missed falls, wake-word misses with TV on</span></li>
-</ul>
-<h3>Week 5 (17–25 Nov): polish and submit</h3>
-<ul class="tasks">
-  <li><input type="checkbox"><span>All: fix bugs found in testing; freeze features by 21 Nov</span></li>
-  <li><input type="checkbox"><span>Member 3: 2–3 minute demo video and final slides</span></li>
-  <li><input type="checkbox"><span>Lead: README, architecture diagram, submission form</span></li>
-  <li><input type="checkbox"><span>All: practise explaining every part of the code for the viva</span></li>
-  <li><input type="checkbox"><span>Submit before 25 Nov, 11:59 PM IST</span></li>
-</ul>
-
+<h2>Hardware and form factor</h2>
+<p>All ten initial-list parts are reported received and soldered. See <a href="parts-list.md">the receipt table</a>; it supersedes the old alternatives and price estimates. The selected controller is XIAO ESP32-S3 Plus, not a larger generic dev board. MPU6050 and DRV2605L are now received but untested.</p>
+<p>The target is a compact standalone 4G wristwatch. Breakouts are bench tools, not proof of final fit. Select modem, antenna, protected LiPo, power-path, regulators, custom PCB and case together after current and space measurements. No final battery/charger combination or guaranteed runtime is established. GNSS, vitals, microphone/speaker and a display remain later extensions.</p>
+<h2>Current execution priorities</h2>
+<p>Reviewed 13 November. The original calendar was a proposal and is not an achieved schedule. Reconfirm organiser dates and requirements before submission. Use evidence gates rather than marking elapsed weeks complete.</p>
+<ol>
+<li>Collect a controlled unchanged-code VL53L1X dataset at 10, 20 and 50 cm, with invalid statuses and any I²C error details. Resolve accuracy and communication problems before obstacle feedback.</li>
+<li>Test buttons, MPU6050, buzzer and DRV2605L/motor individually; record wiring, false triggers and failures.</li>
+<li>Implement the authenticated backend, caregiver dashboard and durable httpSMS delivery using the existing Kubernetes VM and Android gateway.</li>
+<li>Select/test LTE data and demonstrate physical SOS to caregiver with watch Wi-Fi disabled. Remote delivery requires the backend, gateway and connectivity.</li>
+<li>Validate gesture/removal behaviour, then measure power and mechanical fit before building the integrated wrist PCB and case.</li>
+<li>Submit only demonstrated capabilities; label controlled simulations and unfinished extensions clearly.</li>
+</ol>
+<p><a href="build-tracker.md">Detailed build tracker</a> · <a href="current-status.md">Current status and evidence</a></p>
 <h2>Level 2 enhancements (held for the 48-hour build)</h2>
 <p>The jury judges what we add on site against the 17 Dec baseline, so these stay out of the Level 1 prototype but are designed and ready to build. The organisers hand out 2 required enhancements plus 1 optional one at launch; we match whichever fits.</p>
 <div class="table-wrap"><table>
@@ -452,7 +404,7 @@
 <tr><td>Battery drains fast with always-on listening</td><td>Listening windows, wake on motion, push-to-talk fallback, nightly charging</td></tr>
 <tr><td>Wake word misses in a noisy home</td><td>Test with TV on; SOS button always works</td></tr>
 <tr><td>Voice replies slow (1–3 s)</td><td>Keep replies short; play a quick tone while thinking</td></tr>
-<tr><td>Device too bulky</td><td>Pendant or belt clip, not a wristband</td></tr>
+<tr><td>Device too bulky</td><td>Integrated wrist PCB and measured case layout; size remains unvalidated</td></tr>
 <tr><td>Venue internet poor during demo</td><td>Test LTE data and gateway phone connectivity; retain a recorded backup video</td></tr>
 <tr><td>GPS weak indoors</td><td>Show last known location; add Wi-Fi location later</td></tr>
 <tr><td>GSM module unstable</td><td>Send alerts over Wi-Fi and phone notification for the demo</td></tr>

@@ -1,5 +1,6 @@
-// Alerts: event handlers only queue work; the alert task does the slow GSM part.
-// The GSM mutex makes sure an SMS and a call never use the modem at the same time.
+// Scaffold only: alert handlers queue events; no remote notification is sent.
+// Initial route is LTE/Wi-Fi HTTPS -> backend -> httpSMS Android gateway.
+// Direct modem SMS/calling is deferred; the legacy GSM mutex below is a placeholder.
 
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
@@ -22,7 +23,7 @@ static void on_event(const bindu_event_t *evt, void *ctx)
     xQueueSend(s_alert_queue, evt, 0);
 }
 
-// TODO (Member 1 + Member 2): AT commands to the A7670C (4G) over UART.
+// TODO: queue authenticated backend events; implement LTE data transport separately.
 static void gsm_send_sms(const char *text)
 {
     xSemaphoreTake(s_gsm_lock, portMAX_DELAY);

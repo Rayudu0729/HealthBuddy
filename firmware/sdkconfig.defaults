@@ -1,4 +1,4 @@
-# Target: ESP32-S3 N16R8 (16 MB flash, 8 MB octal PSRAM)
+# Target: XIAO ESP32-S3 Plus; 16 MB flash / 8 MB octal PSRAM verified at initial boot
 CONFIG_IDF_TARGET="esp32s3"
 CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
 

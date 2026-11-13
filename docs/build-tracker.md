@@ -1,6 +1,6 @@
 # Bindu — Build plan and pending work
 
-Last updated: 27 October 2026.
+Last reviewed: 13 November 2026. Latest physical evidence remains 1 November; no newer pass result is assumed.
 
 This is the current execution tracker for Bindu, our standalone 4G safety and accessibility watch. It records the agreed build sequence and outstanding work. `[x]` means confirmed complete; `[ ]` means pending. Ordering a part does not mean it has arrived or passed testing.
 
@@ -12,25 +12,25 @@ This is the current execution tracker for Bindu, our standalone 4G safety and ac
 - [x] Firmware scaffold exists in the repository.
 - [x] Frontend, backend, deployment and SMS approach selected.
 - [x] Submission HTML and PDF prepared.
-- [x] Receipt confirmed for all listed parts except the MPU6050 and Adafruit DRV2605L driver (27 October 2026).
-- [ ] Receive MPU6050 and DRV2605L; verify invoice quantities, exact variants and condition of all parts.
+- [x] User reports all ten initial-list parts received and soldered (1 November 2026), superseding the 27 October exceptions.
+- [ ] Verify invoice quantities, exact variants and physical condition of all parts.
 - [x] Build, flash and boot Bindu firmware on the XIAO ESP32-S3 Plus (27 October 2026; user-provided serial log).
 - [ ] Demonstrate real sensor readings and local alerts.
 - [ ] Implement backend, dashboard and caregiver notifications.
 - [ ] Complete standalone LTE operation and compact watch integration.
 
-Hardware integrations are not yet verified. Existing firmware sensor, connectivity and other component stubs must be replaced with working implementations. Accuracy, final dimensions and battery runtime have not been measured.
+VL53L1X acknowledgement, ID 0xEACC and ranging are demonstrated in a separate local diagnostic. Distance accuracy checks are failing; intermittent I2C read errors remain unresolved. Main firmware sensor/connectivity stubs still need integration. Final dimensions and battery runtime remain unmeasured. See [Phase 1 context](../Phases/Phase%201/context.md) for evidence and the immediate next step.
 
 ## 2. Ordered hardware
 
-All items below are user-confirmed ordered. Quantities are the requested quantities from the shopping list; confirm them against invoices on arrival. All except the MPU6050 and Adafruit DRV2605L driver are confirmed received as of 27 October 2026. Prices paid and exact delivery dates have not been recorded. The XIAO has passed initial build/flash/boot and PSRAM checks; peripheral tests remain pending.
+All items below are user-confirmed ordered. Quantities are the requested quantities from the shopping list; confirm them against invoices on arrival. All ten initial-list items are reported received and soldered as of 1 November 2026. Prices paid and exact delivery dates have not been recorded. The XIAO has passed initial build/flash/boot and PSRAM checks; other peripheral tests remain pending; VL53L1X accuracy validation is incomplete.
 
 | Item | Requested quantity | Ordered | Received | Tested | Purpose |
 | --- | --- | --- | --- | --- | --- |
 | XIAO ESP32-S3 Plus — HUBTRONICS | 1 | [x] | [x] | [x] | Main controller; initial boot and memory checks passed |
-| MPU6050 — Quartz Components | 1 | [x] | [ ] | [ ] | Motion and gesture experiments |
-| VL53L1X — Robokits | 1 | [x] | [x] | [ ] | Obstacle distance sensing |
-| Adafruit DRV2605L driver — DigiKey India | 1 | [x] | [ ] | [ ] | Vibration motor control |
+| MPU6050 — Quartz Components | 1 | [x] | [x] | [ ] | Motion and gesture experiments |
+| VL53L1X — Robokits | 1 | [x] | [x] | [ ] | ID and ranging demonstrated; accuracy validation incomplete |
+| Adafruit DRV2605L driver — DigiKey India | 1 | [x] | [x] | [ ] | Vibration motor control |
 | Coin vibration motor — Robocraze | 1 | [x] | [x] | [ ] | Tactile alerts |
 | Active buzzer module — Robocraze | 1 | [x] | [x] | [ ] | Audible alerts |
 | 830-point breadboard — Robocraze | 1 | [x] | [x] | [ ] | Bench wiring |
@@ -38,7 +38,7 @@ All items below are user-confirmed ordered. Quantities are the requested quantit
 | 40-pin male header strips — Robocraze | 2 strips | [x] | [x] | [ ] | Board connections |
 | 6 × 6 mm pushbuttons, 5 mm height — ThinkRobotics | 1 pack of 2 | [x] | [x] | [ ] | SOS and cancel/test controls |
 
-Existing equipment: mobile charger labelled 5 V / 3 A and a cable. USB data connection verified by successful flashing on local COM17. XIAO headers are loose and unsoldered; the user has no soldering iron/solder available yet. Arrange soldering equipment or experienced help before wired tests. Availability of a multimeter and wrist mounting materials still needs checking.
+Existing equipment: mobile charger labelled 5 V / 3 A and a cable. USB data connection verified by successful flashing on local COM17. The user reports all initial parts soldered as of 1 November. Solder quality/continuity have not been independently checked. Availability of a multimeter and wrist mounting materials still needs checking.
 
 These breakout boards support bench testing and a temporary wrist mockup. Final watch size requires a separate PCB, battery, antenna and enclosure fit review. See `parts-list.md` for the matching order and receipt record; do not order duplicate parts.
 
@@ -49,7 +49,8 @@ The first local demonstration will combine a physical SOS button, real motion/di
 ### Step 1 — Receive, inspect and prepare
 
 - [ ] Record received boards, exact variants, quantities and any damage.
-- [ ] Confirm USB data cable, multimeter and soldering access.
+- [x] USB data cable demonstrated and soldering reported complete.
+- [ ] Confirm multimeter access and continuity/supply checks.
 - [x] ESP-IDF v5.5.6 activated on the local computer; XIAO detected on COM17.
 - [x] Boot verified with 16 MB flash and 8 MB octal PSRAM; SPI SRAM memory test passed.
 - [ ] Finalise GPIO allocation before connecting peripherals.
@@ -61,7 +62,8 @@ Completion evidence recorded: on 27 October 2026, user-provided local build/seri
 ### Step 2 — Test each component separately
 
 - [ ] Read stable MPU6050 acceleration and gyroscope samples.
-- [ ] Read VL53L1X distance and validity/status values.
+- [x] Read VL53L1X distance and validity/status values in the separate local diagnostic.
+- [ ] Resolve VL53L1X under-reading at known distances and intermittent I2C errors; validate accuracy and sustained operation.
 - [ ] Operate the coin motor through DRV2605L with a suitable supply and configuration.
 - [ ] Test buzzer control and both physical buttons.
 - [ ] Record wiring and simple component test results.
@@ -154,7 +156,7 @@ Missing heart-rate readings alone must not be interpreted as confirmed removal. 
 
 Completion evidence: a self-contained battery-powered wrist prototype, measured dimensions/runtime and successful LTE alert delivery. Do not claim waterproofing, medical accuracy or production readiness without the corresponding validation.
 
-## 4. Still pending to source or arrange
+## 4. Still pending to source, confirm or arrange
 
 | Pending item | Decision depends on |
 | --- | --- |
@@ -190,4 +192,4 @@ These are outside the first core demonstration and have no confirmed hardware or
 
 ## 7. Immediate next action
 
-The XIAO and other listed parts have arrived except the MPU6050 and DRV2605L driver. Initial build, flash and boot are verified. Arrange soldering of the loose XIAO headers and prepare the pin allocation from exact board documentation, then test the buttons and VL53L1X separately. MPU6050 motion tests must wait for delivery. Defer vibration-motor integration until the driver arrives; do not connect the motor directly to a GPIO. See [Phase 0 context](../Phases/Phase%200/context.md) for the verified local setup and boot evidence.
+Calibration-settings diagnostic flashed successfully on the user's local computer: `offset=0 mm, xtalk=0`. The latest 6.7–7.5 cm excerpt has no confirmed target distance. Next collect five readings at each of 10, 20 and 50 cm with unchanged code and a reproducible setup. Capture any `I2C_DIAG` failure details. Do not add arbitrary corrections. Continue at [Phase 1 context](../Phases/Phase%201/context.md); [Phase 0](../Phases/Phase%200/context.md) preserves the setup/boot milestone.

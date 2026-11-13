@@ -1,6 +1,6 @@
 # Submission PDF source
 
-`create-bindu-submission.mjs` and `minipdf.mjs` preserve the source used for the four-page submission snapshot dated 20 October 2026. Current hardware order and implementation status is tracked in `docs/build-tracker.md`.
+`create-bindu-submission.mjs` and `minipdf.mjs` generate the four-page submission summary reviewed 13 November 2026, using physical test evidence through 1 November. Current progress is tracked in `docs/current-status.md` and the phase contexts. Re-render and inspect after source edits.
 
 Run from the repository root with Node.js:
 

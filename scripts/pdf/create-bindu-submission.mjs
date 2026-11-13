@@ -12,7 +12,7 @@ pdf.setTitle('Bindu - Standalone Safety and Accessibility Wearable');
 pdf.setAuthor('Bindu Project Team');
 pdf.setSubject('HackWithAditya 2026 project submission - concept and prototype development');
 pdf.setCreator('Bindu Project');
-pdf.setCreationDate(new Date('2026-10-20T06:30:00Z'));
+pdf.setCreationDate(new Date('2026-11-13T06:30:00Z'));
 const W=595.28,H=841.89,M=44,CW=W-2*M;
 const color=(s)=>rgb(parseInt(s.slice(0,2),16)/255,parseInt(s.slice(2,4),16)/255,parseInt(s.slice(4,6),16)/255);
 const navy=color('12263A'), teal=color('116B63'), muted=color('536779'), light=color('EDF5F2'), line=color('D9E3E7'), amber=color('98611E'), ink=color('243746');
@@ -28,7 +28,7 @@ function para(s,x,t,w,size=10.5,leading=15,c=ink,font=regular){
 }
 function label(s,x,t){text(s.toUpperCase(),x,t,8,bold,teal);}
 function heading(s,t){text(s,M,t,17,bold,navy);}
-function base(n,kicker,title,subtitle){page=pdf.addPage([W,H]);rect(0,0,W,7,teal);text('BINDU',M,24,11,bold,teal);text('HACKWITHADITYA 2026  /  HEALTHTECH',253,27,7.6,regular,muted);label(kicker,M,65);text(title,M,86,25,bold,navy);if(subtitle)para(subtitle,M,125,CW,10.5,15,muted);rule(H-49);text('Bindu  |  Project submission  |  20 October 2026',M,H-36,8,regular,muted);text(String(n).padStart(2,'0')+' / 04',W-M-36,H-36,8,bold,teal);}
+function base(n,kicker,title,subtitle){page=pdf.addPage([W,H]);rect(0,0,W,7,teal);text('BINDU',M,24,11,bold,teal);text('HACKWITHADITYA 2026  /  HEALTHTECH',253,27,7.6,regular,muted);label(kicker,M,65);text(title,M,86,25,bold,navy);if(subtitle)para(subtitle,M,125,CW,10.5,15,muted);rule(H-49);text('Bindu  |  Project submission  |  13 November 2026',M,H-36,8,regular,muted);text(String(n).padStart(2,'0')+' / 04',W-M-36,H-36,8,bold,teal);}
 function card(title,body,x,t,w,h){rect(x,t,w,h,light);label(title,x+13,t+12);const y=para(body,x+13,t+34,w-26,10,14);if(y>t+h-8)throw Error('Card overflow '+title);}
 function bullet(title,body,t){text(title,M,t,11,bold,navy);return para(body,M,t+20,CW,10.4,15)+15;}
 function row(cols,t,widths,height=48,header=false){let x=M;cols.forEach((v,i)=>{rect(x,t,widths[i],height,header?navy:(Math.round(t)%2?color('F6F9FA'):color('FFFFFF')),line);const y=para(v,x+10,t+10,widths[i]-20,header?9:9.3,13,header?color('FFFFFF'):ink,header?bold:regular);if(y>t+height-5)throw Error('Table overflow: '+v);x+=widths[i];});}
@@ -37,15 +37,15 @@ function row(cols,t,widths,height=48,header=false){let x=M;cols.forEach((v,i)=>{
 base(1,'Project overview','Safety and accessibility,','connected at the wrist.');
 text('BINDU',M,163,48,bold,navy);
 para('Standalone Safety and Accessibility Wearable',M,226,CW,18,24,teal,bold);
-rect(M,267,CW,47,color('FFF4E4'));label('Development stage',M+13,277);text('Pre-hardware integration - firmware scaffold and two parts ordered',M+13,294,9.5,regular,amber);
+rect(M,267,CW,47,color('FFF4E4'));label('Development stage',M+13,277);text('Bench validation - boot/ranging shown; accuracy unresolved',M+13,294,9.5,regular,amber);
 heading('The problem',337);
 para('Older adults living independently may struggle to request help after a fall or emergency. Blind and low-vision users need accessible obstacle feedback, while caregivers need to know when a safety wearable has been removed.',M,368,CW,11,16);
 label('Target users',M,432);
 para('Older adults living independently, blind and low-vision adults, and their family caregivers. Each user can enable the functions relevant to their needs.',M,451,CW,10.5,15);
 heading('Abstract',511);
 para('Bindu is a standalone 4G wrist-wearable project combining physical SOS, motion-based fall detection, watch-removal alerts and gesture-activated obstacle awareness. A forward-facing distance sensor will drive vibration pulses that become faster as obstacles approach, with optional audible feedback.',M,542,CW,10.5,15);
-para('An ESP32-S3 will coordinate local sensing and send remote events over Wi-Fi or LTE data to a self-hosted backend. The backend will request caregiver SMS through httpSMS and a dedicated Android gateway phone. The wearer will not need a nearby phone; remote delivery still depends on internet and gateway availability.',M,617,CW,10.5,15);
-para('Development proceeds from subsystem tests to an integrated PCB and custom enclosure. Evaluation will measure gesture reliability, false alarms, ranging limits, alert delivery and power use. Location, vitals and Telugu/Hindi voice interaction are planned extensions. No detection or battery-performance results are claimed at this stage.',M,692,CW,10.5,15);
+para('The XIAO ESP32-S3 Plus will coordinate local sensing and send remote events over Wi-Fi or LTE data to a self-hosted backend. The backend will request caregiver SMS through httpSMS and a dedicated Android gateway phone. The wearer will not need a nearby phone; remote delivery still depends on internet and gateway availability.',M,617,CW,10.5,15);
+para('Development proceeds from subsystem tests to an integrated PCB and custom enclosure. Evaluation will measure gesture reliability, false alarms, ranging limits, alert delivery and power use. Location, vitals and Telugu/Hindi voice interaction are planned extensions. Distance accuracy remains unresolved; no integrated alert or battery-runtime results are claimed.',M,692,CW,10.5,15);
 
 // Page 2: product interaction and truthful feature status.
 base(2,'Product and user experience','One device. Clear interactions.','Four planned functions connect accessible local feedback with caregiver awareness.');
@@ -76,14 +76,14 @@ para('Open-source application stack; no new managed hosting subscription is requ
 
 // Page 4: evidence, delivery, safeguards, proof of work.
 base(4,'Readiness and delivery','What exists. What comes next.','A measurable delivery plan with explicit prototype status.');
-card('Available in the repository','ESP-IDF/FreeRTOS task scaffold, event dispatch, priorities, power-mode state and component boundaries. Hardware inputs, SMS, voice and sync remain stubs; selected-board build is unverified.',M,171,CW,89);
-card('Hardware ordered','XIAO ESP32-S3 Plus from HUBTRONICS; MPU6050 from Quartz. Receipt is not yet confirmed. Other sensors, cellular integration and the custom PCB/enclosure are pending.',M,272,CW,78);
+card('Available in the repository','ESP-IDF/FreeRTOS task scaffold, event dispatch, priorities, power-mode state and component boundaries. XIAO build/boot passed with 16 MB flash and 8 MB PSRAM. Main sensor, SMS, voice and sync integration remains pending. Separate local ranging diagnostic is not imported yet.',M,171,CW,89);
+card('Bench evidence - through 1 November','Initial-list parts received/soldered. VL53L1X ID/ranging passed; known distances under-read. Intermittent I2C failures remain unresolved. Settings: offset=0 mm, xtalk=0.',M,272,CW,78);
 heading('Delivery gates and acceptance evidence',373);
 row(['Gate','Required evidence'],405,[128,CW-128],29,true);
 const gates=[['1. SOS to caregiver','Wi-Fi disabled; LTE upload reaches backend and gateway SMS arrives. Measure latency and record failure/recovery.'],['2. Local assistance','Measure obstacle range limits, gesture false triggers and warning recognition in supervised tests.'],['3. Removal + motion','Test loose straps, charging, restored contact and controlled motion; record false alarms and missed events.'],['4. Wrist integration','Verify PCB fit, supply stability, antenna performance and measured battery runtime before final case assembly.']];
 gates.forEach((r,i)=>row(r,434+i*49,[128,CW-128],49));
 label('Operating boundaries',M,650);
-para('Obstacle warnings supplement a cane or guide dog; a quiet sensor does not prove a clear path or detect every drop-off. Remote alerts require watch data, backend and Android gateway availability. httpSMS lists a free quota of up to 200 sent/received SMS per month; carrier allowances still apply. Persist alert jobs, deduplicate retries and distinguish API acceptance, delivery and caregiver acknowledgement.',M,668,CW,9.5,13);
+para('Obstacle warnings supplement a cane or guide dog; a quiet sensor does not prove a clear path or detect every drop-off. Remote alerts require watch data, backend and Android gateway availability. Recheck httpSMS free allowance and carrier terms at setup. Persist alert jobs, deduplicate retries and distinguish API acceptance, delivery and caregiver acknowledgement.',M,668,CW,9.5,13);
 label('Proof of work and technical references',M,740);
 const links=[['Project repository','https://github.com/Rayudu0729/HealthBuddy'],['httpSMS API','https://docs.httpsms.com/'],['Plans','https://auth.httpsms.com/'],['Kubernetes','https://kubernetes.io/docs/concepts/workloads/']];
 let lx=M;

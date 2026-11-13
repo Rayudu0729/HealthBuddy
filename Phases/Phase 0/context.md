@@ -1,6 +1,10 @@
 # Bindu — Project context
 
-Last updated: 27 October 2026 (Asia/Calcutta).
+Last reviewed: 13 November 2026 (Asia/Calcutta). Phase 0 evidence below records the 27 October setup milestone.
+
+## Current handoff — reviewed 13 November 2026
+
+Continue at [Phase 1 context](../Phase%201/context.md). The user now reports all initial-list parts received and soldered. VL53L1X acknowledgement, ID `0xEACC` and ranging are demonstrated in a separate local project, but accuracy is failing and intermittent I2C read errors remain unresolved. Calibration settings were captured: offset=0 mm, xtalk=0. A controlled multi-distance dataset and underlying I2C failure details are still awaited. The older pending-arrival and soldering notes below describe the Phase 0 state, not current blockers.
 
 ## Project and agreed scope
 
@@ -65,7 +69,7 @@ idf.py -p COM17 flash monitor
 
 Exit the serial monitor with **Ctrl + ]**. The target has already been set to `esp32s3`; setting it again is unnecessary for ordinary rebuilds. Hardware remains disconnected from peripherals during this initial stage.
 
-### Pending before wired component tests
+### Historical pending items as of 27 October (superseded by Phase 1)
 
 - [ ] Solder the XIAO's currently loose side headers. User has no soldering iron/solder available yet; arrange suitable equipment or experienced help.
 - [ ] Inspect solder joints and check for shorts before powering the board.
@@ -76,14 +80,14 @@ Exit the serial monitor with **Ctrl + ]**. The target has already been set to `e
 
 Disconnect USB before soldering or changing wiring. Loose unsoldered pins are not a reliable connection. Pin headers on the other modules have not been confirmed soldered.
 
-## Hardware status correction
+## Historical hardware status correction — 27 October
 
 All ten items in the agreed initial shopping list were reported ordered. Eight are reported received: XIAO ESP32-S3 Plus, VL53L1X, coin motor, active buzzer, breadboard, jumper set, header strips and pushbuttons. **MPU6050 and Adafruit DRV2605L are not received.** The earlier statement that only the driver was missing was corrected by the user.
 
 Only the controller has passed initial boot/memory checks. All peripheral tests remain pending. Actual invoice quantities, prices and exact delivery dates still need confirmation. LTE modem/accessories/SIM, final protected battery and power circuit, final removal sensing, PCB and enclosure are not confirmed ordered.
 
-## Next session
+## Historical next step — superseded by Phase 1
 
 Resume with arranging header soldering and checking the planned button connection. USB-only firmware work can continue while assembly is pending. Keep hardware readings and alert delivery labelled as unimplemented until demonstrated. Do not add camera hardware or replace the selected controller.
 
-Detailed milestone checklist: [build tracker](../../docs/build-tracker.md). Hardware receipt table: [parts list](../../docs/parts-list.md). The submission PDF is an older presentation snapshot, not the current progress record.
+Detailed milestone checklist: [build tracker](../../docs/build-tracker.md). Hardware receipt table: [parts list](../../docs/parts-list.md). The submission PDF was refreshed on 13 November; use the current-status document and Phase 1 context for detailed progress.

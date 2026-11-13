@@ -23,11 +23,11 @@
 <body>
 <main>
 <h1>Bindu — Standalone Safety and Accessibility Wearable</h1>
-<p class="meta">HackWithAditya 2026 · HealthTech · Submission content updated 20 October 2026</p>
-<p class="navigation"><a href="../README.md">Project README</a> · <a href="HackWithAditya-Plan.html">Development plan</a> · <a href="parts-list.md">Parts and orders</a></p>
+<p class="meta">HackWithAditya 2026 · HealthTech · Reviewed 13 November 2026 · latest physical evidence 1 November</p>
+<p class="navigation"><a href="current-status.md">Current status</a> · <a href="../Phases/Phase%201/context.md">Phase 1 context</a> · <a href="../README.md">Project README</a> · <a href="HackWithAditya-Plan.html">Development plan</a> · <a href="parts-list.md">Parts and orders</a></p>
 <button type="button" onclick="window.print()">Print / Save as PDF</button>
 <p><a href="../output/pdf/Bindu-Project.pdf">Download the formatted four-page submission PDF</a></p>
-<p class="status"><strong>Stage: pre-hardware integration.</strong> Firmware scaffold exists; two hardware items are ordered. Planned functions must not be submitted as tested features. Update the working-prototype field after actual hardware verification.</p>
+<p class="status"><strong>Stage: bench sensor validation.</strong> XIAO boot and VL53L1X ID/ranging are demonstrated. Known-distance tests under-read and intermittent I²C errors remain unresolved. All initial-list parts are reported received/soldered. Integrated alerts and standalone 4G operation are still planned.</p>
 
 <h2>Project title</h2>
 <p>Bindu — Standalone Safety and Accessibility Wearable</p>
@@ -45,8 +45,8 @@
 <p>Development will progress from individual subsystem tests to an integrated PCB and a custom wrist enclosure. Evaluation will measure false alarms, obstacle-detection limits, gesture reliability, alert delivery and power consumption. Bindu is intended to supplement existing mobility aids; it does not establish that a path is clear or guarantee fall prevention.</p>
 
 <h2>Working prototype</h2>
-<p>The repository currently contains an ESP-IDF/FreeRTOS firmware scaffold with event dispatch, task priorities, power-mode state and separate components for fall detection, alerts, sensors, voice and synchronisation. Hardware input functions and external integrations are currently stubs. Firmware compilation and operation on the selected controller have not yet been verified in this project review.</p>
-<p>The XIAO ESP32-S3 Plus controller and MPU6050 motion sensor have been ordered; receipt is not yet confirmed. Physical SOS input, real sensor readings, cellular delivery, obstacle feedback, wrist-gesture activation and watch-removal detection remain to be integrated and tested. There are no measured detection-accuracy, alert-latency or battery-life results yet.</p>
+<p>The repository currently contains an ESP-IDF/FreeRTOS firmware scaffold with event dispatch, task priorities, power-mode state and separate components for fall detection, alerts, sensors, voice and synchronisation. Hardware input functions and external integrations are currently stubs. User-provided logs confirm ESP-IDF v5.5.6 built and booted revision 9c8b2c4 on XIAO ESP32-S3 Plus, with 16 MB flash, 8 MB PSRAM, a passing memory test and Bindu ready.</p>
+<p>All ten initial-list items are reported received and soldered. A separate local ESP-IDF diagnostic acknowledged the VL53L1X at 0x29, read ID 0xEACC and produced distance/status data. Accuracy validation failed: one 20 cm set averaged 16.79 cm and a 50 cm set averaged 40.12 cm; later runs varied. Offset and crosstalk settings read zero; no correction was applied. Intermittent I²C failures need investigation. The diagnostic is not yet integrated into this repository’s main firmware. SOS input, fall/gesture detection, vibration/sound, removal alerts and cellular delivery remain unverified; no alert-latency or battery-runtime results exist.</p>
 <p>The first end-to-end milestone is a deliberate SOS-button press reaching the backend over LTE data while Wi-Fi is unavailable, followed by caregiver SMS delivery through httpSMS and the Android gateway. Subsequent milestones add motion testing, obstacle warnings and removal/restoration alerts before PCB and enclosure integration.</p>
 
 <h2>GitHub link</h2>
@@ -54,13 +54,13 @@
 <p class="meta">This is the repository configured as the local Git remote. The repository URL retains HealthBuddy; the project name is Bindu. Confirm reviewer access and push the reviewed changes before submitting the link.</p>
 
 <h2>Tech stack</h2>
-<p>Firmware: C, ESP-IDF, FreeRTOS, I²C, UART and cellular AT-command integration. Frontend: React, TypeScript and Vite. Backend: Node.js, TypeScript and Express, with PostgreSQL and Server-Sent Events for dashboard updates. SMS: httpSMS REST API and a dedicated Android gateway phone. Deployment: container images on the team's existing Kubernetes VM, HTTPS ingress and persistent database storage. This architecture is selected; implementation and deployment are pending.</p>
+<p>Firmware: C, ESP-IDF, FreeRTOS, I²C, UART and planned cellular AT-command integration. Frontend: React, TypeScript and Vite. Backend: Node.js, TypeScript and Express, with PostgreSQL and Server-Sent Events for dashboard updates. SMS: httpSMS REST API and a dedicated Android gateway phone. Deployment: container images on the team's existing Kubernetes VM, HTTPS ingress and persistent database storage. This architecture is selected; implementation and deployment are pending.</p>
 
 <h2>Hardware</h2>
-<p>Ordered: XIAO ESP32-S3 Plus and MPU6050. Planned: VL53L1X distance sensor, LTE modem and antennas, vibration motor and driver, buzzer, SOS/cancel controls, wrist-contact sensing, protected rechargeable battery, charging/power circuitry, custom PCB, strap and enclosure. Additional hand-bend sensing and GNSS will be selected after subsystem evaluation.</p>
+<p>Reported received/soldered: XIAO ESP32-S3 Plus, MPU6050, VL53L1X, DRV2605L, coin motor, buzzer, buttons, breadboard, jumpers and header strips. Later sourcing/integration: LTE modem and antennas, wrist-contact sensing, protected battery, charging/power circuitry, custom PCB, strap and enclosure. Camera is excluded. Additional hand-bend sensing and GNSS will be selected after subsystem evaluation.</p>
 
 <h2>Dependencies</h2>
-<p>Open-source React/Vite, Node.js/Express and PostgreSQL; ESP-IDF/FreeRTOS and hardware drivers; existing Kubernetes VM capacity, persistent storage and HTTPS access; an httpSMS account/API credential; and an Android gateway phone with internet, the httpSMS app and active SMS-capable SIM. The hosted httpSMS free plan currently allows up to 200 sent/received SMS per month. Software subscriptions are avoided, but existing infrastructure, SIM/data/SMS, hardware and fabrication may have costs. API acceptance is not proof of handset delivery or caregiver acknowledgement. No paid speech API or browser background-push service is included.</p>
+<p>Open-source React/Vite, Node.js/Express and PostgreSQL; ESP-IDF/FreeRTOS and hardware drivers; existing Kubernetes VM capacity, persistent storage and HTTPS access; an httpSMS account/API credential; and an Android gateway phone with internet, the httpSMS app and active SMS-capable SIM. Recheck the available httpSMS free allowance and carrier terms during setup. Software subscriptions are avoided, but existing infrastructure, SIM/data/SMS, hardware and fabrication may have costs. API acceptance is not proof of handset delivery or caregiver acknowledgement. No paid speech API or browser background-push service is included.</p>
 
 <h2>Planned demonstration</h2>
 <ul>

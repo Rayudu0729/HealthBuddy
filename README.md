@@ -2,15 +2,17 @@
 
 Bindu is a standalone 4G wrist-wearable project for older adults, blind and low-vision users, and their caregivers. The planned design combines physical SOS, motion-based fall detection, gesture-activated obstacle warnings, and watch-removal alerts. Location sharing, vitals and Telugu/Hindi voice interaction are planned extensions. Built for HackWithAditya 2026 (HealthTech track).
 
-## Current status — 27 October 2026
+## Current status — reviewed 13 November 2026
 
-Session handoff and Phase 0 setup/boot evidence: [Phase 0 context](Phases/Phase%200/context.md).
+Latest evidence remains 1 November 2026. Start with the [current status summary](docs/current-status.md) and [phase index](Phases/README.md).
+
+Current handoff: [Phase 1 sensor investigation](Phases/Phase%201/context.md). Phase 0 setup/boot evidence: [Phase 0 context](Phases/Phase%200/context.md).
 
 The repository contains an ESP-IDF/FreeRTOS firmware scaffold: event dispatch, task priorities, power-mode state, and component task loops. Hardware readings, SMS, voice and cloud sync are currently stubs. Initial board bring-up is verified from user-provided local logs: ESP-IDF v5.5.6 built and booted firmware revision `9c8b2c4` with 16 MB flash, 8 MB PSRAM, a passing SRAM memory test and `Bindu ready`. End-to-end sensor/alert demonstrations and measured accuracy/battery results remain pending.
 
-All ten items in the latest hardware list are confirmed ordered. The user confirmed receipt of all except the MPU6050 and Adafruit DRV2605L driver on 27 October 2026; XIAO initial boot/memory checks passed; peripheral testing remains pending. Follow the [build tracker](docs/build-tracker.md) for delivery checks, local component tests and integration milestones. The standalone milestone is SOS-button activation followed by caregiver SMS delivery over LTE with watch Wi-Fi disabled. The final wrist device requires an integrated PCB, battery/power design, antennas and a measured enclosure layout; its size and runtime are not yet validated.
+All ten items in the latest hardware list are confirmed ordered. The user reports all initial-list items received and soldered as of 1 November 2026. XIAO initial boot/memory checks passed. A separate local VL53L1X diagnostic confirms ID and ranging, but accuracy checks fail and intermittent I2C read errors remain unresolved. Other peripheral tests and main-firmware integration remain pending. Follow the [build tracker](docs/build-tracker.md) for delivery checks, local component tests and integration milestones. The standalone milestone is SOS-button activation followed by caregiver SMS delivery over LTE with watch Wi-Fi disabled. The final wrist device requires an integrated PCB, battery/power design, antennas and a measured enclosure layout; its size and runtime are not yet validated.
 
-Formatted submission PDF: [Download Bindu project submission](output/pdf/Bindu-Project.pdf).
+Submission PDF refreshed with the reviewed status: [Download Bindu project submission](output/pdf/Bindu-Project.pdf).
 
 Submission fields ready to copy: [Bindu project submission](docs/project-submission.html). Open in a browser; use its print button to save a PDF if required.
 
@@ -43,9 +45,9 @@ Notify the caregiver when the watch is removed, after a short confirmation delay
 
 ## Firmware quick start
 
-Selected application architecture: wearable → authenticated Express HTTPS API → PostgreSQL → React caregiver dashboard (live SSE updates). Run containerised frontend, API and SMS worker on the existing Kubernetes VM, with persistent database storage. SMS route: backend → httpSMS API → dedicated Android gateway phone → caregiver SMS. The wearer does not need a nearby phone, but delivery requires internet, a reachable backend and an operational gateway phone. Use open-source application software and httpSMS's free tier (currently up to 200 sent/received SMS per month); existing infrastructure and SIM/data/SMS charges remain separate. Gateway credentials stay server-side. Frontend/backend implementation is pending.
+Selected application architecture: wearable → authenticated Express HTTPS API → PostgreSQL → React caregiver dashboard (live SSE updates). Run containerised frontend, API and SMS worker on the existing Kubernetes VM, with persistent database storage. SMS route: backend → httpSMS API → dedicated Android gateway phone → caregiver SMS. The wearer does not need a nearby phone, but delivery requires internet, a reachable backend and an operational gateway phone. Use open-source application software and httpSMS's available free allowance (recheck its current terms during setup); existing infrastructure and SIM/data/SMS charges remain separate. Gateway credentials stay server-side. Frontend/backend implementation is pending.
 
-Requirements: ESP-IDF v5.x installed. The selected controller is the XIAO ESP32-S3 Plus. The existing firmware configuration originated with an ESP32-S3 N16R8 board; verify the exact XIAO's flash/PSRAM settings and allocate its GPIOs before connecting hardware or flashing.
+Requirements: ESP-IDF v5.x installed. The selected controller is the XIAO ESP32-S3 Plus. The existing 16 MB flash / 8 MB octal PSRAM settings passed the user-provided XIAO boot test. The separate distance diagnostic uses D4/GPIO5 and D5/GPIO6; allocate remaining GPIOs before integrating other peripherals.
 
 ```bash
 cd firmware
@@ -63,7 +65,7 @@ Replace `COM5` with your board's port. On boot the serial log should end with `B
 - Never commit API keys. Store future backend secrets in a local `backend/.env`; `backend/.env.example` records the planned configuration fields.
 - Credit any open-source library you use in this README under **Credits**.
 
-## Key dates (IST)
+## Previously recorded event dates (IST; verify with organiser)
 
 - 25 Nov, 11:59 PM — Level 1 prototype submission
 - 17 Dec — baseline freeze
