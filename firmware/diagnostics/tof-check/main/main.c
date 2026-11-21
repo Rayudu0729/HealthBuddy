@@ -89,7 +89,7 @@ void app_main(void) {
     }
     if (!booted) { ESP_LOGE("TOF_RANGE", "Boot timeout; stopping"); return; }
     STEP(VL53L1X_SensorInit(ST_DEVICE));
-    STEP(VL53L1X_SetDistanceMode(ST_DEVICE, 1));
+    STEP(VL53L1X_SetDistanceMode(ST_DEVICE, 2));
     STEP(VL53L1X_SetTimingBudgetInMs(ST_DEVICE, 50));
     STEP(VL53L1X_SetInterMeasurementInMs(ST_DEVICE, 100));
     int16_t offset = 0; uint16_t xtalk = 0;
@@ -97,7 +97,7 @@ void app_main(void) {
     STEP(VL53L1X_GetXtalk(ST_DEVICE, &xtalk));
     ESP_LOGI("TOF_RANGE", "Settings after init: offset=%d mm, xtalk=%u; no added correction", offset, xtalk);
     STEP(VL53L1X_StartRanging(ST_DEVICE));
-    ESP_LOGI("TOF_RANGE", "Ranging started: short mode, 50 ms budget, 100 ms period");
+    ESP_LOGI("TOF_RANGE", "Ranging started: long mode, 50 ms budget, 100 ms period");
     unsigned valid = 0, invalid = 0;
     while (1) {
         uint8_t ready = 0;
