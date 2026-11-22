@@ -52,7 +52,7 @@ Next: photo check of the wiring before USB power, then a serial capture of SOS, 
 [Complete bench wiring SVG](../../docs/bench-wiring.svg). The user reported the DRV2605L signals, power and coin motor connected after installing the SOS and CANCEL buttons and wiring the buzzer. Runtime verification is pending.
 
 - The DRV header starts at E0. With INT at that end, E1 is SDA, E2 SCL, E3 GND and E4 VIN. Leave INT open. Verify hole positions against the labels on the breakout.
-- Both XIAO I²C strips were full. The user confirmed adding the DRV to the red VL53L1X SDA and SCL strips, keeping the sensors connected. B42 to C1 and B41 to C2 were the suggested jumpers, subject to physical alignment.
+- Both XIAO I²C strips were full. The user confirmed adding the DRV to the red VL53L1X SDA and SCL strips, keeping the sensors connected. B42 to C1 and B41 to C2 are in place; the user confirmed the strip alignment on 23 November 2026.
 - DRV VIN shares XIAO 3V3 and DRV GND shares XIAO GND. The motor leads go to the dedicated OUT+ and OUT− pads.
 - Buzzer orange S goes to XIAO D0 and green − goes to GND. Leave the yellow middle lead open until its function is identified. SOS connects D1 to GND on press, and CANCEL connects D2 to GND on press.
 
