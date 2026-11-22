@@ -271,3 +271,5 @@ Capture ran on the personal PC (`D:\Bindu\tof-flash`, COM17) because RDP COM red
 Long-mode medians from 305 samples each: confirmed 10 cm target 67 mm raw, confirmed 30 cm target 204 mm raw. The error grows with distance (about 32 % short), so it is a scale error, not a constant offset. A two-point fit (gain 1.460, +2 mm) was flashed; a 20 cm check read 146 mm raw, 21.5 cm corrected (+1.5 cm). Readings drifted about 2 cm between sessions.
 
 The checked-in `main.c` now holds a three-point least-squares fit (gain 1.449, −1 mm) from these three medians. It builds but has not been flashed or tested; the board still runs the two-point build. The correction is fitted only between 10 and 30 cm and is not valid for the 1.5 m obstacle range. Work is on hold to meet the 25 November deadline. Before relying on obstacle alerts, compare a second VL53L1X module and check 50, 100 and 150 cm targets.
+
+Raw logs: `data/samples/vl53l1x-2026-11-22-{capture,cal-10cm,cal-30cm,verify-20cm}.txt`. Bench flash/capture scripts: `firmware/tools/bench/`.

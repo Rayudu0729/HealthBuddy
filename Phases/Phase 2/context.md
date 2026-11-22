@@ -32,6 +32,21 @@ Behaviour: SOS held 1.5 s → confirm pattern, alert sent. Impact > 2.5 g then 2
 
 First flash on the personal PC (`D:\Bindu\fallsos-flash`) produced a 24-byte capture with only a bootloader fragment, so no runtime evidence yet. Re-capture with button and fall tests is next.
 
+### 22 November 2026 bench wiring progress
+
+The DRV2605L header is soldered and the board is in the breadboard at the end away from the XIAO, with pins in row E (INT, SDA, SCL, GND, VIN). It is not wired yet. The vibration motor, buzzer and buttons are not connected yet. The MPU-6050 and VL53L1X keep their existing wiring.
+
+Breadboard notes: the two halves are numbered in opposite directions and the power rails break in the middle, so use pin names rather than hole numbers. With USB-C pointing right, the XIAO pins on the purple/blue-wire side are D0–D6 starting from the USB end; the other side is 5V, GND, 3V3 starting from the USB end. The XIAO GND, 3V3, D4 and D5 strips have no free holes.
+
+Agreed wiring plan:
+
+1. Move the VL53L1X GND (orange) and 3V3 (yellow) jumpers to the − and + rails, and wire the freed XIAO holes to the same rails. Bridge both rails across the middle break.
+2. Move the VL53L1X SDA (dark blue) and SCL (green) jumpers to the DRV SDA/SCL strips, and wire the freed XIAO holes to the same strips (daisy chain). Wire DRV GND to −, VIN to +; leave INT open. Attach the motor to the +/− pads.
+3. Buzzer: − to −, middle to +, S to D0.
+4. SOS and CANCEL buttons across the centre gap: one leg to −, the diagonally opposite leg to D1 (SOS) or D2 (CANCEL).
+
+Next: photo check of the wiring before USB power, then a serial capture of SOS, fall and cancel tests.
+
 ## Completion evidence
 
 Record real sensor/button/motor operation, alert response times, false activations and missed obstacles. Test ordinary wrist movement, different target surfaces/lighting, sensor disconnection and operation without internet. Use supervised obstacle trials and controlled fall simulations.

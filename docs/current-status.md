@@ -9,7 +9,9 @@ Level 1 prototype deadline: 25 November 2026, 11:59 PM IST.
 - **VL53L1X (Phase 1):** about 32 % short (scale error). Two-point correction flashed (20 cm check read 21.5 cm); three-point fit committed but not flashed. On hold.
 - **Bench access:** board on the personal PC as COM17; flash and capture there (`D:\Bindu\fallsos-flash`, `D:\Bindu\tof-flash`) and redirect the port over RDP.
 
-Next: re-capture the Fall + SOS demo log, then connect firmware to the backend over Wi-Fi, then Phase 4 deployment and httpSMS.
+- **Bench wiring:** DRV2605L soldered and placed; it, the motor, buzzer and buttons are not wired yet. The plan is in Phase 2 (rails, daisy-chained I²C, D0/D1/D2).
+
+Next: finish the wiring and check it from a photo, then re-capture the Fall + SOS demo log, then connect firmware to the backend over Wi-Fi, then Phase 4 deployment and httpSMS.
 
 ## Earlier update — 14 November 2026
 

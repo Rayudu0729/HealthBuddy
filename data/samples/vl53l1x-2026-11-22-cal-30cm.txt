@@ -1,0 +1,617 @@
+﻿I (409461) TOF_QUALITY: status=0, raw_mm=66, ambient=8, signal_pI (498101) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20072, spads=33 (ULD result fields)
+I (498101) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (498201) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20336, spads=33 (ULD result fields)
+I (498201) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (498301) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20088, spads=33 (ULD result fields)
+I (498301) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (498401) TOF_QUALITY: status=0, raw_mm=209, ambient=32, signal_per_spad=20520, spads=33 (ULD result fields)
+I (498401) TOF_RANGE: Distance: 20.9 cm (raw: 209 mm), status=0
+I (498501) TOF_QUALITY: status=0, raw_mm=202, ambient=32, signal_per_spad=20224, spads=33 (ULD result fields)
+I (498501) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (498601) TOF_QUALITY: status=0, raw_mm=207, ambient=40, signal_per_spad=20256, spads=33 (ULD result fields)
+I (498601) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (498691) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20288, spads=33 (ULD result fields)
+I (498691) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (498791) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20184, spads=33 (ULD result fields)
+I (498791) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (498891) TOF_QUALITY: status=0, raw_mm=201, ambient=48, signal_per_spad=20112, spads=33 (ULD result fields)
+I (498891) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (498991) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20104, spads=33 (ULD result fields)
+I (498991) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (499091) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20184, spads=33 (ULD result fields)
+I (499091) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (499191) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20280, spads=33 (ULD result fields)
+I (499191) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (499281) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=19968, spads=33 (ULD result fields)
+I (499281) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (499381) TOF_QUALITY: status=0, raw_mm=199, ambient=40, signal_per_spad=20304, spads=33 (ULD result fields)
+I (499381) TOF_RANGE: Distance: 19.9 cm (raw: 199 mm), status=0
+I (499481) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20184, spads=33 (ULD result fields)
+I (499481) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (499581) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20216, spads=33 (ULD result fields)
+I (499581) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (499681) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20184, spads=33 (ULD result fields)
+I (499681) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (499781) TOF_QUALITY: status=0, raw_mm=201, ambient=32, signal_per_spad=20296, spads=33 (ULD result fields)
+I (499781) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (499871) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20152, spads=33 (ULD result fields)
+I (499871) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (499971) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=19960, spads=33 (ULD result fields)
+I (499971) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (500071) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=19952, spads=33 (ULD result fields)
+I (500071) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (500171) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20072, spads=33 (ULD result fields)
+I (500171) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (500271) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20216, spads=33 (ULD result fields)
+I (500271) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (500371) TOF_QUALITY: status=0, raw_mm=208, ambient=40, signal_per_spad=20096, spads=33 (ULD result fields)
+I (500371) TOF_RANGE: Distance: 20.8 cm (raw: 208 mm), status=0
+I (500461) TOF_QUALITY: status=0, raw_mm=200, ambient=32, signal_per_spad=20208, spads=33 (ULD result fields)
+I (500461) TOF_RANGE: Distance: 20.0 cm (raw: 200 mm), status=0
+I (500561) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20128, spads=33 (ULD result fields)
+I (500561) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (500661) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20336, spads=33 (ULD result fields)
+I (500661) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (500761) TOF_QUALITY: status=0, raw_mm=205, ambient=48, signal_per_spad=20144, spads=33 (ULD result fields)
+I (500761) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (500861) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20400, spads=33 (ULD result fields)
+I (500861) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (500951) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20232, spads=33 (ULD result fields)
+I (500951) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (501051) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=19848, spads=33 (ULD result fields)
+I (501051) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (501151) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20112, spads=33 (ULD result fields)
+I (501151) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (501251) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20560, spads=33 (ULD result fields)
+I (501251) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (501351) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20088, spads=33 (ULD result fields)
+I (501351) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (501451) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20216, spads=33 (ULD result fields)
+I (501451) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (501451) TOF_RANGE: Counts: valid=5100, invalid=0
+I (501541) TOF_QUALITY: status=0, raw_mm=207, ambient=40, signal_per_spad=20184, spads=33 (ULD result fields)
+I (501541) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (501641) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20056, spads=33 (ULD result fields)
+I (501641) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (501741) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20176, spads=33 (ULD result fields)
+I (501741) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (501841) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20088, spads=33 (ULD result fields)
+I (501841) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (501941) TOF_QUALITY: status=0, raw_mm=204, ambient=24, signal_per_spad=20376, spads=33 (ULD result fields)
+I (501941) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (502041) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20232, spads=33 (ULD result fields)
+I (502041) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (502131) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=19088, spads=32 (ULD result fields)
+I (502131) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (502231) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=20312, spads=33 (ULD result fields)
+I (502231) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (502331) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20224, spads=33 (ULD result fields)
+I (502331) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (502431) TOF_QUALITY: status=0, raw_mm=203, ambient=24, signal_per_spad=19336, spads=32 (ULD result fields)
+I (502431) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (502531) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20144, spads=33 (ULD result fields)
+I (502531) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (502631) TOF_QUALITY: status=0, raw_mm=200, ambient=40, signal_per_spad=20368, spads=33 (ULD result fields)
+I (502631) TOF_RANGE: Distance: 20.0 cm (raw: 200 mm), status=0
+I (502721) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20360, spads=33 (ULD result fields)
+I (502721) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (502821) TOF_QUALITY: status=0, raw_mm=199, ambient=40, signal_per_spad=20080, spads=33 (ULD result fields)
+I (502821) TOF_RANGE: Distance: 19.9 cm (raw: 199 mm), status=0
+I (502921) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=19968, spads=33 (ULD result fields)
+I (502921) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (503021) TOF_QUALITY: status=0, raw_mm=200, ambient=32, signal_per_spad=20040, spads=33 (ULD result fields)
+I (503021) TOF_RANGE: Distance: 20.0 cm (raw: 200 mm), status=0
+I (503121) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20024, spads=33 (ULD result fields)
+I (503121) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (503221) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=19096, spads=32 (ULD result fields)
+I (503221) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (503311) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20280, spads=33 (ULD result fields)
+I (503311) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (503411) TOF_QUALITY: status=0, raw_mm=206, ambient=48, signal_per_spad=20112, spads=33 (ULD result fields)
+I (503411) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (503511) TOF_QUALITY: status=0, raw_mm=200, ambient=32, signal_per_spad=20352, spads=33 (ULD result fields)
+I (503511) TOF_RANGE: Distance: 20.0 cm (raw: 200 mm), status=0
+I (503611) TOF_QUALITY: status=0, raw_mm=203, ambient=48, signal_per_spad=20048, spads=33 (ULD result fields)
+I (503611) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (503711) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20272, spads=33 (ULD result fields)
+I (503711) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (503801) TOF_QUALITY: status=0, raw_mm=207, ambient=32, signal_per_spad=20320, spads=33 (ULD result fields)
+I (503801) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (503901) TOF_QUALITY: status=0, raw_mm=200, ambient=40, signal_per_spad=20136, spads=33 (ULD result fields)
+I (503901) TOF_RANGE: Distance: 20.0 cm (raw: 200 mm), status=0
+I (504001) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20080, spads=33 (ULD result fields)
+I (504001) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (504101) TOF_QUALITY: status=0, raw_mm=202, ambient=32, signal_per_spad=20232, spads=33 (ULD result fields)
+I (504101) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (504201) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=20144, spads=33 (ULD result fields)
+I (504201) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (504301) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=19992, spads=33 (ULD result fields)
+I (504301) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (504391) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20352, spads=33 (ULD result fields)
+I (504391) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (504491) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20064, spads=33 (ULD result fields)
+I (504491) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (504591) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20216, spads=33 (ULD result fields)
+I (504591) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (504691) TOF_QUALITY: status=0, raw_mm=203, ambient=24, signal_per_spad=20496, spads=33 (ULD result fields)
+I (504691) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (504791) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=19776, spads=33 (ULD result fields)
+I (504791) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (504891) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20048, spads=33 (ULD result fields)
+I (504891) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (504981) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20056, spads=33 (ULD result fields)
+I (504981) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (505081) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20288, spads=33 (ULD result fields)
+I (505081) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (505181) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20000, spads=33 (ULD result fields)
+I (505181) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (505281) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20232, spads=33 (ULD result fields)
+I (505281) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (505381) TOF_QUALITY: status=0, raw_mm=207, ambient=32, signal_per_spad=20224, spads=33 (ULD result fields)
+I (505381) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (505481) TOF_QUALITY: status=0, raw_mm=207, ambient=48, signal_per_spad=19984, spads=33 (ULD result fields)
+I (505481) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (505571) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20088, spads=33 (ULD result fields)
+I (505571) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (505671) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20112, spads=33 (ULD result fields)
+I (505671) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (505771) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20016, spads=33 (ULD result fields)
+I (505771) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (505871) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=19976, spads=33 (ULD result fields)
+I (505871) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (505971) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=19960, spads=33 (ULD result fields)
+I (505971) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (506071) TOF_QUALITY: status=0, raw_mm=203, ambient=48, signal_per_spad=20400, spads=33 (ULD result fields)
+I (506071) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (506161) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20120, spads=33 (ULD result fields)
+I (506161) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (506261) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20152, spads=33 (ULD result fields)
+I (506261) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (506361) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20048, spads=33 (ULD result fields)
+I (506361) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (506361) TOF_RANGE: Counts: valid=5150, invalid=0
+I (506461) TOF_QUALITY: status=0, raw_mm=207, ambient=40, signal_per_spad=20360, spads=33 (ULD result fields)
+I (506461) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (506561) TOF_QUALITY: status=0, raw_mm=201, ambient=48, signal_per_spad=20256, spads=33 (ULD result fields)
+I (506561) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (506651) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20056, spads=33 (ULD result fields)
+I (506651) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (506751) TOF_QUALITY: status=0, raw_mm=203, ambient=48, signal_per_spad=20144, spads=33 (ULD result fields)
+I (506751) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (506851) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20232, spads=33 (ULD result fields)
+I (506851) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (506951) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20248, spads=33 (ULD result fields)
+I (506951) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (507051) TOF_QUALITY: status=0, raw_mm=205, ambient=48, signal_per_spad=20008, spads=33 (ULD result fields)
+I (507051) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (507151) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20304, spads=33 (ULD result fields)
+I (507151) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (507241) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=19984, spads=33 (ULD result fields)
+I (507241) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (507341) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20184, spads=33 (ULD result fields)
+I (507341) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (507441) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20320, spads=33 (ULD result fields)
+I (507441) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (507541) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20440, spads=33 (ULD result fields)
+I (507541) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (507641) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20232, spads=33 (ULD result fields)
+I (507641) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (507741) TOF_QUALITY: status=0, raw_mm=201, ambient=32, signal_per_spad=20272, spads=33 (ULD result fields)
+I (507741) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (507831) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20080, spads=33 (ULD result fields)
+I (507831) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (507931) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20312, spads=33 (ULD result fields)
+I (507931) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (508031) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20272, spads=33 (ULD result fields)
+I (508031) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (508131) TOF_QUALITY: status=0, raw_mm=201, ambient=48, signal_per_spad=20112, spads=33 (ULD result fields)
+I (508131) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (508231) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=19128, spads=32 (ULD result fields)
+I (508231) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (508331) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20080, spads=33 (ULD result fields)
+I (508331) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (508421) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20104, spads=33 (ULD result fields)
+I (508421) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (508521) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20360, spads=33 (ULD result fields)
+I (508521) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (508621) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20280, spads=33 (ULD result fields)
+I (508621) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (508721) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20152, spads=33 (ULD result fields)
+I (508721) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (508821) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20000, spads=33 (ULD result fields)
+I (508821) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (508921) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20312, spads=33 (ULD result fields)
+I (508921) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (509011) TOF_QUALITY: status=0, raw_mm=203, ambient=48, signal_per_spad=20088, spads=33 (ULD result fields)
+I (509011) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (509111) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20056, spads=33 (ULD result fields)
+I (509111) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (509211) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20104, spads=33 (ULD result fields)
+I (509211) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (509311) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20224, spads=33 (ULD result fields)
+I (509311) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (509411) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20160, spads=33 (ULD result fields)
+I (509411) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (509501) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=19984, spads=33 (ULD result fields)
+I (509501) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (509601) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20072, spads=33 (ULD result fields)
+I (509601) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (509701) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20024, spads=33 (ULD result fields)
+I (509701) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (509801) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20112, spads=33 (ULD result fields)
+I (509801) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (509901) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20296, spads=33 (ULD result fields)
+I (509901) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (510001) TOF_QUALITY: status=0, raw_mm=207, ambient=48, signal_per_spad=20040, spads=33 (ULD result fields)
+I (510001) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (510091) TOF_QUALITY: status=0, raw_mm=202, ambient=32, signal_per_spad=20320, spads=33 (ULD result fields)
+I (510091) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (510191) TOF_QUALITY: status=0, raw_mm=202, ambient=48, signal_per_spad=19816, spads=33 (ULD result fields)
+I (510191) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (510291) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20296, spads=33 (ULD result fields)
+I (510291) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (510391) TOF_QUALITY: status=0, raw_mm=206, ambient=48, signal_per_spad=20112, spads=33 (ULD result fields)
+I (510391) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (510491) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20112, spads=33 (ULD result fields)
+I (510491) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (510591) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20136, spads=33 (ULD result fields)
+I (510591) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (510681) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20088, spads=33 (ULD result fields)
+I (510681) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (510781) TOF_QUALITY: status=0, raw_mm=202, ambient=32, signal_per_spad=20368, spads=33 (ULD result fields)
+I (510781) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (510881) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20104, spads=33 (ULD result fields)
+I (510881) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (510981) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20440, spads=33 (ULD result fields)
+I (510981) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (511081) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20192, spads=33 (ULD result fields)
+I (511081) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (511181) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20416, spads=33 (ULD result fields)
+I (511181) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (511271) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20144, spads=33 (ULD result fields)
+I (511271) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (511271) TOF_RANGE: Counts: valid=5200, invalid=0
+I (511371) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20416, spads=33 (ULD result fields)
+I (511371) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (511471) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20456, spads=33 (ULD result fields)
+I (511471) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (511571) TOF_QUALITY: status=0, raw_mm=202, ambient=48, signal_per_spad=20088, spads=33 (ULD result fields)
+I (511571) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (511671) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20400, spads=33 (ULD result fields)
+I (511671) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (511771) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20288, spads=33 (ULD result fields)
+I (511771) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (511861) TOF_QUALITY: status=0, raw_mm=207, ambient=32, signal_per_spad=20272, spads=33 (ULD result fields)
+I (511861) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (511961) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20448, spads=33 (ULD result fields)
+I (511961) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (512061) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20296, spads=33 (ULD result fields)
+I (512061) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (512161) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=20256, spads=33 (ULD result fields)
+I (512161) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (512261) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20160, spads=33 (ULD result fields)
+I (512261) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (512351) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20240, spads=33 (ULD result fields)
+I (512351) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (512451) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20304, spads=33 (ULD result fields)
+I (512451) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (512551) TOF_QUALITY: status=0, raw_mm=202, ambient=32, signal_per_spad=20496, spads=33 (ULD result fields)
+I (512551) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (512651) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20184, spads=33 (ULD result fields)
+I (512651) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (512751) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20384, spads=33 (ULD result fields)
+I (512751) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (512851) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20232, spads=33 (ULD result fields)
+I (512851) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (512941) TOF_QUALITY: status=0, raw_mm=201, ambient=48, signal_per_spad=20176, spads=33 (ULD result fields)
+I (512941) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (513041) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20288, spads=33 (ULD result fields)
+I (513041) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (513141) TOF_QUALITY: status=0, raw_mm=208, ambient=32, signal_per_spad=20424, spads=33 (ULD result fields)
+I (513141) TOF_RANGE: Distance: 20.8 cm (raw: 208 mm), status=0
+I (513241) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=20088, spads=33 (ULD result fields)
+I (513241) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (513341) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20392, spads=33 (ULD result fields)
+I (513341) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (513441) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20072, spads=33 (ULD result fields)
+I (513441) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (513531) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20264, spads=33 (ULD result fields)
+I (513531) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (513631) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20248, spads=33 (ULD result fields)
+I (513631) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (513731) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20208, spads=33 (ULD result fields)
+I (513731) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (513831) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20512, spads=33 (ULD result fields)
+I (513831) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (513931) TOF_QUALITY: status=0, raw_mm=207, ambient=32, signal_per_spad=20224, spads=33 (ULD result fields)
+I (513931) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (514031) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20144, spads=33 (ULD result fields)
+I (514031) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (514121) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20240, spads=33 (ULD result fields)
+I (514121) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (514221) TOF_QUALITY: status=0, raw_mm=205, ambient=48, signal_per_spad=20312, spads=33 (ULD result fields)
+I (514221) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (514321) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20136, spads=33 (ULD result fields)
+I (514321) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (514421) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20128, spads=33 (ULD result fields)
+I (514421) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (514521) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20104, spads=33 (ULD result fields)
+I (514521) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (514621) TOF_QUALITY: status=0, raw_mm=208, ambient=40, signal_per_spad=20192, spads=33 (ULD result fields)
+I (514621) TOF_RANGE: Distance: 20.8 cm (raw: 208 mm), status=0
+I (514711) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20168, spads=33 (ULD result fields)
+I (514711) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (514811) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20328, spads=33 (ULD result fields)
+I (514811) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (514911) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20144, spads=33 (ULD result fields)
+I (514911) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (515011) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20128, spads=33 (ULD result fields)
+I (515011) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (515111) TOF_QUALITY: status=0, raw_mm=203, ambient=56, signal_per_spad=20176, spads=33 (ULD result fields)
+I (515111) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (515201) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20136, spads=33 (ULD result fields)
+I (515201) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (515301) TOF_QUALITY: status=0, raw_mm=206, ambient=48, signal_per_spad=20112, spads=33 (ULD result fields)
+I (515301) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (515401) TOF_QUALITY: status=0, raw_mm=209, ambient=40, signal_per_spad=20440, spads=33 (ULD result fields)
+I (515401) TOF_RANGE: Distance: 20.9 cm (raw: 209 mm), status=0
+I (515501) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20152, spads=33 (ULD result fields)
+I (515501) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (515601) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20304, spads=33 (ULD result fields)
+I (515601) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (515701) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20248, spads=33 (ULD result fields)
+I (515701) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (515791) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20120, spads=33 (ULD result fields)
+I (515791) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (515891) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20176, spads=33 (ULD result fields)
+I (515891) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (515991) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20080, spads=33 (ULD result fields)
+I (515991) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (516091) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=20392, spads=33 (ULD result fields)
+I (516091) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (516191) TOF_QUALITY: status=0, raw_mm=207, ambient=40, signal_per_spad=20232, spads=33 (ULD result fields)
+I (516191) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (516191) TOF_RANGE: Counts: valid=5250, invalid=0
+I (516291) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20224, spads=33 (ULD result fields)
+I (516291) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (516381) TOF_QUALITY: status=0, raw_mm=200, ambient=32, signal_per_spad=20176, spads=33 (ULD result fields)
+I (516381) TOF_RANGE: Distance: 20.0 cm (raw: 200 mm), status=0
+I (516481) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20152, spads=33 (ULD result fields)
+I (516481) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (516581) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20248, spads=33 (ULD result fields)
+I (516581) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (516681) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20088, spads=33 (ULD result fields)
+I (516681) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (516781) TOF_QUALITY: status=0, raw_mm=202, ambient=32, signal_per_spad=20192, spads=33 (ULD result fields)
+I (516781) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (516881) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20112, spads=33 (ULD result fields)
+I (516881) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (516971) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20256, spads=33 (ULD result fields)
+I (516971) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (517071) TOF_QUALITY: status=0, raw_mm=207, ambient=40, signal_per_spad=20224, spads=33 (ULD result fields)
+I (517071) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (517171) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20416, spads=33 (ULD result fields)
+I (517171) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (517271) TOF_QUALITY: status=0, raw_mm=207, ambient=32, signal_per_spad=20056, spads=33 (ULD result fields)
+I (517271) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (517371) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20312, spads=33 (ULD result fields)
+I (517371) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (517461) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20344, spads=33 (ULD result fields)
+I (517461) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (517561) TOF_QUALITY: status=0, raw_mm=207, ambient=40, signal_per_spad=20328, spads=33 (ULD result fields)
+I (517561) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (517661) TOF_QUALITY: status=0, raw_mm=203, ambient=48, signal_per_spad=19920, spads=33 (ULD result fields)
+I (517661) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (517761) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20416, spads=33 (ULD result fields)
+I (517761) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (517861) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20320, spads=33 (ULD result fields)
+I (517861) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (517961) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20256, spads=33 (ULD result fields)
+I (517961) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (518051) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20120, spads=33 (ULD result fields)
+I (518051) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (518151) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20280, spads=33 (ULD result fields)
+I (518151) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (518251) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20152, spads=33 (ULD result fields)
+I (518251) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (518351) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=19120, spads=32 (ULD result fields)
+I (518351) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (518451) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20368, spads=33 (ULD result fields)
+I (518451) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (518551) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20448, spads=33 (ULD result fields)
+I (518551) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (518641) TOF_QUALITY: status=0, raw_mm=206, ambient=48, signal_per_spad=20208, spads=33 (ULD result fields)
+I (518641) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (518741) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20208, spads=33 (ULD result fields)
+I (518741) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (518841) TOF_QUALITY: status=0, raw_mm=203, ambient=48, signal_per_spad=20256, spads=33 (ULD result fields)
+I (518841) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (518941) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20280, spads=33 (ULD result fields)
+I (518941) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (519041) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=19336, spads=32 (ULD result fields)
+I (519041) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (519141) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20232, spads=33 (ULD result fields)
+I (519141) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (519231) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20272, spads=33 (ULD result fields)
+I (519231) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (519331) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20240, spads=33 (ULD result fields)
+I (519331) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (519431) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20304, spads=33 (ULD result fields)
+I (519431) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (519531) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20288, spads=33 (ULD result fields)
+I (519531) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (519631) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20360, spads=33 (ULD result fields)
+I (519631) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (519731) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20312, spads=33 (ULD result fields)
+I (519731) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (519821) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20192, spads=33 (ULD result fields)
+I (519821) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (519921) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20248, spads=33 (ULD result fields)
+I (519921) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (520021) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20120, spads=33 (ULD result fields)
+I (520021) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (520121) TOF_QUALITY: status=0, raw_mm=202, ambient=32, signal_per_spad=20264, spads=33 (ULD result fields)
+I (520121) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (520221) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20184, spads=33 (ULD result fields)
+I (520221) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (520311) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20112, spads=33 (ULD result fields)
+I (520311) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (520411) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20232, spads=33 (ULD result fields)
+I (520411) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (520511) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20408, spads=33 (ULD result fields)
+I (520511) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (520611) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20320, spads=33 (ULD result fields)
+I (520611) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (520711) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20432, spads=33 (ULD result fields)
+I (520711) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (520811) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20344, spads=33 (ULD result fields)
+I (520811) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (520901) TOF_QUALITY: status=0, raw_mm=206, ambient=48, signal_per_spad=20256, spads=33 (ULD result fields)
+I (520901) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (521001) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20240, spads=33 (ULD result fields)
+I (521001) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (521101) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20408, spads=33 (ULD result fields)
+I (521101) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (521101) TOF_RANGE: Counts: valid=5300, invalid=0
+I (521201) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20464, spads=33 (ULD result fields)
+I (521201) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (521301) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20192, spads=33 (ULD result fields)
+I (521301) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (521401) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20072, spads=33 (ULD result fields)
+I (521401) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (521491) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=20424, spads=33 (ULD result fields)
+I (521491) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (521591) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=20280, spads=33 (ULD result fields)
+I (521591) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (521691) TOF_QUALITY: status=0, raw_mm=208, ambient=32, signal_per_spad=20056, spads=33 (ULD result fields)
+I (521691) TOF_RANGE: Distance: 20.8 cm (raw: 208 mm), status=0
+I (521791) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20568, spads=33 (ULD result fields)
+I (521791) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (521891) TOF_QUALITY: status=0, raw_mm=202, ambient=48, signal_per_spad=20136, spads=33 (ULD result fields)
+I (521891) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (521991) TOF_QUALITY: status=0, raw_mm=206, ambient=48, signal_per_spad=20072, spads=33 (ULD result fields)
+I (521991) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (522081) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20192, spads=33 (ULD result fields)
+I (522081) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (522181) TOF_QUALITY: status=0, raw_mm=205, ambient=24, signal_per_spad=19440, spads=32 (ULD result fields)
+I (522181) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (522281) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20272, spads=33 (ULD result fields)
+I (522281) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (522381) TOF_QUALITY: status=0, raw_mm=203, ambient=48, signal_per_spad=20104, spads=33 (ULD result fields)
+I (522381) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (522481) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20264, spads=33 (ULD result fields)
+I (522481) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (522571) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20480, spads=33 (ULD result fields)
+I (522571) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (522671) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20000, spads=33 (ULD result fields)
+I (522671) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (522771) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20208, spads=33 (ULD result fields)
+I (522771) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (522871) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20352, spads=33 (ULD result fields)
+I (522871) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (522971) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20288, spads=33 (ULD result fields)
+I (522971) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (523071) TOF_QUALITY: status=0, raw_mm=206, ambient=48, signal_per_spad=20200, spads=33 (ULD result fields)
+I (523071) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (523161) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20488, spads=33 (ULD result fields)
+I (523161) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (523261) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20272, spads=33 (ULD result fields)
+I (523261) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (523361) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20104, spads=33 (ULD result fields)
+I (523361) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (523461) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20288, spads=33 (ULD result fields)
+I (523461) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (523561) TOF_QUALITY: status=0, raw_mm=203, ambient=40, signal_per_spad=20368, spads=33 (ULD result fields)
+I (523561) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (523661) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20192, spads=33 (ULD result fields)
+I (523661) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (523751) TOF_QUALITY: status=0, raw_mm=200, ambient=40, signal_per_spad=20200, spads=33 (ULD result fields)
+I (523751) TOF_RANGE: Distance: 20.0 cm (raw: 200 mm), status=0
+I (523851) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20536, spads=33 (ULD result fields)
+I (523851) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (523951) TOF_QUALITY: status=0, raw_mm=202, ambient=56, signal_per_spad=20064, spads=33 (ULD result fields)
+I (523951) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (524051) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20408, spads=33 (ULD result fields)
+I (524051) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (524151) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20040, spads=33 (ULD result fields)
+I (524151) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (524251) TOF_QUALITY: status=0, raw_mm=202, ambient=32, signal_per_spad=19992, spads=33 (ULD result fields)
+I (524251) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (524341) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20240, spads=33 (ULD result fields)
+I (524341) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (524441) TOF_QUALITY: status=0, raw_mm=206, ambient=40, signal_per_spad=20152, spads=33 (ULD result fields)
+I (524441) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (524541) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20384, spads=33 (ULD result fields)
+I (524541) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (524641) TOF_QUALITY: status=0, raw_mm=207, ambient=40, signal_per_spad=20200, spads=33 (ULD result fields)
+I (524641) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (524741) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20232, spads=33 (ULD result fields)
+I (524741) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (524831) TOF_QUALITY: status=0, raw_mm=207, ambient=40, signal_per_spad=20192, spads=33 (ULD result fields)
+I (524831) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (524931) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20056, spads=33 (ULD result fields)
+I (524931) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (525031) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20192, spads=33 (ULD result fields)
+I (525031) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (525131) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20376, spads=33 (ULD result fields)
+I (525131) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (525231) TOF_QUALITY: status=0, raw_mm=201, ambient=32, signal_per_spad=20096, spads=33 (ULD result fields)
+I (525231) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (525331) TOF_QUALITY: status=0, raw_mm=206, ambient=48, signal_per_spad=20016, spads=33 (ULD result fields)
+I (525331) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (525421) TOF_QUALITY: status=0, raw_mm=207, ambient=40, signal_per_spad=20352, spads=33 (ULD result fields)
+I (525421) TOF_RANGE: Distance: 20.7 cm (raw: 207 mm), status=0
+I (525521) TOF_QUALITY: status=0, raw_mm=203, ambient=48, signal_per_spad=20056, spads=33 (ULD result fields)
+I (525521) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (525621) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20280, spads=33 (ULD result fields)
+I (525621) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (525721) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20288, spads=33 (ULD result fields)
+I (525721) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (525821) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20200, spads=33 (ULD result fields)
+I (525821) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (525921) TOF_QUALITY: status=0, raw_mm=205, ambient=32, signal_per_spad=20496, spads=33 (ULD result fields)
+I (525921) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (526011) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=20400, spads=33 (ULD result fields)
+I (526011) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (526011) TOF_RANGE: Counts: valid=5350, invalid=0
+I (526111) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20296, spads=33 (ULD result fields)
+I (526111) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (526211) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20400, spads=33 (ULD result fields)
+I (526211) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (526311) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=20328, spads=33 (ULD result fields)
+I (526311) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (526411) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20464, spads=33 (ULD result fields)
+I (526411) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (526511) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20240, spads=33 (ULD result fields)
+I (526511) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (526601) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20296, spads=33 (ULD result fields)
+I (526601) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (526701) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20320, spads=33 (ULD result fields)
+I (526701) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (526801) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=19440, spads=32 (ULD result fields)
+I (526801) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (526901) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20296, spads=33 (ULD result fields)
+I (526901) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (527001) TOF_QUALITY: status=0, raw_mm=208, ambient=40, signal_per_spad=20344, spads=33 (ULD result fields)
+I (527001) TOF_RANGE: Distance: 20.8 cm (raw: 208 mm), status=0
+I (527101) TOF_QUALITY: status=0, raw_mm=201, ambient=40, signal_per_spad=20232, spads=33 (ULD result fields)
+I (527101) TOF_RANGE: Distance: 20.1 cm (raw: 201 mm), status=0
+I (527191) TOF_QUALITY: status=0, raw_mm=202, ambient=40, signal_per_spad=20088, spads=33 (ULD result fields)
+I (527191) TOF_RANGE: Distance: 20.2 cm (raw: 202 mm), status=0
+I (527291) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20136, spads=33 (ULD result fields)
+I (527291) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (527391) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20120, spads=33 (ULD result fields)
+I (527391) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (527491) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20232, spads=33 (ULD result fields)
+I (527491) TOF_RANGE: Distance: 20.5 cm (raw: 205 mm), status=0
+I (527591) TOF_QUALITY: status=0, raw_mm=204, ambient=40, signal_per_spad=20248, spads=33 (ULD result fields)
+I (527591) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (527681) TOF_QUALITY: status=0, raw_mm=206, ambient=32, signal_per_spad=20192, spads=33 (ULD result fields)
+I (527681) TOF_RANGE: Distance: 20.6 cm (raw: 206 mm), status=0
+I (527781) TOF_QUALITY: status=0, raw_mm=203, ambient=32, signal_per_spad=20408, spads=33 (ULD result fields)
+I (527781) TOF_RANGE: Distance: 20.3 cm (raw: 203 mm), status=0
+I (527881) TOF_QUALITY: status=0, raw_mm=204, ambient=48, signal_per_spad=20080, spads=33 (ULD result fields)
+I (527881) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (527981) TOF_QUALITY: status=0, raw_mm=204, ambient=32, signal_per_spad=20240, spads=33 (ULD result fields)
+I (527981) TOF_RANGE: Distance: 20.4 cm (raw: 204 mm), status=0
+I (528081) TOF_QUALITY: status=0, raw_mm=205, ambient=40, signal_per_spad=20160, spads=33 (ULD result fields)
