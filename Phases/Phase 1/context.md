@@ -263,3 +263,11 @@ The XIAO ESP32-S3 Plus enumerated as COM17 on the Windows test PC. The MPU-6050 
 The VL53L1X returned sensor ID 0xEACC. In short mode, the confirmed 10 cm target gave a 9.4 cm median. The confirmed 30 cm target gave a 24.5 cm median in two runs. In long mode, the median was 24.0 cm across 61 valid readings, assuming the target stayed at 30 cm. The checked-in diagnostic now uses long mode with a 50 ms timing budget and a 100 ms measurement period. The driver source shows that GetResult and GetDistance read the same distance register bytes, and the diagnostic converts millimetres to centimetres by dividing by ten.
 
 After the user cleaned the optical windows, startup failed while reading the sensor ID register (0x010F, ESP_ERR_INVALID_STATE). On the next check the sensor ID read succeeded and all 61 samples were valid, with a 22.5 cm median and a 21.2–23.0 cm range. The target distance for this last capture was not reconfirmed. Intermittent I2C communication and ranging accuracy remain open. Compare a known-good VL53L1X breakout with the same setup and a fixed, measured target before applying calibration or relying on obstacle alerts.
+
+## 22 November 2026 calibration attempt — on hold
+
+Capture ran on the personal PC (`D:\Bindu\tof-flash`, COM17) because RDP COM redirection breaks when the board resets. The diagnostic adds an optional 8×8 ROI setting, an optional offset-calibration step and a linear correction; the ROI change did not remove the error.
+
+Long-mode medians from 305 samples each: confirmed 10 cm target 67 mm raw, confirmed 30 cm target 204 mm raw. The error grows with distance (about 32 % short), so it is a scale error, not a constant offset. A two-point fit (gain 1.460, +2 mm) was flashed; a 20 cm check read 146 mm raw, 21.5 cm corrected (+1.5 cm). Readings drifted about 2 cm between sessions.
+
+The checked-in `main.c` now holds a three-point least-squares fit (gain 1.449, −1 mm) from these three medians. It builds but has not been flashed or tested; the board still runs the two-point build. The correction is fitted only between 10 and 30 cm and is not valid for the 1.5 m obstacle range. Work is on hold to meet the 25 November deadline. Before relying on obstacle alerts, compare a second VL53L1X module and check 50, 100 and 150 cm targets.

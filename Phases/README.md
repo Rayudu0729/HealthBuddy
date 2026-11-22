@@ -1,13 +1,13 @@
 # Bindu phases
 
-Reviewed 13 November 2026. [Current status](../docs/current-status.md) summarises the latest evidence.
+Reviewed 22 November 2026. [Current status](../docs/current-status.md) summarises the latest evidence.
 
 | Phase | Status | Context |
 | --- | --- | --- |
 | Phase 0: tools and board boot | Initial setup/boot passed on 27 October; historical pending-arrival notes are superseded | [context.md](Phase%200/context.md) |
-| Phase 1: sensor bring-up | VL53L1X communication/ranging demonstrated; accuracy and intermittent I2C failures unresolved | [context.md](Phase%201/context.md) |
-| Phase 2: local safety and obstacle assistance | Planned: SOS, buttons, vibration, obstacle scanning and experimental falls | [context.md](Phase%202/context.md) |
-| Phase 3: backend and caregiver dashboard | Planned: authenticated API, storage, live dashboard and acknowledgement | [context.md](Phase%203/context.md) |
+| Phase 1: sensor bring-up | VL53L1X ranging demonstrated; ~32 % scale error, calibration on hold (22 Nov) | [context.md](Phase%201/context.md) |
+| Phase 2: local safety and obstacle assistance | In progress: Fall + SOS firmware builds; hardware run pending; obstacle scanning waits on Phase 1 | [context.md](Phase%202/context.md) |
+| Phase 3: backend and caregiver dashboard | Implemented locally with passing tests; not deployed, no real watch upload | [context.md](Phase%203/context.md) |
 | Phase 4: deployment and caregiver SMS | Planned: Kubernetes deployment and httpSMS gateway delivery | [context.md](Phase%204/context.md) |
 | Phase 5: standalone LTE operation | Planned: caregiver delivery with watch Wi-Fi disabled | [context.md](Phase%205/context.md) |
 | Phase 6: watch-removal detection | Planned: removal/restoration states and notifications | [context.md](Phase%206/context.md) |

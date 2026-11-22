@@ -35,6 +35,7 @@ static const char *const EVENT_NAMES[BINDU_EVT_COUNT] = {
     [BINDU_EVT_SOS_BUTTON]  = "SOS_BUTTON",
     [BINDU_EVT_MISSED_CALL] = "MISSED_CALL",
     [BINDU_EVT_LOW_BATTERY] = "LOW_BATTERY",
+    [BINDU_EVT_CANCEL]      = "CANCEL",
 };
 
 const char *bindu_event_name(bindu_event_id_t id)

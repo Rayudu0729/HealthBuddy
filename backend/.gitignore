@@ -1,0 +1,4 @@
+.env
+.device-token
+node_modules
+dist

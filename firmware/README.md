@@ -23,6 +23,28 @@ idf.py -p COM17 flash monitor
 
 COM17 was the earlier computer's port; COM3 was verified on 13 November; check it after reconnecting. On 13 November the board was directly connected to E:\ClaudeDesktop\HealthBuddy on COM3; recheck the port and environment on the current computer. The tof-check diagnostic uses a factory partition layout; flashing this main firmware replaces it with Bindu's OTA layout. A normal sensor test does not require erase-flash or eFuse changes.
 
+## Fall + SOS demo wiring
+
+| Part | Pin / address | Notes |
+|---|---|---|
+| MPU-6050 | I2C 0x68; VCC 3V3, GND, SDA GPIO5 (D4), SCL GPIO6 (D5) | Accelerometer set to ±8 g, ~44 Hz filter, 100 Hz. Clone WHO_AM_I 0x74 is accepted |
+| DRV2605L | I2C 0x5A, same SDA/SCL | ERM coin motor on OUT+/OUT-; EN pin high. Optional: if missing, buzzer only |
+| Active buzzer | D0 = GPIO1 (+), GND (-) | Active high (`BUZZER_ACTIVE_LEVEL` in `feedback.h`) |
+| SOS button | D1 = GPIO2 to GND | Internal pull-up; hold 1.5 s |
+| CANCEL button | D2 = GPIO3 to GND | Internal pull-up; short press |
+
+I2C runs at 100 kHz with internal pull-ups enabled in addition to the breakout pull-ups.
+
+## How to demo
+
+1. Build and flash: `idf.py -B build-demo build`, then `idf.py -p COMx flash monitor`.
+2. Wait for `Bindu ready` and the boot beep.
+3. **SOS:** hold the SOS button 1.5 s. Expect the SOS_CONFIRMED pattern, then `ALERT SENT (stub): SOS`.
+4. **Fall:** tap or drop the MPU hard (> 2.5 g), then leave it still for 2 s. Log shows `impact x.xx g`, `|a| = ...` each second, then `Fall alert in 10 s - press CANCEL` with a tick each second.
+5. **Cancel:** press CANCEL within 10 s: `Fall alert CANCELLED by user - nothing sent`. Otherwise `ALERT SENT (stub): FALL x.x g`.
+
+Sending is a stub (log line only, no network). A second fall during the countdown is ignored; CANCEL outside a countdown is ignored. SOS during a countdown overrides it.
+
 ## Integration boundaries
 
 - Acquire/validate real sensor data before publishing events. Preserve raw distance, range validity, timestamps and bus faults; invalid/missing data must never imply a clear path.

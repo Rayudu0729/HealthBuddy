@@ -7,8 +7,10 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
+#include "esp_timer.h"
 #include "binduos.h"
 #include "fall_detect.h"
+#include "mpu6050.h"
 
 static const char *TAG = "fall_detect";
 
@@ -16,29 +18,51 @@ static const char *TAG = "fall_detect";
 #define IMPACT_G             2.5f    // TODO tune
 #define STILL_TOLERANCE_G    0.15f   // |a| within 1 g +/- this counts as still
 #define STILL_TIME_MS        2000    // stillness needed after impact
-
-typedef struct { float x, y, z; } accel_t;
-
-// TODO (Member 2): read the MPU6050 over I2C. Returns acceleration in g.
-static accel_t read_accel(void)
-{
-    return (accel_t){ 0.0f, 0.0f, 1.0f };
-}
+#define ERR_LOG_PERIOD_US    5000000 // rate-limit for read-error logs
+#define MAG_LOG_PERIOD_MS    1000    // demo log of |a| while waiting for stillness
 
 static void fall_task(void *arg)
 {
     bool impact_seen = false;
     float impact_g = 0.0f;
     int still_ms = 0;
+    int mag_log_ms = 0;
+    int64_t last_err_log_us = -ERR_LOG_PERIOD_US;
     TickType_t last_wake = xTaskGetTickCount();
 
     for (;;) {
-        accel_t a = read_accel();
-        float mag = sqrtf(a.x * a.x + a.y * a.y + a.z * a.z);
+        float ax, ay, az;
+        esp_err_t err = mpu6050_read_accel_g(&ax, &ay, &az);
+        if (err != ESP_OK) {
+            // No fake data: skip this sample, keep state, log at most every 5 s.
+            int64_t now = esp_timer_get_time();
+            if (now - last_err_log_us >= ERR_LOG_PERIOD_US) {
+                ESP_LOGE(TAG, "accel read failed: %s (sample skipped)", esp_err_to_name(err));
+                last_err_log_us = now;
+            }
+            vTaskDelay(pdMS_TO_TICKS(SAMPLE_PERIOD_MS));
+            last_wake = xTaskGetTickCount();
+            continue;
+        }
+        float mag = sqrtf(ax * ax + ay * ay + az * az);
+
+        if (impact_seen) {
+            mag_log_ms += SAMPLE_PERIOD_MS;
+            if (mag_log_ms >= MAG_LOG_PERIOD_MS) {
+                mag_log_ms = 0;
+                ESP_LOGI(TAG, "|a| = %.2f g", mag);
+            }
+        }
 
         if (mag > IMPACT_G) {
+            if (!impact_seen) {
+                ESP_LOGI(TAG, "impact %.2f g - waiting for %d ms stillness", mag, STILL_TIME_MS);
+                mag_log_ms = 0;
+                impact_g = mag;
+            } else {
+                impact_g = fmaxf(impact_g, mag);
+            }
             impact_seen = true;
-            impact_g = mag;
             still_ms = 0;
         } else if (impact_seen) {
             if (fabsf(mag - 1.0f) < STILL_TOLERANCE_G) {
@@ -62,6 +86,12 @@ static void fall_task(void *arg)
 
 esp_err_t fall_detect_init(void)
 {
+    esp_err_t err = mpu6050_init();
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "MPU-6050 not found at 0x68 (%s) - fall detection DISABLED, SOS still works",
+                 esp_err_to_name(err));
+        return ESP_OK;
+    }
     BaseType_t ok = xTaskCreatePinnedToCore(fall_task, "fall_detect", 4096, NULL,
                                             BINDU_PRIO_FALL, NULL, BINDU_CORE_SAFETY);
     return ok == pdPASS ? ESP_OK : ESP_ERR_NO_MEM;

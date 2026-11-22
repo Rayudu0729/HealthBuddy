@@ -1,8 +1,8 @@
 # Bindu caregiver dashboard (Member 1)
 
-Reviewed 13 November 2026. [Current project status](../docs/current-status.md). This directory remains documentation/configuration only; no running service has been demonstrated.
+Reviewed 13 November 2026. [Current project status](../docs/current-status.md). The caregiver dashboard prototype is implemented here (login, device list, device page with live alerts).
 
-## Selected stack — implementation pending
+## Selected stack
 
 - React and TypeScript, built with Vite.
 - Responsive web interface for caregiver phones and laptops; static frontend container deployed to the existing Kubernetes VM.
@@ -13,9 +13,21 @@ The planned backend must enforce caregiver/device ownership. Caregivers can read
 
 Use open-source frontend dependencies and the existing infrastructure; no Firebase subscription is required. SMS alerts will be sent by the backend through the selected HTTP gateway, subject to its connectivity and credit limits. Local watch warnings are intended to work independently; integration is pending. Report stale/disconnected dashboard state and support reconnecting the live event stream.
 
-Start with a web dashboard against mock data; switch to live data once the wearable syncs.
+## Run
 
-## Screens
+1. Start the backend first (see [../backend/README.md](../backend/README.md)); it listens on port 3000.
+2. In `app/`: `npm install && npm run dev`, then open http://localhost:5173 (Vite proxies `/api` to `localhost:3000`).
+3. Demo login: `demo@bindu.local` / `bindu-demo-123`.
+4. Trigger a test alert: `npm run simulate -- SOS` in `backend/`; the banner appears live. Simulated data is badged SIMULATED.
+
+Scripts: `npm run build`, `npm run lint`, `npm test`.
+
+## Live vs stubbed
+
+- Live: login/session, device list with online/stale/offline status (recomputed every second), device page with alert banner and acknowledge, alert history with SMS status, recent events, SSE connection indicator (full refetch on reconnect).
+- Not built: vitals, map, medicine log, fall-risk trends, contacts/settings screens. No push notifications; alerts show only while the dashboard is open.
+
+## Planned screens
 - Live vitals and map (last known location)
 - Alerts and history
 - Experimental fall-risk trends; do not present correlations as proven medical causes

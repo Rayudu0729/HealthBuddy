@@ -1,20 +1,36 @@
 # Phase 2 — Local safety and obstacle assistance
 
-Planned: 13 November 2026 (Asia/Calcutta). Status: pending; no completion evidence recorded.
+Planned: 13 November 2026 (Asia/Calcutta). Status: in progress — Fall + SOS firmware written and building (22 November); not yet demonstrated on hardware.
 
-Build the local watch behaviours for blind/low-vision users and older adults after Phase 1 sensor validation. Work is planned; no integrated demonstration is established.
+Build the local watch behaviours for blind/low-vision users and older adults after Phase 1 sensor validation. Obstacle work waits on the Phase 1 ToF accuracy issue.
 
 ## Requirements and work
 
 - [ ] Import the validated local VL53L1X diagnostic into the main firmware, preserving the ST license and version.
-- [ ] Integrate MPU6050 readings, DRV2605L/motor, buzzer and debounced physical buttons.
-- [ ] Implement physical SOS activation and clear acknowledgement; reserve the SOS control for emergencies.
-- [ ] Implement the cancel/test interaction without ambiguous button actions.
+- [~] Integrate MPU6050 readings, DRV2605L/motor, buzzer and debounced physical buttons. (Code builds; hardware run pending.)
+- [~] Implement physical SOS activation and clear acknowledgement; reserve the SOS control for emergencies. (1.5 s hold; hardware run pending.)
+- [~] Implement the cancel/test interaction without ambiguous button actions. (Separate CANCEL button; hardware run pending.)
 - [ ] Implement forearm-forward obstacle scanning and evaluate the proposed wrist-bending activation; add a sensor only if evidence shows the IMU cannot detect the interaction.
 - [ ] Provide distinct activation/deactivation patterns, distance-dependent vibration and optional sound.
 - [ ] Reject invalid/stale distance readings and signal sensing failure instead of implying a clear path.
 - [ ] Evaluate experimental fall detection using controlled recordings and a cancellation window.
 - [ ] Prioritise SOS and urgent obstacle feedback over informational notifications.
+
+## 22 November 2026 Fall + SOS firmware
+
+New components `i2c_bus`, `feedback` (buzzer + DRV2605L patterns) and `buttons`; `fall_detect` now reads the MPU-6050 at ±8 g, 100 Hz; `alerts` adds the cancel window. `idf.py -B build-demo build` in `firmware/` passes with no warnings. Sending is a log stub; no network upload yet.
+
+| Part | XIAO pin | GPIO |
+| --- | --- | --- |
+| Buzzer (active high) | D0 | 1 |
+| SOS button to GND | D1 | 2 |
+| CANCEL button to GND | D2 | 3 |
+| I²C SDA (MPU 0x68, DRV2605L 0x5A) | D4 | 5 |
+| I²C SCL, 100 kHz | D5 | 6 |
+
+Behaviour: SOS held 1.5 s → confirm pattern, alert sent. Impact > 2.5 g then 2 s still → 10 s countdown with a beep each second; CANCEL inside the window sends nothing. A missing MPU or DRV2605L disables only fall detection or haptics. Known gaps: mode stays ALERT after sending; SOS during a fall countdown replaces it; thresholds are untuned.
+
+First flash on the personal PC (`D:\Bindu\fallsos-flash`) produced a 24-byte capture with only a bootloader fragment, so no runtime evidence yet. Re-capture with button and fall tests is next.
 
 ## Completion evidence
 

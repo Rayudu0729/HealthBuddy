@@ -1,5 +1,6 @@
 # ESP-IDF
 firmware/build/
+firmware/build-*/
 firmware/sdkconfig
 firmware/sdkconfig.old
 firmware/managed_components/
@@ -29,3 +30,7 @@ data/raw/
 
 # Local previews and scratch artifacts
 tmp/
+
+# Bindu backend local device token
+backend/.device-token
+firmware/diagnostics/tof-check/build-*/

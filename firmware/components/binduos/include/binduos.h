@@ -35,6 +35,7 @@ typedef enum {
     BINDU_EVT_SOS_BUTTON,
     BINDU_EVT_MISSED_CALL,
     BINDU_EVT_LOW_BATTERY,
+    BINDU_EVT_CANCEL,       // CANCEL button short press
     BINDU_EVT_COUNT
 } bindu_event_id_t;
 

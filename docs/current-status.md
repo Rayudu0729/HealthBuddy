@@ -1,6 +1,17 @@
 # Bindu — Current project status
 
-## Latest test update — 14 November 2026
+## Latest update — 22 November 2026
+
+Level 1 prototype deadline: 25 November 2026, 11:59 PM IST.
+
+- **Fall + SOS firmware (Phase 2):** written and building with no warnings (`idf.py -B build-demo build`). Buzzer D0, SOS D1 (1.5 s hold), CANCEL D2, I²C D4/D5 at 100 kHz. 10 s fall cancel window. First flash gave only a bootloader fragment in the capture; hardware behaviour not yet demonstrated. Sending is a log stub.
+- **Backend + dashboard (Phase 3):** `backend/` (Express/PostgreSQL/SSE/outbox) and `app/` (React/Vite) implemented; 11 API tests and 3 dashboard tests pass. Not deployed; firmware does not upload events yet.
+- **VL53L1X (Phase 1):** about 32 % short (scale error). Two-point correction flashed (20 cm check read 21.5 cm); three-point fit committed but not flashed. On hold.
+- **Bench access:** board on the personal PC as COM17; flash and capture there (`D:\Bindu\fallsos-flash`, `D:\Bindu\tof-flash`) and redirect the port over RDP.
+
+Next: re-capture the Fall + SOS demo log, then connect firmware to the backend over Wi-Fi, then Phase 4 deployment and httpSMS.
+
+## Earlier update — 14 November 2026
 
 Final handoff: active diagnostic now uses SHORT mode (1), 50 ms timing budget,
 100 ms period, 50 kHz I2C on D4/D5, with TOF_QUALITY logging. Latest 20 cm
@@ -48,9 +59,9 @@ This status summary and the phase contexts describe actual progress. The product
 | Calibration settings | Reported offset=0 mm, xtalk=0 after ULD initialisation; no correction applied by our diagnostic |
 | I2C reliability | ESP_ERR_INVALID_STATE captured on ID/data-ready reads; latest 20 cm run stopped after 21 valid readings; root cause unresolved |
 | Sensor code location | Tracked standalone firmware/diagnostics/tof-check with ST ULD v3.5.5/licence and USB console; not integrated into Bindu main firmware |
-| Other peripherals | MPU6050, DRV2605L/motor, buzzer and buttons received; operation not demonstrated |
-| SOS / falls / wrist gesture / removal | Planned; no completed end-to-end demonstrations |
-| Backend / dashboard | Selected architecture only; no implementation or deployment demonstrated |
+| Other peripherals | MPU6050 streamed on 22 Nov; DRV2605L, buzzer and buttons wired into the Fall + SOS build; operation not demonstrated |
+| SOS / falls / wrist gesture / removal | Fall + SOS firmware builds (22 Nov), not yet shown on hardware; gesture and removal planned |
+| Backend / dashboard | Implemented locally with passing tests (22 Nov); not deployed |
 | LTE / battery / custom PCB / case | Selection, sourcing, integration and measurements pending; no later-stage purchases confirmed |
 | Camera | Explicitly excluded; retain the ordered Plus controller |
 | Wi-Fi CSI room-motion experiment | Selected final phase only; additional stationary node, automatic vibration and button check planned; no hardware purchase or sensing result confirmed |
@@ -72,6 +83,8 @@ Remote alert route: watch Wi-Fi/LTE data -> authenticated backend -> httpSMS -> 
 Use open-source software and available infrastructure. Recheck httpSMS free allowance and carrier terms at setup; no current pricing/stock/quotas were revalidated in this documentation review. Hardware, fabrication, infrastructure and SIM/data/SMS can still cost money. Keep credentials server-side and out of Git.
 
 ## Immediate next action
+
+See the 22 November update at the top. The text below is the 14 November handoff.
 
 User is leaving and continuing in another session. Read [Phase 1 resume handoff](../Phases/Phase%201/context.md) first. SDA/SCL use jumper wires. The latest pending instruction is to disconnect USB, replace/reseat SDA/SCL with a short pair, preserve the pin mapping, and reconnect with a fixed white card at 20 cm. The user has not confirmed doing this.
 

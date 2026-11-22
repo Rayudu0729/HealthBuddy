@@ -1,7 +1,8 @@
 #pragma once
 
-// SOS over GSM SMS, buzzer, missed-call reply.
-// Owner: Member 1 (logic) + Member 2 (GSM wiring).
+// Fall alert with 10 s cancel window, SOS alert, buzzer/haptic feedback.
+// Sending is a stub; the route will be backend -> httpSMS.
+// Owner: Member 1 (logic).
 
 #include "esp_err.h"
 
